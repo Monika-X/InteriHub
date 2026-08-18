@@ -216,6 +216,14 @@ async function renderHome() {
 }
 
 async function render404() {
+    try {
+        const response = await fetch('pages/404.html');
+        if (response.ok) {
+            return await response.text();
+        }
+    } catch (e) {
+        // Fallback
+    }
     return `<div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background-color: var(--bg-primary);">
         <div>
             <h1 class="display-1">404</h1>
