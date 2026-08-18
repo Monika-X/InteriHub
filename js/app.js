@@ -49,10 +49,8 @@ function initNavigation() {
 // --- Routing (SPA) ---
 const routes = {
     '/': renderHome,
-    '/about': renderAbout,
-    '/contact': renderContact,
     '/dashboard': renderDashboard
-    // more to follow
+    // Other routes will dynamically fetch from /pages/[route].html
 };
 
 async function handleRoute(path) {
@@ -67,8 +65,21 @@ async function handleRoute(path) {
     await new Promise(resolve => setTimeout(resolve, 800));
     
     // Render view
-    const renderFn = routes[path] || render404;
-    dom.appRoot.innerHTML = await renderFn();
+    if (routes[path]) {
+        dom.appRoot.innerHTML = await routes[path]();
+    } else {
+        try {
+            const pageName = path === '/' ? 'home' : path.replace('/', '');
+            const response = await fetch(`pages/${pageName}.html`);
+            if (response.ok) {
+                dom.appRoot.innerHTML = await response.text();
+            } else {
+                dom.appRoot.innerHTML = await render404();
+            }
+        } catch (error) {
+            dom.appRoot.innerHTML = await render404();
+        }
+    }
     
     // Re-initialize Lucide icons for new content
     if(window.lucide) {
@@ -204,20 +215,8 @@ async function renderHome() {
     `;
 }
 
-async function renderAbout() {
-    return `<div style="min-height: 100vh; padding: 150px 0;">
-        <div class="container"><h1 class="display-2">The Studio</h1><p>About page content coming soon.</p></div>
-    </div>`;
-}
-
-async function renderContact() {
-    return `<div style="min-height: 100vh; padding: 150px 0;">
-        <div class="container"><h1 class="display-2">Contact Us</h1><p>Contact page content coming soon.</p></div>
-    </div>`;
-}
-
 async function render404() {
-    return `<div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center;">
+    return `<div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background-color: var(--bg-primary);">
         <div>
             <h1 class="display-1">404</h1>
             <p class="text-lead">Page not found.</p>

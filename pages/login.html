@@ -1,0 +1,29 @@
+<!-- Login Page -->
+<section style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background-color: var(--bg-primary); padding: 150px 0;">
+    <div class="container" style="max-width: 500px; width: 100%;">
+        <div class="reveal-up" style="background-color: var(--bg-secondary); padding: 4rem 3rem; border-radius: 8px; border: 1px solid var(--border-color); text-align: center;">
+            <h1 class="heading-1">Client Portal</h1>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Sign in to access your project dashboard.</p>
+            <form>
+                <div style="margin-bottom: 1.5rem; text-align: left;">
+                    <label style="display: block; margin-bottom: 0.5rem; font-family: var(--font-heading);">Email</label>
+                    <input type="email" required style="width: 100%; padding: 1rem; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-primary);">
+                </div>
+                <div style="margin-bottom: 1.5rem; text-align: left;">
+                    <label style="display: block; margin-bottom: 0.5rem; font-family: var(--font-heading);">Password</label>
+                    <input type="password" required style="width: 100%; padding: 1rem; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-primary);">
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                    <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: var(--text-muted);">
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#" style="font-size: 0.875rem; color: var(--color-antique-gold);">Forgot Password?</a>
+                </div>
+                <a href="/dashboard" data-route class="btn btn-primary" style="width: 100%;">Sign In</a>
+            </form>
+            <p style="margin-top: 2rem; font-size: 0.875rem; color: var(--text-muted);">
+                Don't have an account? <a href="/signup" data-route style="color: var(--text-primary); border-bottom: 1px solid var(--text-primary);">Request Access</a>
+            </p>
+        </div>
+    </div>
+</section>

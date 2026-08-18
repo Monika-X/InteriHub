@@ -1,0 +1,32 @@
+<!-- Signup Page -->
+<section style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background-color: var(--bg-primary); padding: 150px 0;">
+    <div class="container" style="max-width: 500px; width: 100%;">
+        <div class="reveal-up" style="background-color: var(--bg-secondary); padding: 4rem 3rem; border-radius: 8px; border: 1px solid var(--border-color); text-align: center;">
+            <h1 class="heading-1">Request Access</h1>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Apply for a client portal account to begin your journey.</p>
+            <form>
+                <div style="margin-bottom: 1.5rem; text-align: left;">
+                    <label style="display: block; margin-bottom: 0.5rem; font-family: var(--font-heading);">Full Name</label>
+                    <input type="text" required style="width: 100%; padding: 1rem; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-primary);">
+                </div>
+                <div style="margin-bottom: 1.5rem; text-align: left;">
+                    <label style="display: block; margin-bottom: 0.5rem; font-family: var(--font-heading);">Email Address</label>
+                    <input type="email" required style="width: 100%; padding: 1rem; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-primary);">
+                </div>
+                <div style="margin-bottom: 1.5rem; text-align: left;">
+                    <label style="display: block; margin-bottom: 0.5rem; font-family: var(--font-heading);">Project Type</label>
+                    <select required style="width: 100%; padding: 1rem; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-primary);">
+                        <option value="">Select an option</option>
+                        <option value="renovation">Full Renovation</option>
+                        <option value="furnishing">Bespoke Furnishing</option>
+                        <option value="commercial">Commercial Space</option>
+                    </select>
+                </div>
+                <button type="button" class="btn btn-primary" style="width: 100%;">Submit Request</button>
+            </form>
+            <p style="margin-top: 2rem; font-size: 0.875rem; color: var(--text-muted);">
+                Already have an account? <a href="/login" data-route style="color: var(--text-primary); border-bottom: 1px solid var(--text-primary);">Sign In</a>
+            </p>
+        </div>
+    </div>
+</section>
