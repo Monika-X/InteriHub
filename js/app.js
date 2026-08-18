@@ -46,10 +46,8 @@ function initNavigation() {
     });
 }
 
-// --- Routing (SPA) ---
 const routes = {
-    '/': renderHome,
-    '/dashboard': renderDashboard
+    '/': renderHome
     // Other routes will dynamically fetch from /pages/[route].html
 };
 
@@ -79,6 +77,10 @@ async function handleRoute(path) {
         } catch (error) {
             dom.appRoot.innerHTML = await render404();
         }
+    }
+    
+    if (path === '/dashboard') {
+        initDashboard();
     }
     
     // Re-initialize Lucide icons for new content
@@ -233,66 +235,46 @@ async function render404() {
     </div>`;
 }
 
-async function renderDashboard() {
-    return `<div style="min-height: 100vh; padding: 150px 0; background-color: var(--bg-secondary);">
-        <div class="container" style="display: flex; gap: 2rem;">
-            <!-- Sidebar -->
-            <aside style="width: 250px; background-color: var(--bg-primary); border-radius: 8px; padding: 2rem; border: 1px solid var(--border-color);">
-                <h3 style="margin-bottom: 2rem; font-size: 1.2rem;">Client Portal</h3>
-                <ul style="list-style: none;">
-                    <li style="margin-bottom: 1rem;"><a href="/dashboard" data-route class="active" style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="layout-dashboard" style="width: 18px;"></i> Overview</a></li>
-                    <li style="margin-bottom: 1rem;"><a href="#" style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="image" style="width: 18px;"></i> Mood Boards</a></li>
-                    <li style="margin-bottom: 1rem;"><a href="#" style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="calendar" style="width: 18px;"></i> Timeline</a></li>
-                    <li style="margin-bottom: 1rem;"><a href="#" style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="file-text" style="width: 18px;"></i> Project Files</a></li>
-                </ul>
-            </aside>
+// --- Dashboard Logic ---
+function initDashboard() {
+    const tabs = document.querySelectorAll('.dashboard-tab');
+    const sections = document.querySelectorAll('.dashboard-section');
+    
+    tabs.forEach(tab => {
+        tab.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Remove active class
+            tabs.forEach(t => t.classList.remove('active'));
+            sections.forEach(s => s.style.display = 'none');
             
-            <!-- Main Content -->
-            <main style="flex: 1; background-color: var(--bg-primary); border-radius: 8px; padding: 2rem; border: 1px solid var(--border-color);">
-                <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-                    <h1 class="heading-1" style="margin-bottom: 0;">Dashboard Overview</h1>
-                    <div style="display: flex; align-items: center; gap: 1rem;">
-                        <span style="color: var(--text-muted);">Welcome, <strong style="color: var(--text-primary);">A. Client</strong></span>
-                        <div style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--color-obsidian); color: var(--color-warm-ivory); display: flex; align-items: center; justify-content: center;">AC</div>
-                    </div>
-                </header>
-                
-                <!-- Stats Grid -->
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 3rem;">
-                    <div style="padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 8px;">
-                        <p style="color: var(--text-muted); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Project Status</p>
-                        <p style="font-size: 1.5rem; font-family: var(--font-heading);">Design Phase</p>
-                    </div>
-                    <div style="padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 8px;">
-                        <p style="color: var(--text-muted); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Next Milestone</p>
-                        <p style="font-size: 1.5rem; font-family: var(--font-heading);">Concept Review (Oct 15)</p>
-                    </div>
-                    <div style="padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 8px;">
-                        <p style="color: var(--text-muted); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Pending Actions</p>
-                        <p style="font-size: 1.5rem; font-family: var(--font-heading);">2 Approvals Required</p>
-                    </div>
-                </div>
-                
-                <!-- Recent Activity -->
-                <section>
-                    <h2 class="heading-1" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Recent Activity</h2>
-                    <div style="border-left: 2px solid var(--border-color); padding-left: 1.5rem; margin-left: 1rem;">
-                        <div style="position: relative; margin-bottom: 2rem;">
-                            <div style="position: absolute; left: -1.9rem; top: 0; width: 12px; height: 12px; border-radius: 50%; background-color: var(--color-antique-gold);"></div>
-                            <p style="font-weight: 600;">Mood Board Proposal V2 Uploaded</p>
-                            <p style="color: var(--text-muted); font-size: 0.875rem;">Today, 10:30 AM</p>
-                            <a href="#" class="btn btn-outline" style="padding: 0.5rem 1rem; margin-top: 1rem; font-size: 0.75rem;">Review Proposal</a>
-                        </div>
-                        <div style="position: relative;">
-                            <div style="position: absolute; left: -1.9rem; top: 0; width: 12px; height: 12px; border-radius: 50%; background-color: var(--border-color);"></div>
-                            <p style="font-weight: 600;">Initial Consultation Notes Added</p>
-                            <p style="color: var(--text-muted); font-size: 0.875rem;">Oct 1, 2026</p>
-                        </div>
-                    </div>
-                </section>
-            </main>
-        </div>
-    </div>`;
+            // Add active class
+            tab.classList.add('active');
+            const targetId = tab.getAttribute('data-target');
+            const targetSection = document.getElementById(targetId);
+            if(targetSection) {
+                targetSection.style.display = 'block';
+                // Trigger reveal animations if needed
+                const reveals = targetSection.querySelectorAll('.reveal-up');
+                reveals.forEach(el => {
+                    el.classList.remove('revealed');
+                    setTimeout(() => el.classList.add('revealed'), 50);
+                });
+            }
+        });
+    });
+
+    // File Upload Simulation
+    const uploadArea = document.getElementById('upload-area');
+    const fileInput = document.getElementById('room-photos');
+    if(uploadArea && fileInput) {
+        uploadArea.addEventListener('click', () => fileInput.click());
+        fileInput.addEventListener('change', (e) => {
+            if(e.target.files.length > 0) {
+                const fileNames = Array.from(e.target.files).map(f => f.name).join(', ');
+                document.getElementById('upload-status').innerHTML = `<p style="color: var(--color-antique-gold);">Successfully queued: ${fileNames}</p>`;
+            }
+        });
+    }
 }
 
 // --- Initialization ---

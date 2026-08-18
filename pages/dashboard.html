@@ -1,0 +1,142 @@
+<!-- Dashboard Container -->
+<div style="min-height: 100vh; padding: 150px 0; background-color: var(--bg-secondary);">
+    <div class="container" style="display: flex; gap: 2rem; align-items: flex-start;">
+        
+        <!-- Sidebar Navigation -->
+        <aside style="width: 250px; background-color: var(--bg-primary); border-radius: 8px; padding: 2rem; border: 1px solid var(--border-color); position: sticky; top: 100px;">
+            <h3 style="margin-bottom: 2rem; font-size: 1.2rem;">Client Portal</h3>
+            <ul style="list-style: none;">
+                <li style="margin-bottom: 1rem;"><a href="#" class="dashboard-tab active" data-target="dash-overview" style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="layout-dashboard" style="width: 18px;"></i> Overview</a></li>
+                <li style="margin-bottom: 1rem;"><a href="#" class="dashboard-tab" data-target="dash-timeline" style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="clock" style="width: 18px;"></i> Project Timeline</a></li>
+                <li style="margin-bottom: 1rem;"><a href="#" class="dashboard-tab" data-target="dash-photos" style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="camera" style="width: 18px;"></i> Upload Photos</a></li>
+                <li style="margin-bottom: 1rem;"><a href="#" class="dashboard-tab" data-target="dash-moodboards" style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="image" style="width: 18px;"></i> Mood Boards</a></li>
+            </ul>
+        </aside>
+        
+        <!-- Main Content Area -->
+        <main style="flex: 1; background-color: var(--bg-primary); border-radius: 8px; padding: 2.5rem; border: 1px solid var(--border-color); min-height: 600px;">
+            
+            <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1.5rem;">
+                <h1 class="heading-1" style="margin-bottom: 0;">Project Workspace</h1>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <span style="color: var(--text-muted);">Welcome, <strong style="color: var(--text-primary);">A. Client</strong></span>
+                    <div style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--color-obsidian); color: var(--color-warm-ivory); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading);">AC</div>
+                </div>
+            </header>
+
+            <!-- SECTION: Overview -->
+            <section id="dash-overview" class="dashboard-section reveal-up">
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 3rem;">
+                    <div style="padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 8px;">
+                        <p style="color: var(--text-muted); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Project Status</p>
+                        <p style="font-size: 1.5rem; font-family: var(--font-heading);">Concept Design</p>
+                    </div>
+                    <div style="padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 8px;">
+                        <p style="color: var(--text-muted); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Next Milestone</p>
+                        <p style="font-size: 1.5rem; font-family: var(--font-heading);">Mood Board Review</p>
+                    </div>
+                    <div style="padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 8px; background-color: var(--color-obsidian); color: var(--color-warm-ivory);">
+                        <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Action Required</p>
+                        <p style="font-size: 1.5rem; font-family: var(--font-heading); color: var(--color-antique-gold);">1 Pending Approval</p>
+                    </div>
+                </div>
+                
+                <h2 class="heading-1" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Recent Activity</h2>
+                <div style="border-left: 2px solid var(--border-color); padding-left: 1.5rem; margin-left: 1rem;">
+                    <div style="position: relative; margin-bottom: 2rem;">
+                        <div style="position: absolute; left: -1.9rem; top: 0; width: 12px; height: 12px; border-radius: 50%; background-color: var(--color-antique-gold);"></div>
+                        <p style="font-weight: 600;">Mood Board V1 Uploaded for Review</p>
+                        <p style="color: var(--text-muted); font-size: 0.875rem;">Today, 10:30 AM</p>
+                    </div>
+                    <div style="position: relative;">
+                        <div style="position: absolute; left: -1.9rem; top: 0; width: 12px; height: 12px; border-radius: 50%; background-color: var(--border-color);"></div>
+                        <p style="font-weight: 600;">Initial Consultation Notes Added</p>
+                        <p style="color: var(--text-muted); font-size: 0.875rem;">Oct 1, 2026</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION: Timeline -->
+            <section id="dash-timeline" class="dashboard-section" style="display: none;">
+                <h2 class="heading-1" style="font-size: 1.8rem; margin-bottom: 2rem;">Delivery Timeline</h2>
+                
+                <div style="position: relative; padding-left: 2rem;">
+                    <!-- Line -->
+                    <div style="position: absolute; left: 6px; top: 10px; bottom: 0; width: 2px; background-color: var(--border-color);"></div>
+                    
+                    <!-- Stage 1 -->
+                    <div style="position: relative; margin-bottom: 3rem; opacity: 0.5;">
+                        <div style="position: absolute; left: -2rem; top: 5px; width: 14px; height: 14px; border-radius: 50%; background-color: var(--text-primary);"></div>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.25rem;">1. Discovery & Consultation</h3>
+                        <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 0.5rem;">Completed: Oct 1, 2026</p>
+                        <p style="color: var(--text-muted);">Initial walk-through and aesthetic alignment.</p>
+                    </div>
+                    
+                    <!-- Stage 2 -->
+                    <div style="position: relative; margin-bottom: 3rem;">
+                        <div style="position: absolute; left: -2rem; top: 5px; width: 14px; height: 14px; border-radius: 50%; background-color: var(--color-antique-gold); box-shadow: 0 0 0 4px rgba(183, 154, 99, 0.2);"></div>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.25rem;">2. Concept & Mood Boards</h3>
+                        <p style="color: var(--color-antique-gold); font-size: 0.875rem; margin-bottom: 0.5rem;">In Progress (Current Stage)</p>
+                        <p style="color: var(--text-muted);">Developing the visual direction, spatial flow, and material palette.</p>
+                    </div>
+                    
+                    <!-- Stage 3 -->
+                    <div style="position: relative; margin-bottom: 3rem;">
+                        <div style="position: absolute; left: -2rem; top: 5px; width: 14px; height: 14px; border-radius: 50%; background-color: var(--bg-primary); border: 2px solid var(--border-color);"></div>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--text-muted);">3. 3D Renderings & Spatial Planning</h3>
+                        <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 0.5rem;">Estimated: Nov 2026</p>
+                    </div>
+                    
+                    <!-- Stage 4 -->
+                    <div style="position: relative;">
+                        <div style="position: absolute; left: -2rem; top: 5px; width: 14px; height: 14px; border-radius: 50%; background-color: var(--bg-primary); border: 2px solid var(--border-color);"></div>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--text-muted);">4. Procurement & Execution</h3>
+                        <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 0.5rem;">Estimated: Jan 2027</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION: Upload Photos -->
+            <section id="dash-photos" class="dashboard-section" style="display: none;">
+                <h2 class="heading-1" style="font-size: 1.8rem; margin-bottom: 1rem;">Upload Room Photos</h2>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">Please upload high-resolution photos of the spaces to be designed. Ensure the room is well-lit and capture multiple angles.</p>
+                
+                <div id="upload-area" style="border: 2px dashed var(--border-color); border-radius: 8px; padding: 4rem 2rem; text-align: center; cursor: pointer; transition: all var(--transition-fast);" onmouseover="this.style.borderColor='var(--color-antique-gold)';" onmouseout="this.style.borderColor='var(--border-color)';">
+                    <i data-lucide="upload-cloud" style="width: 48px; height: 48px; color: var(--text-muted); margin-bottom: 1rem;"></i>
+                    <h3 style="font-family: var(--font-body); font-weight: 500; margin-bottom: 0.5rem;">Click to browse or drag files here</h3>
+                    <p style="color: var(--text-muted); font-size: 0.875rem;">JPG, PNG or PDF (Max 20MB per file)</p>
+                    <input type="file" id="room-photos" multiple accept="image/*,.pdf" style="display: none;">
+                </div>
+                <div id="upload-status" style="margin-top: 1.5rem; text-align: center;"></div>
+                
+                <h3 style="font-size: 1.2rem; margin: 3rem 0 1rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">Previously Uploaded</h3>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+                    <div style="aspect-ratio: 1; background-color: var(--bg-secondary); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: var(--text-muted);">living_room_north.jpg</div>
+                    <div style="aspect-ratio: 1; background-color: var(--bg-secondary); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: var(--text-muted);">living_room_south.jpg</div>
+                </div>
+            </section>
+
+            <!-- SECTION: Mood Boards -->
+            <section id="dash-moodboards" class="dashboard-section" style="display: none;">
+                <h2 class="heading-1" style="font-size: 1.8rem; margin-bottom: 1rem;">Mood Board Proposals</h2>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">Review the aesthetic direction and material palettes. Please approve a concept or request revisions to proceed.</p>
+                
+                <div style="border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; margin-bottom: 3rem;">
+                    <div style="background-color: var(--color-obsidian); padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; color: var(--color-warm-ivory);">
+                        <h3 style="font-family: var(--font-body); font-weight: 500;">Living Space Concept V1</h3>
+                        <span style="background-color: var(--color-antique-gold); color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.75rem; text-transform: uppercase;">Pending Approval</span>
+                    </div>
+                    <div style="padding: 2rem;">
+                        <img src="assets/images/project-1.jpg" alt="Mood Board V1" style="width: 100%; height: auto; border-radius: 4px; margin-bottom: 2rem;">
+                        <p style="color: var(--text-muted); margin-bottom: 2rem;">This concept leverages dark obsidian tones anchored by warm ivory fabrics and antique gold accents. The focus is on textural depth rather than color variety.</p>
+                        <div style="display: flex; gap: 1rem;">
+                            <button class="btn btn-primary" onclick="alert('Concept Approved! Our team has been notified.')">Approve Concept</button>
+                            <button class="btn btn-outline" onclick="alert('Revision Request opened. A designer will reach out shortly.')">Request Revision</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+</div>
