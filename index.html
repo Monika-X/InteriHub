@@ -7,6 +7,7 @@
     <meta name="description" content="Ultra Premium Editorial Interior Design Consultation Portal. Redefining architectural luxury.">
     
     <!-- Typography -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -24,24 +25,44 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <a href="/" class="brand" data-route>
-                INTERI<span>HUB</span>
+            <a href="/" class="brand" data-route style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+                <img src="assets/logo.svg" alt="InteriHub Logo" width="36" height="36">
+                <div style="display: flex; flex-direction: column; justify-content: center;">
+                    <div style="line-height: 1;">INTERI<span>HUB</span></div>
+                    <span style="font-size: 0.65rem; font-family: var(--font-body); letter-spacing: 0.05em; color: var(--color-antique-gold); font-weight: 500; margin-top: 2px;">Where Elegance Meets Comfort.</span>
+                </div>
             </a>
             
             <div class="nav-links">
-                <a href="/" data-route class="active">Home</a>
-                <a href="/about" data-route>Studio</a>
-                <a href="/services" data-route>Consultation</a>
-                <a href="/portfolio" data-route>Portfolio</a>
-                <a href="/contact" data-route>Contact</a>
+                <a href="/" data-route class="active">HOME</a>
+                <a href="/home2" data-route>HOME 2</a>
+                <a href="/about" data-route>ABOUT</a>
+                <a href="/services" data-route>SERVICES</a>
+                <a href="/blog" data-route>JOURNAL</a>
+                <a href="/contact" data-route>CONTACT</a>
             </div>
 
-            <div class="nav-actions">
+            <div class="nav-actions" style="display: flex; align-items: center; gap: 1rem;">
+                <div class="profile-menu" id="profile-menu">
+                    <button class="profile-trigger" aria-label="User Profile" aria-haspopup="true" aria-expanded="false">
+                        <i data-lucide="user" style="width: 20px; height: 20px;"></i>
+                    </button>
+                    <div class="profile-dropdown">
+                        <div class="profile-dropdown-header">
+                            <p style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 0.25rem;">Account</p>
+                            <span style="font-size: 0.75rem; color: var(--text-muted);">Access your client portal</span>
+                        </div>
+                        <a href="/dashboard" data-route><i data-lucide="layout-dashboard"></i> User Dashboard</a>
+                        <a href="/login" data-route><i data-lucide="log-in"></i> Login</a>
+                        <a href="/signup" data-route><i data-lucide="user-plus"></i> Sign Up</a>
+                    </div>
+                </div>
                 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark Mode">
                     <i data-lucide="moon" class="icon-moon"></i>
                     <i data-lucide="sun" class="icon-sun"></i>
                 </button>
-                <a href="/login" data-route class="btn btn-outline">Client Login</a>
+                <button id="rtl-toggle" class="btn btn-outline" style="padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.75rem;">RTL</button>
+                <a href="/book" data-route class="btn btn-primary" style="background-color: var(--color-antique-gold); color: var(--color-obsidian); border: none; font-weight: 600;">BOOK VISIT</a>
                 <button class="mobile-menu-btn" aria-label="Menu">
                     <i data-lucide="menu"></i>
                 </button>
@@ -50,50 +71,97 @@
     </nav>
 
     <!-- Main Content Container (SPA) -->
-    <main id="app-root">
-        <!-- Dynamic content will be injected here -->
-    </main>
+    <main id="app-root"></main>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
+        <div class="container relative-container">
             <div class="footer-grid">
-                <div class="footer-brand">
-                    <h2>INTERI<span>HUB</span></h2>
-                    <p>Elevating living spaces through sophisticated architectural design and personalized consultation.</p>
+                <!-- Column 1 -->
+                <div class="footer-brand-col">
+                    <a href="/" class="brand footer-logo" data-route style="display: flex; align-items: center; gap: 8px; text-decoration: none; margin-bottom: 1.5rem;">
+                        <img src="assets/logo.svg" alt="InteriHub Logo" width="36" height="36">
+                        <div style="display: flex; flex-direction: column; justify-content: center;">
+                            <div style="line-height: 1;">INTERI<span>HUB</span></div>
+                            <span style="font-size: 0.65rem; font-family: var(--font-body); letter-spacing: 0.05em; color: var(--color-antique-gold); font-weight: 500; margin-top: 2px;">Where Elegance Meets Comfort.</span>
+                        </div>
+                    </a>
+                    <p class="footer-desc">
+                        InteriHub's most exclusive destination for luxury design. A curated sanctuary where every space tells an extraordinary story.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="https://www.instagram.com" aria-label="Instagram" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com" aria-label="Facebook" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="https://x.com" aria-label="X (Twitter)" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+                        </a>
+                        <a href="https://www.youtube.com" aria-label="YouTube" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        </a>
+                        <a href="https://www.pinterest.com" aria-label="Pinterest" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+                        </a>
+                    </div>
                 </div>
-                <div class="footer-links">
-                    <h3>Explore</h3>
-                    <a href="/about" data-route>The Studio</a>
-                    <a href="/services" data-route>Expertise</a>
-                    <a href="/portfolio" data-route>Selected Works</a>
-                    <a href="/blog" data-route>Editorial</a>
+
+                <!-- Column 2 -->
+                <div class="footer-links-col">
+                    <h3>COLLECTIONS</h3>
+                    <a href="#" data-route>Luxury Spaces</a>
+                    <a href="#" data-route>Modern Architecture</a>
+                    <a href="#" data-route>Renovations</a>
+                    <a href="#" data-route>Gifting & Decor</a>
+                    <a href="#" data-route>Consultation Services</a>
                 </div>
-                <div class="footer-links">
-                    <h3>Legal</h3>
-                    <a href="/privacy" data-route>Privacy Policy</a>
-                    <a href="/terms" data-route>Terms of Service</a>
-                    <a href="/sitemap" data-route>Sitemap</a>
+
+                <!-- Column 3 -->
+                <div class="footer-links-col">
+                    <h3>STUDIO</h3>
+                    <a href="/" data-route>Home</a>
+                    <a href="/about" data-route>About Us</a>
+                    <a href="/services" data-route>Services</a>
+                    <a href="/portfolio" data-route>Journal</a>
+                    <a href="/contact" data-route>Contact</a>
                 </div>
-                <div class="footer-newsletter">
-                    <h3>Newsletter</h3>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Your email address" required>
-                        <button type="submit" class="btn btn-primary">Subscribe</button>
+
+                <!-- Column 4 -->
+                <div class="footer-newsletter-col">
+                    <h3>THE PRIVATE LIST</h3>
+                    <p>Receive exclusive previews, private consultation invitations, and architectural insights before anyone else.</p>
+                    <form class="newsletter-form-inline">
+                        <input type="email" placeholder="Your email" required>
+                        <button type="submit" class="btn btn-primary">JOIN</button>
                     </form>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 InteriHub Studio. All rights reserved.</p>
-                <button id="back-to-top" aria-label="Back to top">
-                    <i data-lucide="arrow-up"></i>
-                </button>
+
+            <div class="footer-divider">
+                <div class="footer-divider-dot"></div>
             </div>
+
+            <div class="footer-bottom-row">
+                <div class="footer-copyright">
+                    &copy; 2026 InteriHub Studio. All rights reserved. Established 2020.
+                </div>
+                <div class="footer-legal-links">
+                    <a href="/privacy" data-route>Privacy Policy</a>
+                    <a href="/terms" data-route>Terms & Conditions</a>
+                    <a href="/sitemap" data-route>Sitemap</a>
+                </div>
+            </div>
+            
+            <button id="back-to-top" class="back-to-top-floating" aria-label="Back to top">
+                <i data-lucide="arrow-up"></i>
+            </button>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="js/app.js" type="module"></script>
+    <script src="js/app.js"></script>
     <script>
         lucide.createIcons();
     </script>

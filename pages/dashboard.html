@@ -1,21 +1,26 @@
 <!-- Dashboard Container -->
 <div style="min-height: 100vh; padding: 150px 0; background-color: var(--bg-secondary);">
     <div class="container" style="display: flex; gap: 2rem; align-items: flex-start;">
-        
+
         <!-- Sidebar Navigation -->
-        <aside style="width: 250px; background-color: var(--bg-primary); border-radius: 8px; padding: 2rem; border: 1px solid var(--border-color); position: sticky; top: 100px;">
+        <aside style="width: 250px; background-color: var(--bg-primary); border-radius: 8px; padding: 2rem; border: 1px solid var(--border-color); position: sticky; top: 100px; flex-shrink: 0;">
             <h3 style="margin-bottom: 2rem; font-size: 1.2rem;">Client Portal</h3>
             <ul style="list-style: none;">
                 <li style="margin-bottom: 1rem;"><a href="#" class="dashboard-tab active" data-target="dash-overview" style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="layout-dashboard" style="width: 18px;"></i> Overview</a></li>
                 <li style="margin-bottom: 1rem;"><a href="#" class="dashboard-tab" data-target="dash-timeline" style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="clock" style="width: 18px;"></i> Project Timeline</a></li>
                 <li style="margin-bottom: 1rem;"><a href="#" class="dashboard-tab" data-target="dash-photos" style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="camera" style="width: 18px;"></i> Upload Photos</a></li>
                 <li style="margin-bottom: 1rem;"><a href="#" class="dashboard-tab" data-target="dash-moodboards" style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="image" style="width: 18px;"></i> Mood Boards</a></li>
+                <li style="margin-bottom: 1rem;"><a href="#" class="dashboard-tab" data-target="dash-messages" style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="message-circle" style="width: 18px;"></i> Messages <span style="margin-left: auto; background-color: var(--color-antique-gold); color: #fff; font-size: 0.7rem; padding: 0.1rem 0.5rem; border-radius: 10px;">2</span></a></li>
             </ul>
+            <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); font-size: 0.8rem; color: var(--text-muted);">
+                <p style="margin-bottom: 0.5rem;">Project #IH-2026-014</p>
+                <p>Senior Designer: <span style="color: var(--color-antique-gold);">Elena R.</span></p>
+            </div>
         </aside>
-        
+
         <!-- Main Content Area -->
         <main style="flex: 1; background-color: var(--bg-primary); border-radius: 8px; padding: 2.5rem; border: 1px solid var(--border-color); min-height: 600px;">
-            
+
             <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1.5rem;">
                 <h1 class="heading-1" style="margin-bottom: 0;">Project Workspace</h1>
                 <div style="display: flex; align-items: center; gap: 1rem;">
@@ -40,13 +45,24 @@
                         <p style="font-size: 1.5rem; font-family: var(--font-heading); color: var(--color-antique-gold);">1 Pending Approval</p>
                     </div>
                 </div>
-                
-                <h2 class="heading-1" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Recent Activity</h2>
+
+                <h2 class="heading-1" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Project Progress</h2>
+                <div style="height: 8px; background-color: var(--bg-secondary); border-radius: 4px; overflow: hidden; margin-bottom: 1rem;">
+                    <div id="progress-bar" style="height: 100%; width: 35%; background-color: var(--color-antique-gold); border-radius: 4px; transition: width 0.8s ease;"></div>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.875rem;">35% complete — Discovery finished, Concept in review.</p>
+
+                <h2 class="heading-1" style="font-size: 1.5rem; margin: 3rem 0 1.5rem;">Recent Activity</h2>
                 <div style="border-left: 2px solid var(--border-color); padding-left: 1.5rem; margin-left: 1rem;">
                     <div style="position: relative; margin-bottom: 2rem;">
                         <div style="position: absolute; left: -1.9rem; top: 0; width: 12px; height: 12px; border-radius: 50%; background-color: var(--color-antique-gold);"></div>
                         <p style="font-weight: 600;">Mood Board V1 Uploaded for Review</p>
                         <p style="color: var(--text-muted); font-size: 0.875rem;">Today, 10:30 AM</p>
+                    </div>
+                    <div style="position: relative; margin-bottom: 2rem;">
+                        <div style="position: absolute; left: -1.9rem; top: 0; width: 12px; height: 12px; border-radius: 50%; background-color: var(--border-color);"></div>
+                        <p style="font-weight: 600;">Designer reply: "We'd love your thoughts on the palette"</p>
+                        <p style="color: var(--text-muted); font-size: 0.875rem;">Today, 9:45 AM</p>
                     </div>
                     <div style="position: relative;">
                         <div style="position: absolute; left: -1.9rem; top: 0; width: 12px; height: 12px; border-radius: 50%; background-color: var(--border-color);"></div>
@@ -58,40 +74,53 @@
 
             <!-- SECTION: Timeline -->
             <section id="dash-timeline" class="dashboard-section" style="display: none;">
-                <h2 class="heading-1" style="font-size: 1.8rem; margin-bottom: 2rem;">Delivery Timeline</h2>
-                
+                <h2 class="heading-1" style="font-size: 1.8rem; margin-bottom: 1rem;">Delivery Timeline</h2>
+                <p style="color: var(--text-muted); margin-bottom: 2.5rem;">Approve each stage as it completes. The next stage begins automatically once you give the go-ahead.</p>
+
                 <div style="position: relative; padding-left: 2rem;">
                     <!-- Line -->
                     <div style="position: absolute; left: 6px; top: 10px; bottom: 0; width: 2px; background-color: var(--border-color);"></div>
-                    
+
                     <!-- Stage 1 -->
-                    <div style="position: relative; margin-bottom: 3rem; opacity: 0.5;">
-                        <div style="position: absolute; left: -2rem; top: 5px; width: 14px; height: 14px; border-radius: 50%; background-color: var(--text-primary);"></div>
-                        <h3 style="font-family: var(--font-heading); font-size: 1.25rem;">1. Discovery & Consultation</h3>
+                    <div style="position: relative; margin-bottom: 3rem;">
+                        <div style="position: absolute; left: -2rem; top: 5px; width: 14px; height: 14px; border-radius: 50%; background-color: var(--color-antique-gold);"></div>
+                        <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem;">
+                            <h3 style="font-family: var(--font-heading); font-size: 1.25rem;">1. Discovery & Consultation</h3>
+                            <span class="stage-status" style="background-color: var(--color-antique-gold); color: #fff; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.75rem; text-transform: uppercase;">Approved</span>
+                        </div>
                         <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 0.5rem;">Completed: Oct 1, 2026</p>
-                        <p style="color: var(--text-muted);">Initial walk-through and aesthetic alignment.</p>
+                        <p style="color: var(--text-muted);">Initial walk-through, brief capture and aesthetic alignment.</p>
                     </div>
-                    
+
                     <!-- Stage 2 -->
                     <div style="position: relative; margin-bottom: 3rem;">
                         <div style="position: absolute; left: -2rem; top: 5px; width: 14px; height: 14px; border-radius: 50%; background-color: var(--color-antique-gold); box-shadow: 0 0 0 4px rgba(183, 154, 99, 0.2);"></div>
-                        <h3 style="font-family: var(--font-heading); font-size: 1.25rem;">2. Concept & Mood Boards</h3>
+                        <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem;">
+                            <h3 style="font-family: var(--font-heading); font-size: 1.25rem;">2. Concept & Mood Boards</h3>
+                            <span class="stage-status" style="background-color: var(--color-obsidian); color: var(--color-warm-ivory); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.75rem; text-transform: uppercase;">Awaiting Your Approval</span>
+                        </div>
                         <p style="color: var(--color-antique-gold); font-size: 0.875rem; margin-bottom: 0.5rem;">In Progress (Current Stage)</p>
-                        <p style="color: var(--text-muted);">Developing the visual direction, spatial flow, and material palette.</p>
+                        <p style="color: var(--text-muted);">Visual direction, spatial flow and material palette ready for review.</p>
+                        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                            <button class="btn btn-primary stage-approve" style="padding: 0.6rem 1.25rem; font-size: 0.75rem;">Approve Stage</button>
+                            <button class="btn btn-outline stage-revise" style="padding: 0.6rem 1.25rem; font-size: 0.75rem;">Request Changes</button>
+                        </div>
                     </div>
-                    
+
                     <!-- Stage 3 -->
                     <div style="position: relative; margin-bottom: 3rem;">
                         <div style="position: absolute; left: -2rem; top: 5px; width: 14px; height: 14px; border-radius: 50%; background-color: var(--bg-primary); border: 2px solid var(--border-color);"></div>
                         <h3 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--text-muted);">3. 3D Renderings & Spatial Planning</h3>
                         <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 0.5rem;">Estimated: Nov 2026</p>
+                        <p style="color: var(--text-muted);">Photorealistic renders of every room and final spatial planning.</p>
                     </div>
-                    
+
                     <!-- Stage 4 -->
                     <div style="position: relative;">
                         <div style="position: absolute; left: -2rem; top: 5px; width: 14px; height: 14px; border-radius: 50%; background-color: var(--bg-primary); border: 2px solid var(--border-color);"></div>
                         <h3 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--text-muted);">4. Procurement & Execution</h3>
                         <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 0.5rem;">Estimated: Jan 2027</p>
+                        <p style="color: var(--text-muted);">Ordering, fabrication, installation and final styling.</p>
                     </div>
                 </div>
             </section>
@@ -100,7 +129,7 @@
             <section id="dash-photos" class="dashboard-section" style="display: none;">
                 <h2 class="heading-1" style="font-size: 1.8rem; margin-bottom: 1rem;">Upload Room Photos</h2>
                 <p style="color: var(--text-muted); margin-bottom: 2rem;">Please upload high-resolution photos of the spaces to be designed. Ensure the room is well-lit and capture multiple angles.</p>
-                
+
                 <div id="upload-area" style="border: 2px dashed var(--border-color); border-radius: 8px; padding: 4rem 2rem; text-align: center; cursor: pointer; transition: all var(--transition-fast);" onmouseover="this.style.borderColor='var(--color-antique-gold)';" onmouseout="this.style.borderColor='var(--border-color)';">
                     <i data-lucide="upload-cloud" style="width: 48px; height: 48px; color: var(--text-muted); margin-bottom: 1rem;"></i>
                     <h3 style="font-family: var(--font-body); font-weight: 500; margin-bottom: 0.5rem;">Click to browse or drag files here</h3>
@@ -108,31 +137,93 @@
                     <input type="file" id="room-photos" multiple accept="image/*,.pdf" style="display: none;">
                 </div>
                 <div id="upload-status" style="margin-top: 1.5rem; text-align: center;"></div>
-                
+
                 <h3 style="font-size: 1.2rem; margin: 3rem 0 1rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">Previously Uploaded</h3>
                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
                     <div style="aspect-ratio: 1; background-color: var(--bg-secondary); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: var(--text-muted);">living_room_north.jpg</div>
                     <div style="aspect-ratio: 1; background-color: var(--bg-secondary); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: var(--text-muted);">living_room_south.jpg</div>
+                    <div style="aspect-ratio: 1; background-color: var(--bg-secondary); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: var(--text-muted);">kitchen_west.jpg</div>
                 </div>
             </section>
 
             <!-- SECTION: Mood Boards -->
             <section id="dash-moodboards" class="dashboard-section" style="display: none;">
                 <h2 class="heading-1" style="font-size: 1.8rem; margin-bottom: 1rem;">Mood Board Proposals</h2>
-                <p style="color: var(--text-muted); margin-bottom: 2rem;">Review the aesthetic direction and material palettes. Please approve a concept or request revisions to proceed.</p>
-                
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">Review each proposal's aesthetic direction and material palette. Approve a concept or request revisions to proceed.</p>
+
+                <!-- Proposal V1 -->
                 <div style="border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; margin-bottom: 3rem;">
-                    <div style="background-color: var(--color-obsidian); padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; color: var(--color-warm-ivory);">
+                    <div style="background-color: var(--color-obsidian); padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; color: var(--color-warm-ivory); flex-wrap: wrap; gap: 0.5rem;">
                         <h3 style="font-family: var(--font-body); font-weight: 500;">Living Space Concept V1</h3>
-                        <span style="background-color: var(--color-antique-gold); color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.75rem; text-transform: uppercase;">Pending Approval</span>
+                        <span class="mood-status" data-state="pending" style="background-color: var(--color-antique-gold); color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.75rem; text-transform: uppercase;">Pending Approval</span>
                     </div>
                     <div style="padding: 2rem;">
                         <img src="assets/images/project-1.jpg" alt="Mood Board V1" style="width: 100%; height: auto; border-radius: 4px; margin-bottom: 2rem;">
                         <p style="color: var(--text-muted); margin-bottom: 2rem;">This concept leverages dark obsidian tones anchored by warm ivory fabrics and antique gold accents. The focus is on textural depth rather than color variety.</p>
                         <div style="display: flex; gap: 1rem;">
-                            <button class="btn btn-primary" onclick="alert('Concept Approved! Our team has been notified.')">Approve Concept</button>
-                            <button class="btn btn-outline" onclick="alert('Revision Request opened. A designer will reach out shortly.')">Request Revision</button>
+                            <button class="btn btn-primary mood-approve" style="padding: 0.7rem 1.5rem; font-size: 0.8rem;">Approve Concept</button>
+                            <button class="btn btn-outline mood-revise" style="padding: 0.7rem 1.5rem; font-size: 0.8rem;">Request Revision</button>
                         </div>
+                        <p class="mood-feedback" style="display: none; margin-top: 1rem; font-size: 0.875rem;"></p>
+                    </div>
+                </div>
+
+                <!-- Proposal V2 -->
+                <div style="border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
+                    <div style="background-color: var(--bg-secondary); padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                        <h3 style="font-family: var(--font-body); font-weight: 500;">Living Space Concept V2 — Lighter Palette</h3>
+                        <span class="mood-status" data-state="draft" style="background-color: var(--color-olive-gray); color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.75rem; text-transform: uppercase;">In Draft</span>
+                    </div>
+                    <div style="padding: 2rem;">
+                        <img src="assets/images/project-2.jpg" alt="Mood Board V2" style="width: 100%; height: auto; border-radius: 4px; margin-bottom: 2rem;">
+                        <p style="color: var(--text-muted); margin-bottom: 2rem;">An alternative direction built on warm ivory expanses, olive-gray stone and soft taupe textiles. Designed for clients who prefer luminosity over drama.</p>
+                        <p style="color: var(--text-muted); font-size: 0.875rem;">This board is still in draft and will be shared once finalized.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION: Messages -->
+            <section id="dash-messages" class="dashboard-section" style="display: none;">
+                <h2 class="heading-1" style="font-size: 1.8rem; margin-bottom: 1rem;">Message Your Designer</h2>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">Direct line to Elena Rostova and her studio team. Replies typically arrive within one business day.</p>
+
+                <div style="border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
+                    <div style="background-color: var(--bg-secondary); padding: 1rem 1.5rem; display: flex; align-items: center; gap: 1rem; border-bottom: 1px solid var(--border-color);">
+                        <div style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--color-obsidian); color: var(--color-warm-ivory); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading);">ER</div>
+                        <div>
+                            <p style="font-weight: 600; font-size: 0.9rem;">Elena Rostova</p>
+                            <p style="color: var(--color-olive-gray); font-size: 0.75rem;">Principal Designer <span style="color: var(--color-antique-gold);">● Online</span></p>
+                        </div>
+                    </div>
+
+                    <div id="msg-list" style="padding: 1.5rem; background-color: var(--bg-primary); min-height: 320px; max-height: 420px; overflow-y: auto;">
+                        <div style="display: flex; gap: 0.75rem; margin-bottom: 1.5rem; max-width: 80%;">
+                            <div style="flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background-color: var(--color-obsidian); color: var(--color-warm-ivory); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 0.75rem;">ER</div>
+                            <div style="background-color: var(--bg-secondary); border-radius: 12px 12px 12px 2px; padding: 0.9rem 1.2rem;">
+                                <p style="font-size: 0.9rem; margin-bottom: 0.25rem;">Good morning! I've uploaded Mood Board V1 — the obsidian direction. Do take a look when you have a moment.</p>
+                                <p style="font-size: 0.7rem; color: var(--text-muted);">Today, 9:45 AM</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 0.75rem; margin-bottom: 1.5rem; max-width: 80%;">
+                            <div style="flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background-color: var(--color-obsidian); color: var(--color-warm-ivory); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 0.75rem;">ER</div>
+                            <div style="background-color: var(--bg-secondary); border-radius: 12px 12px 12px 2px; padding: 0.9rem 1.2rem;">
+                                <p style="font-size: 0.9rem; margin-bottom: 0.25rem;">Also, could you share a photo of the north wall? I want to check how the afternoon light falls there.</p>
+                                <p style="font-size: 0.7rem; color: var(--text-muted);">Today, 10:05 AM</p>
+                            </div>
+                        </div>
+                        <div id="typing-indicator" style="display: none; align-items: center; gap: 0.5rem; margin-bottom: 1rem; font-size: 0.8rem; color: var(--text-muted);">
+                            <span style="display: inline-flex; gap: 3px;">
+                                <span style="width: 6px; height: 6px; border-radius: 50%; background-color: var(--color-antique-gold); animation: msgPulse 1s infinite;"></span>
+                                <span style="width: 6px; height: 6px; border-radius: 50%; background-color: var(--color-antique-gold); animation: msgPulse 1s infinite 0.2s;"></span>
+                                <span style="width: 6px; height: 6px; border-radius: 50%; background-color: var(--color-antique-gold); animation: msgPulse 1s infinite 0.4s;"></span>
+                            </span>
+                            Elena is typing...
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; padding: 1.25rem 1.5rem; border-top: 1px solid var(--border-color); background-color: var(--bg-primary);">
+                        <input type="text" id="msg-input" placeholder="Write a message to your design team..." style="flex: 1; padding: 0.9rem 1.2rem; border: 1px solid var(--border-color); background: transparent; color: var(--text-primary); font-family: var(--font-body);" onkeydown="if(event.key==='Enter'){sendMessage();}">
+                        <button id="msg-send" class="btn btn-primary" onclick="sendMessage()" style="padding: 0.9rem 1.6rem; font-size: 0.8rem; background-color: var(--color-antique-gold); color: var(--color-obsidian); border: none;">Send</button>
                     </div>
                 </div>
             </section>
