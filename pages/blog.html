@@ -7,6 +7,11 @@
             Insights, architectural discourse, and a curation of our design inspirations — published monthly from the studio floor.
         </p>
     </div>
+    <div class="container reveal-up" style="margin-top: 4rem;">
+        <div style="position: relative; overflow: hidden; aspect-ratio: 16/9;">
+            <img src="https://i.pinimg.com/736x/64/4e/3b/644e3b163bf2b7e1ba6a34afa5cd6ef3.jpg" alt="Editorial" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+    </div>
 </section>
 
 <section class="section-padding" style="background-color: var(--bg-secondary);">
@@ -14,48 +19,156 @@
         <!-- Featured Post -->
         <div class="reveal-up" style="margin-bottom: 6rem; position: relative;">
             <div style="aspect-ratio: 21/9; overflow: hidden; margin-bottom: 2rem;">
-                <img src="assets/images/hero-interior.jpg" alt="Featured Article" style="width: 100%; height: 100%; object-fit: cover;">
+                <img src="https://i.pinimg.com/736x/04/8f/37/048f37deffa60841e4b3980ce0ffccf3.jpg" alt="Featured Article" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;">Architecture</p>
-            <h2 class="display-2" style="margin-bottom: 1rem;"><a href="/blog-details" data-route>The Psychology of Volume</a></h2>
+            <h2 class="display-2" style="margin-bottom: 1rem;"><a href="/blog-details?post=psychology-of-volume" data-route>The Psychology of Volume</a></h2>
             <p style="color: var(--text-muted); max-width: 800px; margin-bottom: 2rem;">How manipulating spatial proportions can profoundly influence emotional resonance within a residential environment.</p>
             <a href="/blog-details" data-route class="btn btn-outline">Read Article</a>
         </div>
 
+        <!-- Filter Bar -->
+        <div class="reveal-up" style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 3rem;">
+            <button class="blog-filter-btn active" data-filter="all" type="button">All</button>
+            <button class="blog-filter-btn" data-filter="materials" type="button">Materials</button>
+            <button class="blog-filter-btn" data-filter="lighting" type="button">Lighting</button>
+            <button class="blog-filter-btn" data-filter="process" type="button">Process</button>
+            <button class="blog-filter-btn" data-filter="studio-notes" type="button">Studio Notes</button>
+        </div>
+
         <!-- Grid Posts -->
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 4rem;">
-            <div class="reveal-up">
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;">
+            <div class="reveal-up blog-card" data-category="materials">
                 <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
-                    <img src="assets/images/project-1.jpg" alt="Article 1" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="https://i.pinimg.com/736x/33/95/70/33957001a5d064a3237a9f689e91b52a.jpg" alt="Article 1" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Materials</p>
-                <h3 class="heading-1" style="font-size: 2rem;"><a href="/blog-details" data-route>Sourcing Italian Travertine</a></h3>
+                <h3 class="heading-1" style="font-size: 1.4rem;"><a href="/blog-details?post=sourcing-travertine" data-route>Sourcing Italian Travertine</a></h3>
                 <p style="color: var(--text-muted); margin-top: 1rem;">A journey to the quarries of Tivoli — and the story behind our favorite warm stone.</p>
             </div>
-            <div class="reveal-up" style="transition-delay: 0.2s;">
+            <div class="reveal-up blog-card" style="transition-delay: 0.2s;" data-category="lighting">
                 <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
-                    <img src="assets/images/project-2.jpg" alt="Article 2" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="https://i.pinimg.com/736x/d7/0f/93/d70f9333a39fa75874faeca95a1becce.jpg" alt="Article 2" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Lighting</p>
-                <h3 class="heading-1" style="font-size: 2rem;"><a href="/blog-details" data-route>Sculpting with Shadows</a></h3>
+                <h3 class="heading-1" style="font-size: 1.4rem;"><a href="/blog-details?post=sculpting-shadows" data-route>Sculpting with Shadows</a></h3>
                 <p style="color: var(--text-muted); margin-top: 1rem;">The art of concealed architectural illumination and what it teaches us about night.</p>
             </div>
-            <div class="reveal-up">
+            <div class="reveal-up blog-card" data-category="process">
                 <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
-                    <img src="assets/images/project-3.jpg" alt="Article 3" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="https://i.pinimg.com/736x/e0/c7/05/e0c705772466eca16dd518850b4ba8b7.jpg" alt="Article 3" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Process</p>
-                <h3 class="heading-1" style="font-size: 2rem;"><a href="/blog-details" data-route>Inside a 12-Month Renovation</a></h3>
+                <h3 class="heading-1" style="font-size: 1.4rem;"><a href="/blog-details?post=renovation-12-months" data-route>Inside a 12-Month Renovation</a></h3>
                 <p style="color: var(--text-muted); margin-top: 1rem;">A behind-the-scenes account of our most demanding transformation to date.</p>
             </div>
-            <div class="reveal-up" style="transition-delay: 0.2s;">
+            <div class="reveal-up blog-card" style="transition-delay: 0.2s;" data-category="studio-notes">
                 <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
-                    <img src="assets/images/hero-interior.jpg" alt="Article 4" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="https://i.pinimg.com/736x/4e/f5/14/4ef51472656d283a91ab207b85540084.jpg" alt="Article 4" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Studio Notes</p>
-                <h3 class="heading-1" style="font-size: 2rem;"><a href="/blog-details" data-route>Five Rooms We Dream About</a></h3>
+                <h3 class="heading-1" style="font-size: 1.4rem;"><a href="/blog-details?post=five-rooms" data-route>Five Rooms We Dream About</a></h3>
                 <p style="color: var(--text-muted); margin-top: 1rem;">The interiors from cinema and travel that shaped our collective taste.</p>
             </div>
+            <div class="reveal-up blog-card" style="transition-delay: 0.1s;" data-category="materials">
+                <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
+                    <img src="https://i.pinimg.com/736x/00/07/f7/0007f740a75fddc83d4d89aa38025a83.jpg" alt="Article 5" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Materials</p>
+                <h3 class="heading-1" style="font-size: 1.4rem;"><a href="/blog-details?post=calacatta-veining" data-route>The Veining of Calacatta</a></h3>
+                <p style="color: var(--text-muted); margin-top: 1rem;">How a single slab's geology dictates the composition of an entire room.</p>
+            </div>
+            <div class="reveal-up blog-card" style="transition-delay: 0.2s;" data-category="lighting">
+                <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
+                    <img src="https://i.pinimg.com/736x/d3/12/a0/d312a07cd64e6018409d811361cdfe34.jpg" alt="Article 6" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Lighting</p>
+                <h3 class="heading-1" style="font-size: 1.4rem;"><a href="/blog-details?post=layered-light-living" data-route>Layered Light in the Living Room</a></h3>
+                <p style="color: var(--text-muted); margin-top: 1rem;">Combining daylight, task and accent light to compose rooms that shift through the day.</p>
+            </div>
+            <div class="reveal-up blog-card" style="transition-delay: 0.3s;" data-category="process">
+                <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
+                    <img src="https://i.pinimg.com/736x/2b/cb/a5/2bcba5fad2e3953134d42035da8b6afa.jpg" alt="Article 7" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Process</p>
+                <h3 class="heading-1" style="font-size: 1.4rem;"><a href="/blog-details?post=budgeting-invisible" data-route>Budgeting the Invisible</a></h3>
+                <p style="color: var(--text-muted); margin-top: 1rem;">Why the most important spend in any renovation is the part you never see.</p>
+            </div>
+            <div class="reveal-up blog-card" data-category="studio-notes">
+                <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
+                    <img src="https://i.pinimg.com/736x/ed/cc/d5/edccd5be23c3caa50ee9bec2d490e64c.jpg" alt="Article 8" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Studio Notes</p>
+                <h3 class="heading-1" style="font-size: 1.4rem;"><a href="/blog-details?post=reading-room-country" data-route>Reading Room in the Country</a></h3>
+                <p style="color: var(--text-muted); margin-top: 1rem;">The quiet project we keep returning to — walls of oak, light from the east.</p>
+            </div>
+            <div class="reveal-up blog-card" style="transition-delay: 0.1s;" data-category="materials">
+                <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
+                    <img src="https://i.pinimg.com/736x/3d/84/29/3d842906a5b548ddf1b2f8f7b7a5fa3a.jpg" alt="Article 9" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Materials</p>
+                <h3 class="heading-1" style="font-size: 1.4rem;"><a href="/blog-details?post=european-oak" data-route>A Field Guide to European Oak</a></h3>
+                <p style="color: var(--text-muted); margin-top: 1rem;">Distinguishing the forests, cuts and finishes behind our favorite timber.</p>
+            </div>
+            <div class="reveal-up blog-card" style="transition-delay: 0.2s;" data-category="lighting">
+                <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
+                    <img src="https://i.pinimg.com/1200x/da/1b/ac/da1bac4d69d7fea48bb504202795d31f.jpg" alt="Article 10" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Lighting</p>
+                <h3 class="heading-1" style="font-size: 1.4rem;"><a href="/blog-details?post=indirect-glow" data-route>The Warmth of Indirect Glow</a></h3>
+                <p style="color: var(--text-muted); margin-top: 1rem;">Coves, reveals and reflected pools of light that never show their source.</p>
+            </div>
+            <div class="reveal-up blog-card" style="transition-delay: 0.3s;" data-category="process">
+                <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
+                    <img src="https://i.pinimg.com/736x/63/ae/cd/63aecdc9ac03dda48a896e1bc5dfc888.jpg" alt="Article 11" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Process</p>
+                <h3 class="heading-1" style="font-size: 1.4rem;"><a href="/blog-details?post=drawing-to-delivery" data-route>From Drawing to Delivery</a></h3>
+                <p style="color: var(--text-muted); margin-top: 1rem;">The full lifecycle of a custom piece, from first sketch to final placement.</p>
+            </div>
+            <div class="reveal-up blog-card" style="transition-delay: 0.1s;" data-category="studio-notes">
+                <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
+                    <img src="https://i.pinimg.com/736x/0f/1a/b3/0f1ab31f6c27f9ad79106a972e30a9c2.jpg" alt="Article 12" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Studio Notes</p>
+                <h3 class="heading-1" style="font-size: 1.4rem;"><a href="/blog-details?post=objects-we-return-to" data-route>Objects We Keep Returning To</a></h3>
+                <p style="color: var(--text-muted); margin-top: 1rem;">The tableware, brass and ceramics that anchor our most-loved interiors.</p>
+            </div>
+            <div class="reveal-up blog-card" style="transition-delay: 0.2s;" data-category="materials">
+                <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
+                    <img src="https://i.pinimg.com/736x/c6/4a/12/c64a12e57021d76021ae04f54cc16baf.jpg" alt="Article 13" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Materials</p>
+                <h3 class="heading-1" style="font-size: 1.4rem;"><a href="/blog-details?post=patina-designing-age" data-route>Patina: Designing for Age</a></h3>
+                <p style="color: var(--text-muted); margin-top: 1rem;">Why we choose surfaces that grow more beautiful with every year of use.</p>
+            </div>
+            <div class="reveal-up blog-card" style="transition-delay: 0.3s;" data-category="lighting">
+                <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
+                    <img src="https://i.pinimg.com/1200x/ad/bc/bb/adbcbb6638f00604ede175a1b8fcb712.jpg" alt="Article 14" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Lighting</p>
+                <h3 class="heading-1" style="font-size: 1.4rem;"><a href="/blog-details?post=daylight-studies" data-route>Daylight Studies: South-Facing Rooms</a></h3>
+                <p style="color: var(--text-muted); margin-top: 1rem;">Tracking the arc of the sun to place each room in its best possible light.</p>
+            </div>
+            <div class="reveal-up blog-card" data-category="process">
+                <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
+                    <img src="https://i.pinimg.com/736x/5f/ff/7f/5fff7f51be5e8fafd33f95dcfeeb7a75.jpg" alt="Article 15" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Process</p>
+                <h3 class="heading-1" style="font-size: 1.4rem;"><a href="/blog-details?post=site-visit-art" data-route>The Art of the Site Visit</a></h3>
+                <p style="color: var(--text-muted); margin-top: 1rem;">What we look for on the ground before a single line is drawn.</p>
+            </div>
+            <div class="reveal-up blog-card" style="transition-delay: 0.1s;" data-category="studio-notes">
+                <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
+                    <img src="https://i.pinimg.com/736x/1a/0c/9a/1a0c9a283ef3da46beab7b9aa5ac1413.jpg" alt="Article 16" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Studio Notes</p>
+                <h3 class="heading-1" style="font-size: 1.4rem;"><a href="/blog-details?post=studio-morning-elena" data-route>A Studio Morning with Elena</a></h3>
+                <p style="color: var(--text-muted); margin-top: 1rem;">Coffee, swatches and the first sketch of a penthouse in the making.</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 4rem;" class="reveal-up">
+            <button type="button" class="btn btn-outline blog-view-more">View More</button>
         </div>
     </div>
 </section>
@@ -101,3 +214,34 @@
         </div>
     </div>
 </section>
+
+<style>
+    .blog-filter-btn {
+        padding: 0.5rem 1.25rem;
+        border: 1px solid var(--border-color);
+        background: transparent;
+        color: var(--text-secondary);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        cursor: pointer;
+        font-family: var(--font-body);
+        transition: all 0.3s ease;
+    }
+    .blog-filter-btn:hover {
+        border-color: var(--color-antique-gold);
+        color: var(--color-antique-gold);
+    }
+    .blog-filter-btn.active {
+        background-color: var(--color-antique-gold);
+        border-color: var(--color-antique-gold);
+        color: var(--color-obsidian);
+    }
+    @keyframes blogCardIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .blog-card[data-hidden="true"] {
+        display: none;
+    }
+</style>

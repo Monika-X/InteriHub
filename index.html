@@ -61,7 +61,7 @@
                     <i data-lucide="moon" class="icon-moon"></i>
                     <i data-lucide="sun" class="icon-sun"></i>
                 </button>
-                <button id="rtl-toggle" class="btn btn-outline" style="padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.75rem;">RTL</button>
+                <button id="rtl-toggle" class="btn btn-outline rtl-toggle-btn" style="padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.75rem;">RTL</button>
                 <a href="/book" data-route class="btn btn-primary" style="background-color: var(--color-antique-gold); color: var(--color-obsidian); border: none; font-weight: 600;">BOOK VISIT</a>
                 <button class="mobile-menu-btn" aria-label="Menu">
                     <i data-lucide="menu"></i>
@@ -69,6 +69,15 @@
             </div>
         </div>
     </nav>
+
+    <!-- Minimal Page Controls (Login / Signup / Dashboard / 404) -->
+    <div class="page-controls" id="page-controls" aria-label="Page Controls">
+        <button class="theme-toggle" aria-label="Toggle Dark Mode">
+            <i data-lucide="moon" class="icon-moon"></i>
+            <i data-lucide="sun" class="icon-sun"></i>
+        </button>
+        <button id="page-rtl-toggle" class="btn btn-outline rtl-toggle-btn" style="padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.75rem;">RTL</button>
+    </div>
 
     <!-- Main Content Container (SPA) -->
     <main id="app-root"></main>

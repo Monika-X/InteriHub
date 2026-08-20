@@ -239,6 +239,34 @@ img {
     position: relative;
 }
 
+/* Minimal pages: no navbar/footer, floating top-right controls */
+.page-auth .navbar,
+.page-auth .footer {
+    display: none;
+}
+
+.page-controls {
+    display: none;
+    position: fixed;
+    top: 1.5rem;
+    inset-inline-end: 1.5rem;
+    z-index: 1000;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.page-auth .page-controls {
+    display: flex;
+}
+
+.page-controls .theme-toggle {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+}
+
 .profile-trigger {
     background: none;
     border: none;
@@ -253,7 +281,7 @@ img {
 .profile-dropdown {
     position: absolute;
     top: calc(100% + 12px);
-    right: 0;
+    inset-inline-end: 0;
     min-width: 240px;
     background-color: var(--bg-primary);
     border: 1px solid var(--border-color);
@@ -516,7 +544,7 @@ img {
 
 .back-to-top-floating {
     position: absolute;
-    right: var(--spacing-md);
+    inset-inline-end: var(--spacing-md);
     bottom: -20px;
     width: 50px;
     height: 50px;
