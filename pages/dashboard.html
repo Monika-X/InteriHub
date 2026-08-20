@@ -1,233 +1,687 @@
-<!-- Dashboard Container -->
-<div style="min-height: 100vh; padding: 150px 0; background-color: var(--bg-secondary);">
-    <div class="container" style="display: flex; gap: 2rem; align-items: flex-start;">
+<!-- Dashboard — The Client Portfolio Edition (light editorial, below Atelier intensity) -->
+<div class="ds-wrap">
 
-        <!-- Sidebar Navigation -->
-        <aside style="width: 250px; background-color: var(--bg-primary); border-radius: 8px; padding: 2rem; border: 1px solid var(--border-color); position: sticky; top: 100px; flex-shrink: 0;">
-            <h3 style="margin-bottom: 2rem; font-size: 1.2rem;">Client Portal</h3>
-            <ul style="list-style: none;">
-                <li style="margin-bottom: 1rem;"><a href="#" class="dashboard-tab active" data-target="dash-overview" style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="layout-dashboard" style="width: 18px;"></i> Overview</a></li>
-                <li style="margin-bottom: 1rem;"><a href="#" class="dashboard-tab" data-target="dash-timeline" style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="clock" style="width: 18px;"></i> Project Timeline</a></li>
-                <li style="margin-bottom: 1rem;"><a href="#" class="dashboard-tab" data-target="dash-photos" style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="camera" style="width: 18px;"></i> Upload Photos</a></li>
-                <li style="margin-bottom: 1rem;"><a href="#" class="dashboard-tab" data-target="dash-moodboards" style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="image" style="width: 18px;"></i> Mood Boards</a></li>
-                <li style="margin-bottom: 1rem;"><a href="#" class="dashboard-tab" data-target="dash-messages" style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="message-circle" style="width: 18px;"></i> Messages <span style="margin-inline-start: auto; background-color: var(--color-antique-gold); color: #fff; font-size: 0.7rem; padding: 0.1rem 0.5rem; border-radius: 10px;">2</span></a></li>
-            </ul>
-            <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); font-size: 0.8rem; color: var(--text-muted);">
-                <p style="margin-bottom: 0.5rem;">Project #IH-2026-014</p>
-                <p>Senior Designer: <span style="color: var(--color-antique-gold);">Elena R.</span></p>
+    <!-- ======== SIDEBAR ======== -->
+    <aside class="ds-side">
+        <div class="ds-side-top">
+            <div class="ds-brand">
+                <span class="ds-brand-mark">IH</span>
+                <span class="ds-brand-name">InteriHub</span>
             </div>
-        </aside>
+            <p class="ds-label">Client Portal</p>
+        </div>
 
-        <!-- Main Content Area -->
-        <main style="flex: 1; background-color: var(--bg-primary); border-radius: 8px; padding: 2.5rem; border: 1px solid var(--border-color); min-height: 600px;">
+        <div class="ds-id">
+            <div id="dash-user-avatar" class="ds-avatar">AC</div>
+            <div class="ds-id-text">
+                <span class="ds-id-eyebrow">Est. Client</span>
+                <strong id="dash-user-name" class="ds-id-name">A. Client</strong>
+            </div>
+        </div>
 
-            <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1.5rem;">
-                <h1 class="heading-1" style="margin-bottom: 0;">Project Workspace</h1>
-                <div style="display: flex; align-items: center; gap: 1rem;">
-                    <span style="color: var(--text-muted);">Welcome, <strong style="color: var(--text-primary);">A. Client</strong></span>
-                    <div style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--color-obsidian); color: var(--color-warm-ivory); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading);">AC</div>
+        <nav class="ds-nav">
+            <a href="#" class="dashboard-tab active" data-target="dash-overview"><span class="ds-nav-num">01</span> Overview</a>
+            <a href="#" class="dashboard-tab" data-target="dash-timeline"><span class="ds-nav-num">02</span> Project Timeline</a>
+            <a href="#" class="dashboard-tab" data-target="dash-photos"><span class="ds-nav-num">03</span> Upload Photos</a>
+            <a href="#" class="dashboard-tab" data-target="dash-moodboards"><span class="ds-nav-num">04</span> Mood Boards</a>
+            <a href="#" class="dashboard-tab" data-target="dash-messages"><span class="ds-nav-num">05</span> Messages <span class="ds-nav-badge">2</span></a>
+        </nav>
+
+        <div class="ds-side-meta">
+            <p>Project <b>#IH-2026-014</b></p>
+            <p>Senior Designer <b>Elena R.</b></p>
+        </div>
+
+        <div class="ds-side-logout">
+            <a href="#" id="dash-logout">
+                <i data-lucide="log-out" style="width:16px;height:16px;"></i> Logout
+            </a>
+        </div>
+    </aside>
+
+    <!-- ======== MAIN ======== -->
+    <main class="ds-main">
+
+        <header class="ds-header reveal-up">
+            <div>
+                <p class="ds-label">Private Works — Project #IH-2026-014</p>
+                <h1 class="ds-title">Project <em>Workspace.</em></h1>
+            </div>
+            <div class="ds-header-status">
+                <span class="ds-status-dot"></span> All systems nominal
+            </div>
+        </header>
+
+        <!-- SECTION 01 — OVERVIEW -->
+        <section id="dash-overview" class="dashboard-section">
+            <div class="ds-sec-head reveal-up">
+                <p class="ds-label">01 — Overview</p>
+                <h2 class="ds-sec-title">The current <em>state.</em></h2>
+                <span class="ds-sec-index" aria-hidden="true">I</span>
+            </div>
+
+            <div class="ds-stats">
+                <div class="ds-stat reveal-up">
+                    <span class="ds-stat-label">Project Status</span>
+                    <p class="ds-stat-value">Concept Design</p>
+                    <span class="ds-stat-note">In active review</span>
                 </div>
-            </header>
-
-            <!-- SECTION: Overview -->
-            <section id="dash-overview" class="dashboard-section reveal-up">
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 3rem;">
-                    <div style="padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 8px;">
-                        <p style="color: var(--text-muted); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Project Status</p>
-                        <p style="font-size: 1.5rem; font-family: var(--font-heading);">Concept Design</p>
-                    </div>
-                    <div style="padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 8px;">
-                        <p style="color: var(--text-muted); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Next Milestone</p>
-                        <p style="font-size: 1.5rem; font-family: var(--font-heading);">Mood Board Review</p>
-                    </div>
-                    <div style="padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 8px; background-color: var(--color-obsidian); color: var(--color-warm-ivory);">
-                        <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Action Required</p>
-                        <p style="font-size: 1.5rem; font-family: var(--font-heading); color: var(--color-antique-gold);">1 Pending Approval</p>
-                    </div>
+                <div class="ds-stat reveal-up" style="transition-delay:.08s">
+                    <span class="ds-stat-label">Next Milestone</span>
+                    <p class="ds-stat-value">Mood Board Review</p>
+                    <span class="ds-stat-note">Due this week</span>
                 </div>
-
-                <h2 class="heading-1" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Project Progress</h2>
-                <div style="height: 8px; background-color: var(--bg-secondary); border-radius: 4px; overflow: hidden; margin-bottom: 1rem;">
-                    <div id="progress-bar" style="height: 100%; width: 35%; background-color: var(--color-antique-gold); border-radius: 4px; transition: width 0.8s ease;"></div>
+                <div class="ds-stat ds-stat-dark reveal-up" style="transition-delay:.16s">
+                    <span class="ds-stat-label">Action Required</span>
+                    <p class="ds-stat-value">1 Pending Approval</p>
+                    <span class="ds-stat-note">Awaiting your decision</span>
                 </div>
-                <p style="color: var(--text-muted); font-size: 0.875rem;">35% complete — Discovery finished, Concept in review.</p>
+            </div>
 
-                <h2 class="heading-1" style="font-size: 1.5rem; margin: 3rem 0 1.5rem;">Recent Activity</h2>
-                <div style="border-inline-start: 2px solid var(--border-color); padding-inline-start: 1.5rem; margin-inline-start: 1rem;">
-                    <div style="position: relative; margin-bottom: 2rem;">
-                        <div style="position: absolute; inset-inline-start: -1.9rem; top: 0; width: 12px; height: 12px; border-radius: 50%; background-color: var(--color-antique-gold);"></div>
-                        <p style="font-weight: 600;">Mood Board V1 Uploaded for Review</p>
-                        <p style="color: var(--text-muted); font-size: 0.875rem;">Today, 10:30 AM</p>
-                    </div>
-                    <div style="position: relative; margin-bottom: 2rem;">
-                        <div style="position: absolute; inset-inline-start: -1.9rem; top: 0; width: 12px; height: 12px; border-radius: 50%; background-color: var(--border-color);"></div>
-                        <p style="font-weight: 600;">Designer reply: "We'd love your thoughts on the palette"</p>
-                        <p style="color: var(--text-muted); font-size: 0.875rem;">Today, 9:45 AM</p>
-                    </div>
-                    <div style="position: relative;">
-                        <div style="position: absolute; inset-inline-start: -1.9rem; top: 0; width: 12px; height: 12px; border-radius: 50%; background-color: var(--border-color);"></div>
-                        <p style="font-weight: 600;">Initial Consultation Notes Added</p>
-                        <p style="color: var(--text-muted); font-size: 0.875rem;">Oct 1, 2026</p>
-                    </div>
+            <div class="ds-progress reveal-up">
+                <div class="ds-progress-head">
+                    <p class="ds-label">Project Progress</p>
+                    <span class="ds-progress-pct" id="progress-pct">25%</span>
                 </div>
-            </section>
-
-            <!-- SECTION: Timeline -->
-            <section id="dash-timeline" class="dashboard-section" style="display: none;">
-                <h2 class="heading-1" style="font-size: 1.8rem; margin-bottom: 1rem;">Delivery Timeline</h2>
-                <p style="color: var(--text-muted); margin-bottom: 2.5rem;">Approve each stage as it completes. The next stage begins automatically once you give the go-ahead.</p>
-
-                <div style="position: relative; padding-inline-start: 2rem;">
-                    <!-- Line -->
-                    <div style="position: absolute; inset-inline-start: 6px; top: 10px; bottom: 0; width: 2px; background-color: var(--border-color);"></div>
-
-                    <!-- Stage 1 -->
-                    <div style="position: relative; margin-bottom: 3rem;">
-                        <div style="position: absolute; inset-inline-start: -2rem; top: 5px; width: 14px; height: 14px; border-radius: 50%; background-color: var(--color-antique-gold);"></div>
-                        <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem;">
-                            <h3 style="font-family: var(--font-heading); font-size: 1.25rem;">1. Discovery & Consultation</h3>
-                            <span class="stage-status" style="background-color: var(--color-antique-gold); color: #fff; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.75rem; text-transform: uppercase;">Approved</span>
-                        </div>
-                        <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 0.5rem;">Completed: Oct 1, 2026</p>
-                        <p style="color: var(--text-muted);">Initial walk-through, brief capture and aesthetic alignment.</p>
-                    </div>
-
-                    <!-- Stage 2 -->
-                    <div style="position: relative; margin-bottom: 3rem;">
-                        <div style="position: absolute; inset-inline-start: -2rem; top: 5px; width: 14px; height: 14px; border-radius: 50%; background-color: var(--color-antique-gold); box-shadow: 0 0 0 4px rgba(183, 154, 99, 0.2);"></div>
-                        <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem;">
-                            <h3 style="font-family: var(--font-heading); font-size: 1.25rem;">2. Concept & Mood Boards</h3>
-                            <span class="stage-status" style="background-color: var(--color-obsidian); color: var(--color-warm-ivory); padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.75rem; text-transform: uppercase;">Awaiting Your Approval</span>
-                        </div>
-                        <p style="color: var(--color-antique-gold); font-size: 0.875rem; margin-bottom: 0.5rem;">In Progress (Current Stage)</p>
-                        <p style="color: var(--text-muted);">Visual direction, spatial flow and material palette ready for review.</p>
-                        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
-                            <button class="btn btn-primary stage-approve" style="padding: 0.6rem 1.25rem; font-size: 0.75rem;">Approve Stage</button>
-                            <button class="btn btn-outline stage-revise" style="padding: 0.6rem 1.25rem; font-size: 0.75rem;">Request Changes</button>
-                        </div>
-                    </div>
-
-                    <!-- Stage 3 -->
-                    <div style="position: relative; margin-bottom: 3rem;">
-                        <div style="position: absolute; inset-inline-start: -2rem; top: 5px; width: 14px; height: 14px; border-radius: 50%; background-color: var(--bg-primary); border: 2px solid var(--border-color);"></div>
-                        <h3 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--text-muted);">3. 3D Renderings & Spatial Planning</h3>
-                        <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 0.5rem;">Estimated: Nov 2026</p>
-                        <p style="color: var(--text-muted);">Photorealistic renders of every room and final spatial planning.</p>
-                    </div>
-
-                    <!-- Stage 4 -->
-                    <div style="position: relative;">
-                        <div style="position: absolute; inset-inline-start: -2rem; top: 5px; width: 14px; height: 14px; border-radius: 50%; background-color: var(--bg-primary); border: 2px solid var(--border-color);"></div>
-                        <h3 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--text-muted);">4. Procurement & Execution</h3>
-                        <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 0.5rem;">Estimated: Jan 2027</p>
-                        <p style="color: var(--text-muted);">Ordering, fabrication, installation and final styling.</p>
-                    </div>
+                <div class="ds-progress-track">
+                    <div id="progress-bar" class="ds-progress-bar"></div>
+                    <span class="ds-progress-tick" style="left:25%;"></span>
+                    <span class="ds-progress-tick" style="left:50%;"></span>
+                    <span class="ds-progress-tick" style="left:75%;"></span>
+                    <span class="ds-progress-tick" style="left:100%;"></span>
                 </div>
-            </section>
+                <p id="progress-caption" class="ds-progress-caption" data-desc="Discovery finished, Concept in review.">25% complete — Discovery finished, Concept in review.</p>
+            </div>
 
-            <!-- SECTION: Upload Photos -->
-            <section id="dash-photos" class="dashboard-section" style="display: none;">
-                <h2 class="heading-1" style="font-size: 1.8rem; margin-bottom: 1rem;">Upload Room Photos</h2>
-                <p style="color: var(--text-muted); margin-bottom: 2rem;">Please upload high-resolution photos of the spaces to be designed. Ensure the room is well-lit and capture multiple angles.</p>
-
-                <div id="upload-area" style="border: 2px dashed var(--border-color); border-radius: 8px; padding: 4rem 2rem; text-align: center; cursor: pointer; transition: all var(--transition-fast);" onmouseover="this.style.borderColor='var(--color-antique-gold)';" onmouseout="this.style.borderColor='var(--border-color)';">
-                    <i data-lucide="upload-cloud" style="width: 48px; height: 48px; color: var(--text-muted); margin-bottom: 1rem;"></i>
-                    <h3 style="font-family: var(--font-body); font-weight: 500; margin-bottom: 0.5rem;">Click to browse or drag files here</h3>
-                    <p style="color: var(--text-muted); font-size: 0.875rem;">JPG, PNG or PDF (Max 20MB per file)</p>
-                    <input type="file" id="room-photos" multiple accept="image/*,.pdf" style="display: none;">
+            <div class="ds-activity reveal-up">
+                <div class="ds-sec-head ds-sec-head-inline">
+                    <p class="ds-label">Recent Activity</p>
+                    <span class="ds-sec-index ds-sec-index-small" aria-hidden="true">A</span>
                 </div>
-                <div id="upload-status" style="margin-top: 1.5rem; text-align: center;"></div>
-
-                <h3 style="font-size: 1.2rem; margin: 3rem 0 1rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">Previously Uploaded</h3>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
-                    <div style="aspect-ratio: 1; background-color: var(--bg-secondary); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: var(--text-muted);">living_room_north.jpg</div>
-                    <div style="aspect-ratio: 1; background-color: var(--bg-secondary); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: var(--text-muted);">living_room_south.jpg</div>
-                    <div style="aspect-ratio: 1; background-color: var(--bg-secondary); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: var(--text-muted);">kitchen_west.jpg</div>
-                </div>
-            </section>
-
-            <!-- SECTION: Mood Boards -->
-            <section id="dash-moodboards" class="dashboard-section" style="display: none;">
-                <h2 class="heading-1" style="font-size: 1.8rem; margin-bottom: 1rem;">Mood Board Proposals</h2>
-                <p style="color: var(--text-muted); margin-bottom: 2rem;">Review each proposal's aesthetic direction and material palette. Approve a concept or request revisions to proceed.</p>
-
-                <!-- Proposal V1 -->
-                <div style="border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; margin-bottom: 3rem;">
-                    <div style="background-color: var(--color-obsidian); padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; color: var(--color-warm-ivory); flex-wrap: wrap; gap: 0.5rem;">
-                        <h3 style="font-family: var(--font-body); font-weight: 500;">Living Space Concept V1</h3>
-                        <span class="mood-status" data-state="pending" style="background-color: var(--color-antique-gold); color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.75rem; text-transform: uppercase;">Pending Approval</span>
-                    </div>
-                    <div style="padding: 2rem;">
-                        <img src="assets/images/project-1.jpg" alt="Mood Board V1" style="width: 100%; height: auto; border-radius: 4px; margin-bottom: 2rem;">
-                        <p style="color: var(--text-muted); margin-bottom: 2rem;">This concept leverages dark obsidian tones anchored by warm ivory fabrics and antique gold accents. The focus is on textural depth rather than color variety.</p>
-                        <div style="display: flex; gap: 1rem;">
-                            <button class="btn btn-primary mood-approve" style="padding: 0.7rem 1.5rem; font-size: 0.8rem;">Approve Concept</button>
-                            <button class="btn btn-outline mood-revise" style="padding: 0.7rem 1.5rem; font-size: 0.8rem;">Request Revision</button>
-                        </div>
-                        <p class="mood-feedback" style="display: none; margin-top: 1rem; font-size: 0.875rem;"></p>
-                    </div>
-                </div>
-
-                <!-- Proposal V2 -->
-                <div style="border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
-                    <div style="background-color: var(--bg-secondary); padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
-                        <h3 style="font-family: var(--font-body); font-weight: 500;">Living Space Concept V2 — Lighter Palette</h3>
-                        <span class="mood-status" data-state="draft" style="background-color: var(--color-olive-gray); color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.75rem; text-transform: uppercase;">In Draft</span>
-                    </div>
-                    <div style="padding: 2rem;">
-                        <img src="assets/images/project-2.jpg" alt="Mood Board V2" style="width: 100%; height: auto; border-radius: 4px; margin-bottom: 2rem;">
-                        <p style="color: var(--text-muted); margin-bottom: 2rem;">An alternative direction built on warm ivory expanses, olive-gray stone and soft taupe textiles. Designed for clients who prefer luminosity over drama.</p>
-                        <p style="color: var(--text-muted); font-size: 0.875rem;">This board is still in draft and will be shared once finalized.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SECTION: Messages -->
-            <section id="dash-messages" class="dashboard-section" style="display: none;">
-                <h2 class="heading-1" style="font-size: 1.8rem; margin-bottom: 1rem;">Message Your Designer</h2>
-                <p style="color: var(--text-muted); margin-bottom: 2rem;">Direct line to Elena Rostova and her studio team. Replies typically arrive within one business day.</p>
-
-                <div style="border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
-                    <div style="background-color: var(--bg-secondary); padding: 1rem 1.5rem; display: flex; align-items: center; gap: 1rem; border-bottom: 1px solid var(--border-color);">
-                        <div style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--color-obsidian); color: var(--color-warm-ivory); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading);">ER</div>
+                <div class="ds-activity-list">
+                    <div class="ds-activity-item">
+                        <span class="ds-activity-dot ds-activity-dot-gold"></span>
                         <div>
-                            <p style="font-weight: 600; font-size: 0.9rem;">Elena Rostova</p>
-                            <p style="color: var(--color-olive-gray); font-size: 0.75rem;">Principal Designer <span style="color: var(--color-antique-gold);">● Online</span></p>
+                            <p class="ds-activity-title">Mood Board V1 Uploaded for Review</p>
+                            <p class="ds-activity-time">Today, 10:30 AM</p>
                         </div>
                     </div>
-
-                    <div id="msg-list" style="padding: 1.5rem; background-color: var(--bg-primary); min-height: 320px; max-height: 420px; overflow-y: auto;">
-                        <div style="display: flex; gap: 0.75rem; margin-bottom: 1.5rem; max-width: 80%;">
-                            <div style="flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background-color: var(--color-obsidian); color: var(--color-warm-ivory); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 0.75rem;">ER</div>
-                            <div style="background-color: var(--bg-secondary); border-radius: 12px 12px 12px 2px; padding: 0.9rem 1.2rem;">
-                                <p style="font-size: 0.9rem; margin-bottom: 0.25rem;">Good morning! I've uploaded Mood Board V1 — the obsidian direction. Do take a look when you have a moment.</p>
-                                <p style="font-size: 0.7rem; color: var(--text-muted);">Today, 9:45 AM</p>
-                            </div>
-                        </div>
-                        <div style="display: flex; gap: 0.75rem; margin-bottom: 1.5rem; max-width: 80%;">
-                            <div style="flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background-color: var(--color-obsidian); color: var(--color-warm-ivory); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 0.75rem;">ER</div>
-                            <div style="background-color: var(--bg-secondary); border-radius: 12px 12px 12px 2px; padding: 0.9rem 1.2rem;">
-                                <p style="font-size: 0.9rem; margin-bottom: 0.25rem;">Also, could you share a photo of the north wall? I want to check how the afternoon light falls there.</p>
-                                <p style="font-size: 0.7rem; color: var(--text-muted);">Today, 10:05 AM</p>
-                            </div>
-                        </div>
-                        <div id="typing-indicator" style="display: none; align-items: center; gap: 0.5rem; margin-bottom: 1rem; font-size: 0.8rem; color: var(--text-muted);">
-                            <span style="display: inline-flex; gap: 3px;">
-                                <span style="width: 6px; height: 6px; border-radius: 50%; background-color: var(--color-antique-gold); animation: msgPulse 1s infinite;"></span>
-                                <span style="width: 6px; height: 6px; border-radius: 50%; background-color: var(--color-antique-gold); animation: msgPulse 1s infinite 0.2s;"></span>
-                                <span style="width: 6px; height: 6px; border-radius: 50%; background-color: var(--color-antique-gold); animation: msgPulse 1s infinite 0.4s;"></span>
-                            </span>
-                            Elena is typing...
+                    <div class="ds-activity-item">
+                        <span class="ds-activity-dot"></span>
+                        <div>
+                            <p class="ds-activity-title">Designer reply: "We'd love your thoughts on the palette"</p>
+                            <p class="ds-activity-time">Today, 9:45 AM</p>
                         </div>
                     </div>
-
-                    <div style="display: flex; gap: 1rem; padding: 1.25rem 1.5rem; border-top: 1px solid var(--border-color); background-color: var(--bg-primary);">
-                        <input type="text" id="msg-input" placeholder="Write a message to your design team..." style="flex: 1; padding: 0.9rem 1.2rem; border: 1px solid var(--border-color); background: transparent; color: var(--text-primary); font-family: var(--font-body);" onkeydown="if(event.key==='Enter'){sendMessage();}">
-                        <button id="msg-send" class="btn btn-primary" onclick="sendMessage()" style="padding: 0.9rem 1.6rem; font-size: 0.8rem; background-color: var(--color-antique-gold); color: var(--color-obsidian); border: none;">Send</button>
+                    <div class="ds-activity-item">
+                        <span class="ds-activity-dot"></span>
+                        <div>
+                            <p class="ds-activity-title">Initial Consultation Notes Added</p>
+                            <p class="ds-activity-time">Oct 1, 2026</p>
+                        </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-        </main>
-    </div>
+        <!-- SECTION 02 — TIMELINE -->
+        <section id="dash-timeline" class="dashboard-section" style="display:none;">
+            <div class="ds-sec-head reveal-up">
+                <p class="ds-label">02 — Delivery Timeline</p>
+                <h2 class="ds-sec-title">The <em>sequence.</em></h2>
+                <span class="ds-sec-index" aria-hidden="true">II</span>
+            </div>
+            <p class="ds-sec-sub reveal-up">Approve each stage as it completes. The next stage begins automatically once you give the go-ahead.</p>
+
+            <div class="ds-tl">
+
+                <!-- Stage I -->
+                <div class="stage ds-tl-item" data-approved="true">
+                    <span class="ds-tl-rail"></span>
+                    <span class="ds-tl-node ds-tl-node-gold"></span>
+                    <div class="ds-tl-card">
+                        <div class="ds-tl-head">
+                            <span class="ds-tl-roman">I</span>
+                            <h3>Discovery &amp; Consultation</h3>
+                            <span class="stage-status ds-chip ds-chip-gold">Approved</span>
+                        </div>
+                        <p class="ds-tl-meta">Completed — Oct 1, 2026</p>
+                        <p class="ds-tl-desc">Initial walk-through, brief capture and aesthetic alignment.</p>
+                    </div>
+                </div>
+
+                <!-- Stage II -->
+                <div class="stage ds-tl-item" data-approved="false">
+                    <span class="ds-tl-rail"></span>
+                    <span class="ds-tl-node"></span>
+                    <div class="ds-tl-card">
+                        <div class="ds-tl-head">
+                            <span class="ds-tl-roman">II</span>
+                            <h3>Concept &amp; Mood Boards</h3>
+                            <span class="stage-status ds-chip ds-chip-dark">Awaiting Your Approval</span>
+                        </div>
+                        <p class="ds-tl-meta ds-tl-meta-gold">In Progress — Current Stage</p>
+                        <p class="ds-tl-desc">Visual direction, spatial flow and material palette ready for review.</p>
+                        <div class="ds-tl-actions">
+                            <button class="stage-approve ds-btn ds-btn-gold">Approve Stage</button>
+                            <button class="stage-revise ds-btn ds-btn-ghost">Request Changes</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stage III -->
+                <div class="stage ds-tl-item" data-approved="false">
+                    <span class="ds-tl-rail"></span>
+                    <span class="ds-tl-node ds-tl-node-idle"></span>
+                    <div class="ds-tl-card">
+                        <div class="ds-tl-head">
+                            <span class="ds-tl-roman">III</span>
+                            <h3>3D Renderings &amp; Spatial Planning</h3>
+                        </div>
+                        <p class="ds-tl-meta">Estimated — Nov 2026</p>
+                        <p class="ds-tl-desc">Photorealistic renders of every room and final spatial planning.</p>
+                    </div>
+                </div>
+
+                <!-- Stage IV -->
+                <div class="stage ds-tl-item" data-approved="false">
+                    <span class="ds-tl-rail"></span>
+                    <span class="ds-tl-node ds-tl-node-idle"></span>
+                    <div class="ds-tl-card">
+                        <div class="ds-tl-head">
+                            <span class="ds-tl-roman">IV</span>
+                            <h3>Procurement &amp; Execution</h3>
+                        </div>
+                        <p class="ds-tl-meta">Estimated — Jan 2027</p>
+                        <p class="ds-tl-desc">Ordering, fabrication, installation and final styling.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 03 — UPLOAD PHOTOS -->
+        <section id="dash-photos" class="dashboard-section" style="display:none;">
+            <div class="ds-sec-head reveal-up">
+                <p class="ds-label">03 — Upload Photos</p>
+                <h2 class="ds-sec-title">Share your <em>spaces.</em></h2>
+                <span class="ds-sec-index" aria-hidden="true">III</span>
+            </div>
+            <p class="ds-sec-sub reveal-up">Upload high-resolution photos of the spaces to be designed. Ensure the room is well-lit and capture multiple angles.</p>
+
+            <div id="upload-area" class="ds-dropzone reveal-up">
+                <i data-lucide="upload-cloud" style="width:44px;height:44px;color:var(--color-antique-gold);"></i>
+                <h3>Click to browse or drag files here</h3>
+                <p>JPG, PNG or PDF — Max 20MB per file</p>
+                <span class="ds-dropzone-line">DROP INTAKE</span>
+                <input type="file" id="room-photos" multiple accept="image/*,.pdf" style="display:none;">
+            </div>
+            <div id="upload-status" class="ds-upload-status"></div>
+
+            <div class="ds-sub-block reveal-up">
+                <p class="ds-label">Previously Uploaded</p>
+                <div class="ds-gallery">
+                    <figure class="ds-gallery-item">
+                        <div class="ds-gallery-tile">living_room_north.jpg</div>
+                        <figcaption><span class="ds-gallery-num">01</span> Living — North</figcaption>
+                    </figure>
+                    <figure class="ds-gallery-item">
+                        <div class="ds-gallery-tile">living_room_south.jpg</div>
+                        <figcaption><span class="ds-gallery-num">02</span> Living — South</figcaption>
+                    </figure>
+                    <figure class="ds-gallery-item">
+                        <div class="ds-gallery-tile">kitchen_west.jpg</div>
+                        <figcaption><span class="ds-gallery-num">03</span> Kitchen — West</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 04 — MOOD BOARDS -->
+        <section id="dash-moodboards" class="dashboard-section" style="display:none;">
+            <div class="ds-sec-head reveal-up">
+                <p class="ds-label">04 — Mood Board Proposals</p>
+                <h2 class="ds-sec-title">Review the <em>direction.</em></h2>
+                <span class="ds-sec-index" aria-hidden="true">IV</span>
+            </div>
+            <p class="ds-sec-sub reveal-up">Approve a concept or request revisions to proceed.</p>
+
+            <!-- Proposal V1 -->
+            <div class="ds-mood reveal-up">
+                <div class="ds-mood-bar">
+                    <span class="ds-mood-num">V1</span>
+                    <h3>Living Space Concept V1</h3>
+                    <span class="mood-status ds-chip ds-chip-gold" data-state="pending">Pending Approval</span>
+                </div>
+                <div class="ds-mood-body">
+                    <img src="assets/images/project-1.jpg" alt="Mood Board V1">
+                    <p>This concept leverages dark obsidian tones anchored by warm ivory fabrics and antique gold accents. The focus is on textural depth rather than color variety.</p>
+                    <div class="ds-mood-actions">
+                        <button class="mood-approve ds-btn ds-btn-gold">Approve Concept</button>
+                        <button class="mood-revise ds-btn ds-btn-ghost">Request Revision</button>
+                    </div>
+                    <p class="mood-feedback ds-mood-feedback" style="display:none;"></p>
+                </div>
+            </div>
+
+            <!-- Proposal V2 -->
+            <div class="ds-mood reveal-up" style="transition-delay:.1s">
+                <div class="ds-mood-bar ds-mood-bar-idle">
+                    <span class="ds-mood-num">V2</span>
+                    <h3>Living Space Concept V2 — Lighter Palette</h3>
+                    <span class="mood-status ds-chip ds-chip-olive" data-state="draft">In Draft</span>
+                </div>
+                <div class="ds-mood-body">
+                    <img src="assets/images/project-2.jpg" alt="Mood Board V2">
+                    <p>An alternative direction built on warm ivory expanses, olive-gray stone and soft taupe textiles. Designed for clients who prefer luminosity over drama.</p>
+                    <p class="ds-mood-note">This board is still in draft and will be shared once finalized.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 05 — MESSAGES -->
+        <section id="dash-messages" class="dashboard-section" style="display:none;">
+            <div class="ds-sec-head reveal-up">
+                <p class="ds-label">05 — Message Your Designer</p>
+                <h2 class="ds-sec-title">The direct <em>line.</em></h2>
+                <span class="ds-sec-index" aria-hidden="true">V</span>
+            </div>
+            <p class="ds-sec-sub reveal-up">Replies typically arrive within one business day.</p>
+
+            <div class="ds-chat reveal-up">
+                <div class="ds-chat-head">
+                    <div class="ds-chat-avatar">ER</div>
+                    <div>
+                        <p class="ds-chat-name">Elena Rostova</p>
+                        <p class="ds-chat-role">Principal Designer <span class="ds-chat-online">● Online</span></p>
+                    </div>
+                </div>
+
+                <div id="msg-list" class="ds-chat-list">
+                    <div class="ds-msg ds-msg-in">
+                        <div class="ds-msg-avatar">ER</div>
+                        <div class="ds-msg-bubble ds-msg-bubble-in">
+                            <p>Good morning! I've uploaded Mood Board V1 — the obsidian direction. Do take a look when you have a moment.</p>
+                            <span>Today, 9:45 AM</span>
+                        </div>
+                    </div>
+                    <div class="ds-msg ds-msg-in">
+                        <div class="ds-msg-avatar">ER</div>
+                        <div class="ds-msg-bubble ds-msg-bubble-in">
+                            <p>Also, could you share a photo of the north wall? I want to check how the afternoon light falls there.</p>
+                            <span>Today, 10:05 AM</span>
+                        </div>
+                    </div>
+                    <div id="typing-indicator" class="ds-typing" style="display:none;">
+                        <span class="ds-typing-dots">
+                            <span></span><span></span><span></span>
+                        </span>
+                        Elena is typing...
+                    </div>
+                </div>
+
+                <div class="ds-chat-input">
+                    <input type="text" id="msg-input" placeholder="Write a message to your design team..." onkeydown="if(event.key==='Enter'){sendMessage();}">
+                    <button id="msg-send" class="ds-btn ds-btn-gold" onclick="sendMessage()" style="border:none;cursor:pointer;">Send</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
 </div>
+
+<style>
+    /* ==================== Dashboard — Client Portfolio Edition ==================== */
+    .ds-wrap {
+        padding: 140px 0 9rem;
+        display: flex;
+        gap: 2.5rem;
+        align-items: flex-start;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding-inline: 24px;
+    }
+
+    /* ---------- Sidebar (Atelier panel) ---------- */
+    .ds-side {
+        width: 280px;
+        flex-shrink: 0;
+        position: sticky;
+        top: 120px;
+        background: var(--color-obsidian);
+        color: var(--color-warm-ivory);
+        border: 1px solid rgba(183, 154, 99, 0.4);
+        padding: 2.25rem 2rem;
+    }
+    .ds-side-top { border-bottom: 1px solid rgba(247, 243, 237, 0.12); padding-bottom: 1.75rem; }
+    .ds-brand { display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1rem; }
+    .ds-brand-mark {
+        display: inline-flex; align-items: center; justify-content: center;
+        width: 34px; height: 34px; border: 1px solid var(--color-antique-gold);
+        font-family: var(--font-heading); font-size: 0.9rem; color: var(--color-antique-gold);
+    }
+    .ds-brand-name { font-family: var(--font-heading); font-size: 1.35rem; letter-spacing: 0.02em; }
+    .ds-side-top .ds-label { margin: 0; }
+
+    .ds-id {
+        display: flex; align-items: center; gap: 1rem;
+        padding: 1.75rem 0;
+        border-bottom: 1px solid rgba(247, 243, 237, 0.12);
+    }
+    .ds-avatar {
+        width: 46px; height: 46px; border-radius: 50%;
+        background: var(--color-warm-ivory); color: var(--color-obsidian);
+        display: flex; align-items: center; justify-content: center;
+        font-family: var(--font-heading); font-size: 1.05rem;
+        box-shadow: 0 0 0 2px var(--color-antique-gold), 0 0 0 4px rgba(183, 154, 99, 0.25);
+        flex-shrink: 0;
+    }
+    .ds-id-eyebrow { display: block; font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--color-antique-gold); margin-bottom: 0.25rem; }
+    .ds-id-name { font-family: var(--font-heading); font-size: 1.15rem; font-weight: 500; color: var(--color-warm-ivory); }
+
+    .ds-nav { padding: 1.25rem 0; border-bottom: 1px solid rgba(247, 243, 237, 0.12); }
+    .ds-nav a {
+        position: relative; display: flex; align-items: center; gap: 0.9rem;
+        padding: 0.9rem 0 0.9rem 1rem;
+        color: rgba(247, 243, 237, 0.72);
+        font-size: 0.8rem; letter-spacing: 0.08em;
+        transition: color 0.3s ease;
+    }
+    .ds-nav a::before {
+        content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+        width: 3px; height: 0; background: var(--color-antique-gold);
+        transition: height 0.3s ease;
+    }
+    .ds-nav a:hover { color: var(--color-warm-ivory); }
+    .ds-nav a:hover::before, .ds-nav a.active::before { height: 60%; }
+    .ds-nav a.active { color: var(--color-warm-ivory); }
+    .ds-nav-num { font-family: var(--font-heading); font-style: italic; font-size: 0.95rem; color: var(--color-antique-gold); opacity: 0.5; }
+    .ds-nav a.active .ds-nav-num, .ds-nav a:hover .ds-nav-num { opacity: 1; }
+    .ds-nav-badge { margin-inline-start: auto; background: var(--color-antique-gold); color: var(--color-obsidian); font-size: 0.62rem; padding: 0.12rem 0.5rem; border-radius: 10px; }
+
+    .ds-side-meta { padding: 1.5rem 0; font-size: 0.72rem; letter-spacing: 0.06em; }
+    .ds-side-meta p { color: rgba(247, 243, 237, 0.5); margin-bottom: 0.4rem; }
+    .ds-side-meta b { display: block; color: var(--color-warm-ivory); font-weight: 500; }
+    .ds-side-logout { border-top: 1px solid rgba(247, 243, 237, 0.12); padding-top: 1.25rem; }
+    .ds-side-logout a {
+        display: inline-flex; align-items: center; gap: 0.6rem;
+        color: var(--color-clay); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+        transition: color 0.3s ease;
+    }
+    .ds-side-logout a:hover { color: var(--color-warm-ivory); }
+
+    /* ---------- Main panel ---------- */
+    .ds-main {
+        flex: 1;
+        background: var(--bg-primary);
+        border: 1px solid var(--border-color);
+        padding: 3.5rem 4rem;
+        min-height: 640px;
+    }
+
+    .ds-header {
+        display: flex; justify-content: space-between; align-items: flex-end; gap: 2rem;
+        padding-bottom: 2.5rem; margin-bottom: 4rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .ds-title {
+        font-family: var(--font-heading); font-weight: 300;
+        font-size: clamp(2.2rem, 4vw, 3.2rem);
+        letter-spacing: -0.01em;
+        color: var(--text-primary); margin: 0.6rem 0 0;
+    }
+    .ds-title em { font-style: italic; color: var(--color-antique-gold); }
+    .ds-header-status {
+        display: inline-flex; align-items: center; gap: 0.6rem;
+        font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase;
+        color: var(--text-muted); white-space: nowrap;
+    }
+    .ds-status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-olive-gray); box-shadow: 0 0 0 4px rgba(116, 122, 105, 0.18); }
+
+    /* ---------- Shared section head ---------- */
+    .ds-label { font-size: 0.68rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--color-antique-gold); margin: 0 0 0.5rem; }
+    .ds-sec-head { position: relative; margin-bottom: 2.5rem; }
+    .ds-sec-title {
+        font-family: var(--font-heading); font-weight: 300;
+        font-size: clamp(1.9rem, 3vw, 2.6rem);
+        letter-spacing: -0.01em; color: var(--text-primary); margin: 0;
+    }
+    .ds-sec-title em { font-style: italic; color: var(--color-antique-gold); }
+    .ds-sec-index {
+        position: absolute; right: 0; top: -0.7rem;
+        font-family: var(--font-heading); font-size: clamp(4.5rem, 9vw, 7rem);
+        line-height: 1; color: var(--text-primary);
+        opacity: 0.05; user-select: none; pointer-events: none;
+    }
+    .ds-sec-head-inline { display: flex; align-items: baseline; justify-content: space-between; }
+    .ds-sec-index-small { position: static; font-size: 2.2rem; top: auto; }
+    .ds-sec-sub { color: var(--text-muted); max-width: 560px; margin: -1rem 0 3rem; font-size: 0.95rem; }
+
+    /* ---------- Overview stats ---------- */
+    .ds-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 3.5rem; }
+    .ds-stat {
+        position: relative; padding: 1.75rem 1.75rem 1.5rem;
+        border: 1px solid var(--border-color);
+        transition: border-color 0.4s ease;
+    }
+    .ds-stat:hover { border-color: var(--color-antique-gold); }
+    .ds-stat-label { font-size: 0.66rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-muted); }
+    .ds-stat-value { font-family: var(--font-heading); font-size: 1.55rem; font-weight: 400; color: var(--text-primary); margin: 0.9rem 0 0.4rem; }
+    .ds-stat-note { font-size: 0.78rem; color: var(--text-muted); }
+    .ds-stat-dark {
+        background: var(--color-obsidian); color: var(--color-warm-ivory); border-color: var(--color-obsidian);
+    }
+    .ds-stat-dark .ds-stat-label { color: rgba(247, 243, 237, 0.55); }
+    .ds-stat-dark .ds-stat-value { color: var(--color-antique-gold); }
+    .ds-stat-dark .ds-stat-note { color: rgba(247, 243, 237, 0.6); }
+
+    /* ---------- Progress ---------- */
+    .ds-progress {
+        border: 1px solid var(--border-color);
+        padding: 2rem 2.25rem; margin-bottom: 3.5rem;
+    }
+    .ds-progress-head { display: flex; justify-content: space-between; align-items: baseline; }
+    .ds-progress-head .ds-label { margin: 0; }
+    .ds-progress-pct { font-family: var(--font-heading); font-size: 2.2rem; font-style: italic; color: var(--color-antique-gold); line-height: 1; }
+    .ds-progress-track {
+        position: relative; height: 8px; background: var(--bg-secondary);
+        margin: 1.5rem 0 1rem; border-radius: 4px; overflow: hidden;
+    }
+    .ds-progress-bar {
+        height: 100%; width: 25%;
+        background: linear-gradient(90deg, var(--color-antique-gold), #D2B883);
+        border-radius: 4px; transition: width 0.8s ease;
+    }
+    .ds-progress-tick { position: absolute; top: -3px; width: 2px; height: 14px; background: var(--bg-primary); }
+    .ds-progress-caption { font-size: 0.8rem; color: var(--text-muted); margin: 0; }
+
+    /* ---------- Activity ---------- */
+    .ds-activity { border-top: 1px solid var(--border-color); padding-top: 2.5rem; }
+    .ds-activity-list { border-inline-start: 1px solid var(--border-color); padding-inline-start: 2rem; margin-top: 1.5rem; }
+    .ds-activity-item { position: relative; padding-bottom: 2rem; display: flex; gap: 1rem; }
+    .ds-activity-item:last-child { padding-bottom: 0; }
+    .ds-activity-dot {
+        position: absolute; inset-inline-start: -2.35rem; top: 4px;
+        width: 12px; height: 12px; border-radius: 50%;
+        background: var(--border-color);
+    }
+    .ds-activity-dot-gold { background: var(--color-antique-gold); box-shadow: 0 0 0 4px rgba(183, 154, 99, 0.2); }
+    .ds-activity-title { font-weight: 600; font-size: 0.95rem; color: var(--text-primary); margin: 0 0 0.2rem; }
+    .ds-activity-time { font-size: 0.78rem; color: var(--text-muted); margin: 0; }
+
+    /* ---------- Timeline ---------- */
+    .ds-tl { position: relative; padding-inline-start: 2.5rem; }
+    .ds-tl-item { position: relative; margin-bottom: 3rem; }
+    .ds-tl-item:last-child { margin-bottom: 0; }
+    .ds-tl-rail {
+        position: absolute; inset-inline-start: -2.5rem; top: 24px; bottom: -3rem; width: 1px;
+        background: var(--border-color);
+    }
+    .ds-tl-item:last-child .ds-tl-rail { display: none; }
+    .ds-tl-node {
+        position: absolute; inset-inline-start: -2.5rem; top: 6px;
+        width: 15px; height: 15px; border-radius: 50%; margin-inline-start: -7px;
+        background: var(--bg-primary); border: 2px solid var(--border-color);
+    }
+    .ds-tl-node-gold {
+        background: var(--color-antique-gold); border-color: var(--color-antique-gold);
+        box-shadow: 0 0 0 4px rgba(183, 154, 99, 0.22);
+    }
+    .ds-tl-node-idle { background: var(--bg-primary); border-color: var(--border-color); }
+    .ds-tl-card { padding-inline-start: 0.5rem; }
+    .ds-tl-head { display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+    .ds-tl-roman { font-family: var(--font-heading); font-style: italic; font-size: 1.4rem; color: var(--color-antique-gold); }
+    .ds-tl-head h3 { font-family: var(--font-heading); font-size: 1.3rem; font-weight: 500; color: var(--text-primary); margin: 0; }
+    .ds-tl-meta { font-size: 0.78rem; color: var(--text-muted); margin: 0.75rem 0 0.4rem; }
+    .ds-tl-meta-gold { color: var(--color-antique-gold); }
+    .ds-tl-desc { color: var(--text-secondary); font-size: 0.9rem; margin: 0; max-width: 640px; }
+    .ds-tl-actions { display: flex; gap: 1rem; margin-top: 1.25rem; }
+
+    /* ---------- Chips / Buttons ---------- */
+    .ds-chip { padding: 0.28rem 0.8rem; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; border-radius: 2px; }
+    .ds-chip-gold { background: var(--color-antique-gold); color: #fff; }
+    .ds-chip-dark { background: var(--color-obsidian); color: var(--color-warm-ivory); }
+    .ds-chip-olive { background: var(--color-olive-gray); color: #fff; }
+    .ds-chip-clay { background: var(--color-clay); color: #fff; }
+
+    .ds-btn {
+        display: inline-flex; align-items: center; gap: 0.6rem;
+        padding: 0.7rem 1.5rem; font-size: 0.68rem; letter-spacing: 0.22em;
+        text-transform: uppercase; font-family: var(--font-body);
+        cursor: pointer; transition: all 0.3s ease;
+    }
+    .ds-btn-gold { background: var(--color-antique-gold); color: var(--color-obsidian); border: 1px solid var(--color-antique-gold); }
+    .ds-btn-gold:hover { background: transparent; color: var(--color-antique-gold); }
+    .ds-btn-ghost { background: transparent; color: var(--text-primary); border: 1px solid var(--border-color); }
+    .ds-btn-ghost:hover { border-color: var(--color-antique-gold); color: var(--color-antique-gold); }
+
+    /* ---------- Upload ---------- */
+    .ds-dropzone {
+        border: 1px dashed var(--border-color);
+        padding: 4rem 2rem; text-align: center; cursor: pointer;
+        transition: border-color 0.4s ease, background 0.4s ease;
+        margin-bottom: 1.25rem;
+    }
+    .ds-dropzone:hover { border-color: var(--color-antique-gold); background: rgba(183, 154, 99, 0.04); }
+    .ds-dropzone i { margin-bottom: 1rem; }
+    .ds-dropzone h3 { font-family: var(--font-body); font-weight: 500; font-size: 1.05rem; color: var(--text-primary); margin: 0 0 0.4rem; }
+    .ds-dropzone p { color: var(--text-muted); font-size: 0.85rem; margin: 0; }
+    .ds-dropzone-line {
+        display: block; margin-top: 1.5rem;
+        font-size: 0.62rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--color-antique-gold);
+    }
+    .ds-upload-status { text-align: center; margin: 1rem 0 3rem; font-size: 0.85rem; }
+
+    .ds-sub-block { border-top: 1px solid var(--border-color); padding-top: 2.5rem; }
+    .ds-sub-block > .ds-label { margin-bottom: 1.75rem; }
+    .ds-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .ds-gallery-item { margin: 0; }
+    .ds-gallery-tile {
+        aspect-ratio: 4 / 3; background: var(--bg-secondary);
+        display: flex; align-items: center; justify-content: center;
+        color: var(--text-muted); font-size: 0.8rem; border: 1px solid var(--border-color);
+    }
+    .ds-gallery figcaption { display: flex; align-items: baseline; gap: 0.6rem; margin-top: 0.75rem; font-size: 0.82rem; color: var(--text-primary); }
+    .ds-gallery-num { font-family: var(--font-heading); font-style: italic; color: var(--color-antique-gold); }
+
+    /* ---------- Mood boards ---------- */
+    .ds-mood { border: 1px solid var(--border-color); margin-bottom: 3rem; }
+    .ds-mood-bar {
+        display: flex; align-items: center; gap: 1rem;
+        background: var(--color-obsidian); color: var(--color-warm-ivory);
+        padding: 1rem 1.75rem;
+    }
+    .ds-mood-bar-idle { background: var(--bg-secondary); color: var(--text-primary); }
+    .ds-mood-num {
+        font-family: var(--font-heading); font-style: italic; font-size: 1rem; color: var(--color-antique-gold);
+        border: 1px solid var(--color-antique-gold); padding: 0.1rem 0.5rem;
+    }
+    .ds-mood-bar h3 { font-family: var(--font-body); font-weight: 500; font-size: 0.95rem; margin: 0; }
+    .ds-mood-bar .mood-status { margin-inline-start: auto; }
+    .ds-mood-body { padding: 2rem 1.75rem; }
+    .ds-mood-body img { width: 100%; height: auto; display: block; margin-bottom: 1.5rem; border: 1px solid var(--border-color); }
+    .ds-mood-body p { color: var(--text-muted); font-size: 0.92rem; margin: 0 0 1.5rem; }
+    .ds-mood-note { font-size: 0.82rem !important; color: var(--text-muted); }
+    .ds-mood-actions { display: flex; gap: 1rem; }
+    .ds-mood-feedback { margin-top: 1.25rem !important; font-size: 0.88rem; }
+
+    /* ---------- Chat ---------- */
+    .ds-chat { border: 1px solid var(--border-color); }
+    .ds-chat-head {
+        display: flex; align-items: center; gap: 1rem;
+        background: var(--bg-secondary); padding: 1rem 1.5rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .ds-chat-avatar {
+        width: 42px; height: 42px; border-radius: 50%;
+        background: var(--color-obsidian); color: var(--color-warm-ivory);
+        display: flex; align-items: center; justify-content: center;
+        font-family: var(--font-heading); font-size: 0.9rem;
+        box-shadow: 0 0 0 2px var(--color-antique-gold);
+    }
+    .ds-chat-name { font-weight: 600; font-size: 0.92rem; color: var(--text-primary); margin: 0; }
+    .ds-chat-role { font-size: 0.72rem; color: var(--text-muted); margin: 0.15rem 0 0; }
+    .ds-chat-online { color: var(--color-antique-gold); }
+
+    .ds-chat-list { padding: 1.5rem; min-height: 340px; max-height: 440px; overflow-y: auto; }
+    .ds-msg { display: flex; gap: 0.75rem; margin-bottom: 1.5rem; max-width: 80%; }
+    .ds-msg-in { align-items: flex-start; }
+    .ds-msg-avatar {
+        flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%;
+        background: var(--color-obsidian); color: var(--color-warm-ivory);
+        display: flex; align-items: center; justify-content: center;
+        font-family: var(--font-heading); font-size: 0.75rem;
+    }
+    .ds-msg-bubble {
+        padding: 0.9rem 1.2rem; font-size: 0.9rem;
+        background: var(--bg-secondary);
+        border-radius: 12px 12px 12px 2px;
+    }
+    .ds-msg-bubble p { margin: 0 0 0.3rem; color: var(--text-primary); }
+    .ds-msg-bubble span { font-size: 0.7rem; color: var(--text-muted); }
+    .ds-msg-out { justify-content: flex-end; margin-inline-start: auto; }
+    .ds-msg-bubble-out { background: var(--color-obsidian); color: var(--color-warm-ivory); border-radius: 12px 12px 2px 12px; }
+    .ds-msg-bubble-out p { color: var(--color-warm-ivory); }
+
+    .ds-typing { display: flex; align-items: center; gap: 0.6rem; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem; }
+    .ds-typing-dots { display: inline-flex; gap: 3px; }
+    .ds-typing-dots span {
+        width: 6px; height: 6px; border-radius: 50%;
+        background: var(--color-antique-gold); animation: msgPulse 1s infinite;
+    }
+    .ds-typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+    .ds-typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+    .ds-chat-input {
+        display: flex; gap: 1rem; padding: 1.25rem 1.5rem;
+        border-top: 1px solid var(--border-color);
+    }
+    .ds-chat-input input {
+        flex: 1; padding: 0.9rem 1.2rem; font-size: 0.9rem;
+        border: 1px solid var(--border-color); background: transparent;
+        color: var(--text-primary); font-family: var(--font-body);
+    }
+    .ds-chat-input input:focus { outline: none; border-color: var(--color-antique-gold); }
+
+    /* ---------- Reveal ---------- */
+    .reveal-up { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal-up.revealed { opacity: 1; transform: translateY(0); }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 1024px) {
+        .ds-wrap { flex-direction: column; padding-top: 120px; }
+        .ds-side { position: static; width: 100%; }
+        .ds-nav { display: flex; flex-wrap: wrap; gap: 0 1.5rem; }
+        .ds-nav a { flex: 0 0 auto; }
+        .ds-main { padding: 2.5rem 1.5rem; }
+    }
+    @media (max-width: 760px) {
+        .ds-stats { grid-template-columns: 1fr; }
+        .ds-gallery { grid-template-columns: 1fr; }
+        .ds-header { flex-direction: column; align-items: flex-start; }
+        .ds-sec-index { display: none; }
+        .ds-tl-actions { flex-direction: column; }
+        .ds-mood-bar { flex-wrap: wrap; }
+        .ds-mood-bar .mood-status { margin-inline-start: 0; }
+    }
+</style>

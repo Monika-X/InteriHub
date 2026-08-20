@@ -1701,6 +1701,16 @@ function initDashboard() {
         });
     });
 
+    // Logout: clear stored session and return to the login page
+    const logoutBtn = document.getElementById('dash-logout');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            try { localStorage.removeItem('interihub_user'); } catch (err) { /* storage unavailable */ }
+            window.location.hash = '/login';
+        });
+    }
+
     // File Upload Simulation
     const uploadArea = document.getElementById('upload-area');
     const fileInput = document.getElementById('room-photos');
@@ -1725,12 +1735,14 @@ function initDashboard() {
     // Timeline Stage Approvals
     document.querySelectorAll('.stage-approve').forEach(btn => {
         btn.addEventListener('click', () => {
-            const status = btn.closest('div').parentElement.querySelector('.stage-status');
+            const stage = btn.closest('.stage');
+            const status = stage ? stage.querySelector('.stage-status') : null;
             if(status) {
                 status.textContent = 'Approved';
                 status.style.backgroundColor = 'var(--color-antique-gold)';
                 status.style.color = '#fff';
             }
+            if(stage) stage.setAttribute('data-approved', 'true');
             btn.remove();
             const revise = btn.closest('div').querySelector('.stage-revise');
             if(revise) revise.remove();
@@ -1739,33 +1751,61 @@ function initDashboard() {
     });
     document.querySelectorAll('.stage-revise').forEach(btn => {
         btn.addEventListener('click', () => {
-            const status = btn.closest('div').parentElement.querySelector('.stage-status');
+            const stage = btn.closest('.stage');
+            const status = stage ? stage.querySelector('.stage-status') : null;
             if(status) {
                 status.textContent = 'Changes Requested';
                 status.style.backgroundColor = 'var(--color-clay)';
                 status.style.color = '#fff';
             }
+            if(stage) stage.setAttribute('data-approved', 'false');
             btn.remove();
             const approve = btn.closest('div').querySelector('.stage-approve');
             if(approve) approve.remove();
             document.getElementById('msg-list').innerHTML += `
-                <div style="display: flex; justify-content: flex-end; margin-bottom: 1.5rem;">
-                    <div style="background-color: var(--color-obsidian); color: var(--color-warm-ivory); border-radius: 12px 12px 2px 12px; padding: 0.9rem 1.2rem; max-width: 80%;">
-                        <p style="font-size: 0.9rem;">We'd like some changes to the Concept stage — details to follow.</p>
-                        <p style="font-size: 0.7rem; color: var(--text-muted); margin-top: 0.25rem;">Just now</p>
+                <div class="ds-msg ds-msg-out">
+                    <div class="ds-msg-bubble ds-msg-bubble-out">
+                        <p>We'd like some changes to the Concept stage — details to follow.</p>
+                        <span>Just now</span>
                     </div>
                 </div>`;
         });
     });
+
+    // Personalize the greeting with the signed-up client's name
+    applyUserGreeting();
 }
 
 function updateProgress() {
     const bar = document.getElementById('progress-bar');
     if(!bar) return;
-    const approved = document.querySelectorAll('.stage-status').length;
-    const steps = document.querySelectorAll('.stage-status').length + 2;
-    const pct = Math.min(Math.round((approved / steps) * 100), 100);
+    const total = document.querySelectorAll('.stage').length;
+    if(!total) return;
+    const approved = document.querySelectorAll('.stage[data-approved="true"]').length;
+    const pct = Math.min(Math.round((approved / total) * 100), 100);
     bar.style.width = pct + '%';
+    const pctEl = document.getElementById('progress-pct');
+    if(pctEl) pctEl.textContent = pct + '%';
+    const caption = document.getElementById('progress-caption');
+    if(caption) caption.textContent = pct + '% complete — ' + caption.getAttribute('data-desc');
+}
+
+function applyUserGreeting() {
+    const nameEl = document.getElementById('dash-user-name');
+    const avatarEl = document.getElementById('dash-user-avatar');
+    if (!nameEl && !avatarEl) return;
+    let name = '';
+    try {
+        const raw = localStorage.getItem('interihub_user');
+        if (raw) name = (JSON.parse(raw).name || '').trim();
+    } catch (e) { /* storage unavailable */ }
+    if (!name) return;
+    if (nameEl) nameEl.textContent = name;
+    if (avatarEl) {
+        const parts = name.split(/\s+/).filter(Boolean);
+        const initials = parts.map(p => p.charAt(0).toUpperCase()).join('').slice(0, 2);
+        avatarEl.textContent = initials || 'AC';
+    }
 }
 
 function setMoodStatus(btn, state) {
@@ -1810,10 +1850,10 @@ function sendMessage() {
     input.value = '';
 
     list.innerHTML += `
-        <div style="display: flex; justify-content: flex-end; margin-bottom: 1.5rem;">
-            <div style="background-color: var(--color-obsidian); color: var(--color-warm-ivory); border-radius: 12px 12px 2px 12px; padding: 0.9rem 1.2rem; max-width: 80%;">
-                <p style="font-size: 0.9rem;">${text.replace(/</g, '&lt;')}</p>
-                <p style="font-size: 0.7rem; color: var(--text-muted); margin-top: 0.25rem;">Just now</p>
+        <div class="ds-msg ds-msg-out">
+            <div class="ds-msg-bubble ds-msg-bubble-out">
+                <p>${text.replace(/</g, '&lt;')}</p>
+                <span>Just now</span>
             </div>
         </div>`;
 
@@ -1825,11 +1865,11 @@ function sendMessage() {
     setTimeout(() => {
         if(typing) typing.style.display = 'none';
         list.innerHTML += `
-            <div style="display: flex; gap: 0.75rem; margin-bottom: 1.5rem; max-width: 80%;">
-                <div style="flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background-color: var(--color-obsidian); color: var(--color-warm-ivory); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 0.75rem;">ER</div>
-                <div style="background-color: var(--bg-secondary); border-radius: 12px 12px 12px 2px; padding: 0.9rem 1.2rem;">
-                    <p style="font-size: 0.9rem;">${reply}</p>
-                    <p style="font-size: 0.7rem; color: var(--text-muted); margin-top: 0.25rem;">Just now</p>
+            <div class="ds-msg ds-msg-in">
+                <div class="ds-msg-avatar">ER</div>
+                <div class="ds-msg-bubble ds-msg-bubble-in">
+                    <p>${reply}</p>
+                    <span>Just now</span>
                 </div>
             </div>`;
         list.scrollTop = list.scrollHeight;
@@ -1840,6 +1880,7 @@ function sendMessage() {
 function formSuccessMessage(form) {
     const isNewsletter = form.classList.contains('newsletter-form-inline');
     const hasPassword = !!form.querySelector('input[type="password"]');
+    const hasTel = !!form.querySelector('input[type="tel"]');
     const hasSelect = !!form.querySelector('select');
     const hasTextarea = !!form.querySelector('textarea');
 
@@ -1847,6 +1888,12 @@ function formSuccessMessage(form) {
         return {
             title: "You're on the list.",
             sub: "Welcome to The Private List — issue No. 05 arrives soon."
+        };
+    }
+    if (hasPassword && hasTel) {
+        return {
+            title: "Welcome aboard.",
+            sub: "Your account is being prepared — redirecting you to sign in."
         };
     }
     if (hasPassword) {
@@ -1876,8 +1923,24 @@ function formSuccessMessage(form) {
 function showFormSuccess(form) {
     const msg = formSuccessMessage(form);
     const savedHTML = form.innerHTML;
-    const isLogin = !!form.querySelector('input[type="password"]');
-    const isAuth = isLogin || (!!form.querySelector('select') && !form.querySelector('textarea'));
+    const hasPassword = !!form.querySelector('input[type="password"]');
+    const hasTel = !!form.querySelector('input[type="tel"]');
+    const isLogin = hasPassword && !hasTel;
+    const isSignup = hasTel && hasPassword;
+    const isAuth = isLogin || isSignup || (!!form.querySelector('select') && !form.querySelector('textarea'));
+
+    // Capture the name + email from login or signup and persist them for the dashboard greeting
+    if (isLogin || isSignup) {
+        const nameInput = form.querySelector('input[type="text"]');
+        const emailInput = form.querySelector('input[type="email"]');
+        const name = nameInput ? nameInput.value.trim() : '';
+        const email = emailInput ? emailInput.value.trim() : '';
+        if (name || email) {
+            try {
+                localStorage.setItem('interihub_user', JSON.stringify({ name: name || '', email: email || '' }));
+            } catch (e) { /* storage unavailable */ }
+        }
+    }
 
     form.innerHTML = `
         <div class="form-success" role="status">
@@ -1893,7 +1956,7 @@ function showFormSuccess(form) {
 
     if (isAuth) {
         setTimeout(() => {
-            window.location.hash = isLogin ? '/dashboard' : '/login';
+            window.location.hash = isSignup ? '/login' : '/dashboard';
             setTimeout(restore, 600);
         }, 1600);
     } else {
