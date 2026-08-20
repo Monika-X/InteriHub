@@ -99,6 +99,39 @@ function initNavigation() {
     dom.backToTopBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+    initMobileMenu();
+}
+
+function initMobileMenu() {
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    if (!menuBtn || !navLinks) return;
+
+    const MENU_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>';
+    const CLOSE_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>';
+
+    const toggle = (open) => {
+        navLinks.classList.toggle('open', open);
+        document.body.classList.toggle('menu-open', open);
+        menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        menuBtn.innerHTML = open ? CLOSE_SVG : MENU_SVG;
+    };
+
+    menuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggle(!navLinks.classList.contains('open'));
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => toggle(false));
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!navLinks.classList.contains('open')) return;
+        if (navLinks.contains(e.target) || menuBtn.contains(e.target)) return;
+        toggle(false);
+    });
 }
 
 function getRoute() {
