@@ -1,29 +1,63 @@
-<!-- Login Page -->
-<section style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background-color: var(--bg-primary); padding: 150px 0;">
-    <div class="container" style="max-width: 500px; width: 100%;">
-        <div class="reveal-up" style="background-color: var(--bg-secondary); padding: 4rem 3rem; border-radius: 8px; border: 1px solid var(--border-color); text-align: center;">
-            <h1 class="heading-1">Client Portal</h1>
-            <p style="color: var(--text-muted); margin-bottom: 2rem;">Sign in to access your project dashboard.</p>
-            <form>
-                <div style="margin-bottom: 1.5rem; text-align: start;">
-                    <label style="display: block; margin-bottom: 0.5rem; font-family: var(--font-heading);">Email</label>
-                    <input type="email" required style="width: 100%; padding: 1rem; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-primary);">
+<!-- Login — Client Portal, Premium Editorial -->
+<section class="ax-page">
+    <div class="ax-bg">
+        <img src="https://i.pinimg.com/736x/a8/81/97/a881977bf50d59f6ab86a9429f3c36a8.jpg" alt="InteriHub" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMyQTIzMkEiLz48L3N2Zz4=';">
+        <div class="ax-overlay" aria-hidden="true"></div>
+    </div>
+    <p class="ax-quote">&ldquo;A room is not a room until it tells a story.&rdquo;</p>
+    <p class="ax-coords">Plate 01 &mdash; The InteriHub Archive &middot; Est. 2020</p>
+
+    <div class="ax-center">
+        <span class="ax-num" aria-hidden="true">I</span>
+        <div class="ax-plate">
+            <p class="ax-eyebrow">Client Portal &mdash; Est. 2020</p>
+            <h1 class="ax-title">Welcome <em>back.</em></h1>
+            <p class="ax-sub">Sign in to access your project dashboard.</p>
+
+            <div class="ax-rule" aria-hidden="true"><span class="ax-rule-diamond"></span></div>
+
+            <form class="ax-form">
+                <div class="ax-field">
+                    <div class="ax-field-head">
+                        <span class="ax-field-num">01</span>
+                        <label for="ax-email">Email Address</label>
+                    </div>
+                    <div class="ax-input">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+                        <input id="ax-email" type="email" required autocomplete="email" placeholder="you@example.com">
+                    </div>
                 </div>
-                <div style="margin-bottom: 1.5rem; text-align: start;">
-                    <label style="display: block; margin-bottom: 0.5rem; font-family: var(--font-heading);">Password</label>
-                    <input type="password" required style="width: 100%; padding: 1rem; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-primary);">
+                <div class="ax-field">
+                    <div class="ax-field-head">
+                        <span class="ax-field-num">02</span>
+                        <label for="ax-password">Password</label>
+                    </div>
+                    <div class="ax-input">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+                        <input id="ax-password" type="password" required autocomplete="current-password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;">
+                        <button type="button" class="ax-eye" aria-label="Show password" onclick="var i=document.getElementById('ax-password');i.type=i.type==='password'?'text':'password';this.classList.toggle('active');">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                        </button>
+                    </div>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-                    <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: var(--text-muted);">
-                        <input type="checkbox"> Remember me
+                <div class="ax-row">
+                    <label class="ax-remember">
+                        <input type="checkbox">
+                        <span class="ax-check" aria-hidden="true"><svg viewBox="0 0 12 10"><path d="M1 5.5 4.5 9 11 1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>Remember me</span>
                     </label>
-                    <a href="#" style="font-size: 0.875rem; color: var(--color-antique-gold);">Forgot Password?</a>
+                    <a href="#" class="ax-forgot" onclick="event.preventDefault();return false;">Forgot Password?</a>
                 </div>
-                <a href="/dashboard" data-route class="btn btn-primary" style="width: 100%;">Sign In</a>
+                <button type="submit" class="ax-submit">Sign In <span aria-hidden="true">&rarr;</span></button>
             </form>
-            <p style="margin-top: 2rem; font-size: 0.875rem; color: var(--text-muted);">
-                Don't have an account? <a href="/signup" data-route style="color: var(--text-primary); border-bottom: 1px solid var(--text-primary);">Request Access</a>
+
+            <p class="ax-secure">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+                Protected by TLS 1.3 &mdash; your data stays yours
             </p>
         </div>
+
+        <p class="ax-alt">Don't have an account? <a href="/signup" data-route>Request Access</a></p>
     </div>
 </section>
+

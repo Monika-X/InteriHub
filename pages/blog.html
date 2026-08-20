@@ -1,34 +1,77 @@
-<!-- Blog Page -->
-<section class="section-padding" style="padding-top: 150px; background-color: var(--bg-primary);">
-    <div class="container">
-        <p class="reveal-up" style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 1rem;">The Journal</p>
-        <h1 class="display-2 reveal-up">Editorial</h1>
-        <p class="text-lead reveal-up" style="max-width: 600px; margin-top: 2rem; transition-delay: 0.2s;">
-            Insights, architectural discourse, and a curation of our design inspirations — published monthly from the studio floor.
-        </p>
-    </div>
-    <div class="container reveal-up" style="margin-top: 4rem;">
-        <div style="position: relative; overflow: hidden; aspect-ratio: 16/9;">
-            <img src="https://i.pinimg.com/736x/64/4e/3b/644e3b163bf2b7e1ba6a34afa5cd6ef3.jpg" alt="Editorial" style="width: 100%; height: 100%; object-fit: cover;">
+<!-- Blog Page — The Journal, Premium Editorial -->
+<section class="bl-hero">
+    <div class="container bl-hero-grid">
+        <div class="bl-hero-text">
+            <span class="bl-hero-ghost" aria-hidden="true">Journal</span>
+            <p class="bl-eyebrow reveal-up">The Journal — Vol. 04</p>
+            <h1 class="bl-hero-title reveal-up">Notes from the<br><em>studio floor</em></h1>
+            <p class="bl-hero-lead reveal-up">
+                Insights, architectural discourse, and a curation of our design inspirations — published monthly from the studio.
+            </p>
+            <div class="bl-hero-actions reveal-up">
+                <a href="#latest" class="btn btn-primary">Read the Latest</a>
+                <a href="#subscribe" class="btn btn-outline">Join the Private List</a>
+            </div>
+            <div class="bl-hero-meta reveal-up">
+                <span><b>Vol.</b> 04</span>
+                <span><b>Est.</b> 2020</span>
+                <span><b>Cadence</b> Monthly</span>
+            </div>
+        </div>
+        <div class="bl-hero-media reveal-up" style="transition-delay: 0.3s;">
+            <div class="bl-hero-frame">
+                <img src="https://i.pinimg.com/736x/64/4e/3b/644e3b163bf2b7e1ba6a34afa5cd6ef3.jpg" alt="The Journal" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';">
+            </div>
+            <div class="bl-hero-caption">
+                <span>Issue 04 — Autumn</span>
+                <span>From the studio archives</span>
+            </div>
         </div>
     </div>
 </section>
 
-<section class="section-padding" style="background-color: var(--bg-secondary);">
+<!-- Featured Article -->
+<section class="bl-featured" id="latest">
     <div class="container">
-        <!-- Featured Post -->
-        <div class="reveal-up" style="margin-bottom: 6rem; position: relative;">
-            <div style="aspect-ratio: 21/9; overflow: hidden; margin-bottom: 2rem;">
-                <img src="https://i.pinimg.com/736x/04/8f/37/048f37deffa60841e4b3980ce0ffccf3.jpg" alt="Featured Article" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="bl-featured-head reveal-up">
+            <p class="bl-label">01 — Featured</p>
+            <p class="bl-featured-note">This month's essay</p>
+        </div>
+        <article class="bl-featured-card reveal-up">
+            <div class="bl-featured-media">
+                <img src="https://i.pinimg.com/736x/04/8f/37/048f37deffa60841e4b3980ce0ffccf3.jpg" alt="Featured Article" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';">
             </div>
-            <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;">Architecture</p>
-            <h2 class="display-2" style="margin-bottom: 1rem;"><a href="/blog-details?post=psychology-of-volume" data-route>The Psychology of Volume</a></h2>
-            <p style="color: var(--text-muted); max-width: 800px; margin-bottom: 2rem;">How manipulating spatial proportions can profoundly influence emotional resonance within a residential environment.</p>
-            <a href="/blog-details" data-route class="btn btn-outline">Read Article</a>
+            <div class="bl-featured-body">
+                <div class="bl-featured-meta">
+                    <span class="bl-card-cat">Architecture</span>
+                    <span class="bl-issue">Issue 04 · 01</span>
+                </div>
+                <h2 class="bl-featured-title">
+                    <a href="/blog-details?post=psychology-of-volume" data-route>The Psychology of <em>Volume</em></a>
+                </h2>
+                <p class="bl-featured-excerpt">How manipulating spatial proportions can profoundly influence emotional resonance within a residential environment.</p>
+                <div class="bl-featured-foot">
+                    <a href="/blog-details?post=psychology-of-volume" data-route class="bl-link">Read the Essay <span>&rarr;</span></a>
+                    <span class="bl-read-meta">By the Studio · 12 min read</span>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!-- The Index -->
+<section class="bl-index">
+    <div class="container">
+        <div class="bl-index-head reveal-up">
+            <div>
+                <p class="bl-label">02 — The Index</p>
+                <h2 class="bl-index-title">All issues, <em>by theme</em></h2>
+            </div>
+            <p class="bl-index-copy">Sixteen essays across materials, light, process and the quieter notes from the studio.</p>
         </div>
 
         <!-- Filter Bar -->
-        <div class="reveal-up" style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 3rem;">
+        <div class="bl-filters reveal-up" role="group" aria-label="Filter articles">
             <button class="blog-filter-btn active" data-filter="all" type="button">All</button>
             <button class="blog-filter-btn" data-filter="materials" type="button">Materials</button>
             <button class="blog-filter-btn" data-filter="lighting" type="button">Lighting</button>
@@ -37,193 +80,538 @@
         </div>
 
         <!-- Grid Posts -->
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;">
-            <div class="reveal-up blog-card" data-category="materials">
-                <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
-                    <img src="https://i.pinimg.com/736x/33/95/70/33957001a5d064a3237a9f689e91b52a.jpg" alt="Article 1" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="bl-grid">
+            <article class="blog-card bl-card reveal-up" data-category="materials">
+                <figure class="bl-card-media">
+                    <img src="https://i.pinimg.com/736x/33/95/70/33957001a5d064a3237a9f689e91b52a.jpg" alt="Sourcing Italian Travertine" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';">
+                </figure>
+                <div class="bl-card-body">
+                    <div class="bl-card-meta">
+                        <span class="bl-card-cat">Materials</span>
+                        <span class="bl-issue">N-01</span>
+                    </div>
+                    <h3 class="bl-card-title"><a href="/blog-details?post=sourcing-travertine" data-route>Sourcing Italian <em>Travertine</em></a></h3>
+                    <p class="bl-card-excerpt">A journey to the quarries of Tivoli — and the story behind our favorite warm stone.</p>
+                    <a href="/blog-details?post=sourcing-travertine" data-route class="bl-link">Read <span>&rarr;</span></a>
                 </div>
-                <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Materials</p>
-                <h3 class="heading-1" style="font-size: 1.4rem;"><a href="/blog-details?post=sourcing-travertine" data-route>Sourcing Italian Travertine</a></h3>
-                <p style="color: var(--text-muted); margin-top: 1rem;">A journey to the quarries of Tivoli — and the story behind our favorite warm stone.</p>
-            </div>
-            <div class="reveal-up blog-card" style="transition-delay: 0.2s;" data-category="lighting">
-                <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
-                    <img src="https://i.pinimg.com/736x/d7/0f/93/d70f9333a39fa75874faeca95a1becce.jpg" alt="Article 2" style="width: 100%; height: 100%; object-fit: cover;">
+            </article>
+            <article class="blog-card bl-card reveal-up" style="transition-delay: 0.1s;" data-category="lighting">
+                <figure class="bl-card-media">
+                    <img src="https://i.pinimg.com/736x/d7/0f/93/d70f9333a39fa75874faeca95a1becce.jpg" alt="Sculpting with Shadows" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';">
+                </figure>
+                <div class="bl-card-body">
+                    <div class="bl-card-meta">
+                        <span class="bl-card-cat">Lighting</span>
+                        <span class="bl-issue">N-02</span>
+                    </div>
+                    <h3 class="bl-card-title"><a href="/blog-details?post=sculpting-shadows" data-route>Sculpting with <em>Shadows</em></a></h3>
+                    <p class="bl-card-excerpt">The art of concealed architectural illumination and what it teaches us about night.</p>
+                    <a href="/blog-details?post=sculpting-shadows" data-route class="bl-link">Read <span>&rarr;</span></a>
                 </div>
-                <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Lighting</p>
-                <h3 class="heading-1" style="font-size: 1.4rem;"><a href="/blog-details?post=sculpting-shadows" data-route>Sculpting with Shadows</a></h3>
-                <p style="color: var(--text-muted); margin-top: 1rem;">The art of concealed architectural illumination and what it teaches us about night.</p>
-            </div>
-            <div class="reveal-up blog-card" data-category="process">
-                <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
-                    <img src="https://i.pinimg.com/736x/e0/c7/05/e0c705772466eca16dd518850b4ba8b7.jpg" alt="Article 3" style="width: 100%; height: 100%; object-fit: cover;">
+            </article>
+            <article class="blog-card bl-card reveal-up" data-category="process">
+                <figure class="bl-card-media">
+                    <img src="https://i.pinimg.com/736x/e0/c7/05/e0c705772466eca16dd518850b4ba8b7.jpg" alt="Inside a 12-Month Renovation" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';">
+                </figure>
+                <div class="bl-card-body">
+                    <div class="bl-card-meta">
+                        <span class="bl-card-cat">Process</span>
+                        <span class="bl-issue">N-03</span>
+                    </div>
+                    <h3 class="bl-card-title"><a href="/blog-details?post=renovation-12-months" data-route>Inside a 12-Month <em>Renovation</em></a></h3>
+                    <p class="bl-card-excerpt">A behind-the-scenes account of our most demanding transformation to date.</p>
+                    <a href="/blog-details?post=renovation-12-months" data-route class="bl-link">Read <span>&rarr;</span></a>
                 </div>
-                <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Process</p>
-                <h3 class="heading-1" style="font-size: 1.4rem;"><a href="/blog-details?post=renovation-12-months" data-route>Inside a 12-Month Renovation</a></h3>
-                <p style="color: var(--text-muted); margin-top: 1rem;">A behind-the-scenes account of our most demanding transformation to date.</p>
-            </div>
-            <div class="reveal-up blog-card" style="transition-delay: 0.2s;" data-category="studio-notes">
-                <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
-                    <img src="https://i.pinimg.com/736x/4e/f5/14/4ef51472656d283a91ab207b85540084.jpg" alt="Article 4" style="width: 100%; height: 100%; object-fit: cover;">
+            </article>
+            <article class="blog-card bl-card reveal-up" style="transition-delay: 0.1s;" data-category="studio-notes">
+                <figure class="bl-card-media">
+                    <img src="https://i.pinimg.com/736x/4e/f5/14/4ef51472656d283a91ab207b85540084.jpg" alt="Five Rooms We Dream About" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';">
+                </figure>
+                <div class="bl-card-body">
+                    <div class="bl-card-meta">
+                        <span class="bl-card-cat">Studio Notes</span>
+                        <span class="bl-issue">N-04</span>
+                    </div>
+                    <h3 class="bl-card-title"><a href="/blog-details?post=five-rooms" data-route>Five Rooms We <em>Dream About</em></a></h3>
+                    <p class="bl-card-excerpt">The interiors from cinema and travel that shaped our collective taste.</p>
+                    <a href="/blog-details?post=five-rooms" data-route class="bl-link">Read <span>&rarr;</span></a>
                 </div>
-                <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Studio Notes</p>
-                <h3 class="heading-1" style="font-size: 1.4rem;"><a href="/blog-details?post=five-rooms" data-route>Five Rooms We Dream About</a></h3>
-                <p style="color: var(--text-muted); margin-top: 1rem;">The interiors from cinema and travel that shaped our collective taste.</p>
-            </div>
-            <div class="reveal-up blog-card" style="transition-delay: 0.1s;" data-category="materials">
-                <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
-                    <img src="https://i.pinimg.com/736x/00/07/f7/0007f740a75fddc83d4d89aa38025a83.jpg" alt="Article 5" style="width: 100%; height: 100%; object-fit: cover;">
+            </article>
+            <article class="blog-card bl-card reveal-up" data-category="materials">
+                <figure class="bl-card-media">
+                    <img src="https://i.pinimg.com/736x/00/07/f7/0007f740a75fddc83d4d89aa38025a83.jpg" alt="The Veining of Calacatta" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';">
+                </figure>
+                <div class="bl-card-body">
+                    <div class="bl-card-meta">
+                        <span class="bl-card-cat">Materials</span>
+                        <span class="bl-issue">N-05</span>
+                    </div>
+                    <h3 class="bl-card-title"><a href="/blog-details?post=calacatta-veining" data-route>The Veining of <em>Calacatta</em></a></h3>
+                    <p class="bl-card-excerpt">How a single slab's geology dictates the composition of an entire room.</p>
+                    <a href="/blog-details?post=calacatta-veining" data-route class="bl-link">Read <span>&rarr;</span></a>
                 </div>
-                <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Materials</p>
-                <h3 class="heading-1" style="font-size: 1.4rem;"><a href="/blog-details?post=calacatta-veining" data-route>The Veining of Calacatta</a></h3>
-                <p style="color: var(--text-muted); margin-top: 1rem;">How a single slab's geology dictates the composition of an entire room.</p>
-            </div>
-            <div class="reveal-up blog-card" style="transition-delay: 0.2s;" data-category="lighting">
-                <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
-                    <img src="https://i.pinimg.com/736x/d3/12/a0/d312a07cd64e6018409d811361cdfe34.jpg" alt="Article 6" style="width: 100%; height: 100%; object-fit: cover;">
+            </article>
+            <article class="blog-card bl-card reveal-up" style="transition-delay: 0.1s;" data-category="lighting">
+                <figure class="bl-card-media">
+                    <img src="https://i.pinimg.com/736x/d3/12/a0/d312a07cd64e6018409d811361cdfe34.jpg" alt="Layered Light in the Living Room" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';">
+                </figure>
+                <div class="bl-card-body">
+                    <div class="bl-card-meta">
+                        <span class="bl-card-cat">Lighting</span>
+                        <span class="bl-issue">N-06</span>
+                    </div>
+                    <h3 class="bl-card-title"><a href="/blog-details?post=layered-light-living" data-route>Layered Light in the <em>Living Room</em></a></h3>
+                    <p class="bl-card-excerpt">Combining daylight, task and accent light to compose rooms that shift through the day.</p>
+                    <a href="/blog-details?post=layered-light-living" data-route class="bl-link">Read <span>&rarr;</span></a>
                 </div>
-                <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Lighting</p>
-                <h3 class="heading-1" style="font-size: 1.4rem;"><a href="/blog-details?post=layered-light-living" data-route>Layered Light in the Living Room</a></h3>
-                <p style="color: var(--text-muted); margin-top: 1rem;">Combining daylight, task and accent light to compose rooms that shift through the day.</p>
-            </div>
-            <div class="reveal-up blog-card" style="transition-delay: 0.3s;" data-category="process">
-                <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
-                    <img src="https://i.pinimg.com/736x/2b/cb/a5/2bcba5fad2e3953134d42035da8b6afa.jpg" alt="Article 7" style="width: 100%; height: 100%; object-fit: cover;">
+            </article>
+            <article class="blog-card bl-card reveal-up" data-category="process">
+                <figure class="bl-card-media">
+                    <img src="https://i.pinimg.com/736x/2b/cb/a5/2bcba5fad2e3953134d42035da8b6afa.jpg" alt="Budgeting the Invisible" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';">
+                </figure>
+                <div class="bl-card-body">
+                    <div class="bl-card-meta">
+                        <span class="bl-card-cat">Process</span>
+                        <span class="bl-issue">N-07</span>
+                    </div>
+                    <h3 class="bl-card-title"><a href="/blog-details?post=budgeting-invisible" data-route>Budgeting the <em>Invisible</em></a></h3>
+                    <p class="bl-card-excerpt">Why the most important spend in any renovation is the part you never see.</p>
+                    <a href="/blog-details?post=budgeting-invisible" data-route class="bl-link">Read <span>&rarr;</span></a>
                 </div>
-                <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Process</p>
-                <h3 class="heading-1" style="font-size: 1.4rem;"><a href="/blog-details?post=budgeting-invisible" data-route>Budgeting the Invisible</a></h3>
-                <p style="color: var(--text-muted); margin-top: 1rem;">Why the most important spend in any renovation is the part you never see.</p>
-            </div>
-            <div class="reveal-up blog-card" data-category="studio-notes">
-                <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
-                    <img src="https://i.pinimg.com/736x/ed/cc/d5/edccd5be23c3caa50ee9bec2d490e64c.jpg" alt="Article 8" style="width: 100%; height: 100%; object-fit: cover;">
+            </article>
+            <article class="blog-card bl-card reveal-up" style="transition-delay: 0.1s;" data-category="studio-notes">
+                <figure class="bl-card-media">
+                    <img src="https://i.pinimg.com/736x/ed/cc/d5/edccd5be23c3caa50ee9bec2d490e64c.jpg" alt="Reading Room in the Country" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';">
+                </figure>
+                <div class="bl-card-body">
+                    <div class="bl-card-meta">
+                        <span class="bl-card-cat">Studio Notes</span>
+                        <span class="bl-issue">N-08</span>
+                    </div>
+                    <h3 class="bl-card-title"><a href="/blog-details?post=reading-room-country" data-route>Reading Room in the <em>Country</em></a></h3>
+                    <p class="bl-card-excerpt">The quiet project we keep returning to — walls of oak, light from the east.</p>
+                    <a href="/blog-details?post=reading-room-country" data-route class="bl-link">Read <span>&rarr;</span></a>
                 </div>
-                <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Studio Notes</p>
-                <h3 class="heading-1" style="font-size: 1.4rem;"><a href="/blog-details?post=reading-room-country" data-route>Reading Room in the Country</a></h3>
-                <p style="color: var(--text-muted); margin-top: 1rem;">The quiet project we keep returning to — walls of oak, light from the east.</p>
-            </div>
-            <div class="reveal-up blog-card" style="transition-delay: 0.1s;" data-category="materials">
-                <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
-                    <img src="https://i.pinimg.com/736x/3d/84/29/3d842906a5b548ddf1b2f8f7b7a5fa3a.jpg" alt="Article 9" style="width: 100%; height: 100%; object-fit: cover;">
+            </article>
+            <article class="blog-card bl-card reveal-up" data-category="materials">
+                <figure class="bl-card-media">
+                    <img src="https://i.pinimg.com/736x/3d/84/29/3d842906a5b548ddf1b2f8f7b7a5fa3a.jpg" alt="A Field Guide to European Oak" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';">
+                </figure>
+                <div class="bl-card-body">
+                    <div class="bl-card-meta">
+                        <span class="bl-card-cat">Materials</span>
+                        <span class="bl-issue">N-09</span>
+                    </div>
+                    <h3 class="bl-card-title"><a href="/blog-details?post=european-oak" data-route>A Field Guide to <em>European Oak</em></a></h3>
+                    <p class="bl-card-excerpt">Distinguishing the forests, cuts and finishes behind our favorite timber.</p>
+                    <a href="/blog-details?post=european-oak" data-route class="bl-link">Read <span>&rarr;</span></a>
                 </div>
-                <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Materials</p>
-                <h3 class="heading-1" style="font-size: 1.4rem;"><a href="/blog-details?post=european-oak" data-route>A Field Guide to European Oak</a></h3>
-                <p style="color: var(--text-muted); margin-top: 1rem;">Distinguishing the forests, cuts and finishes behind our favorite timber.</p>
-            </div>
-            <div class="reveal-up blog-card" style="transition-delay: 0.2s;" data-category="lighting">
-                <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
-                    <img src="https://i.pinimg.com/1200x/da/1b/ac/da1bac4d69d7fea48bb504202795d31f.jpg" alt="Article 10" style="width: 100%; height: 100%; object-fit: cover;">
+            </article>
+            <article class="blog-card bl-card reveal-up" style="transition-delay: 0.1s;" data-category="lighting">
+                <figure class="bl-card-media">
+                    <img src="https://i.pinimg.com/1200x/da/1b/ac/da1bac4d69d7fea48bb504202795d31f.jpg" alt="The Warmth of Indirect Glow" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';">
+                </figure>
+                <div class="bl-card-body">
+                    <div class="bl-card-meta">
+                        <span class="bl-card-cat">Lighting</span>
+                        <span class="bl-issue">N-10</span>
+                    </div>
+                    <h3 class="bl-card-title"><a href="/blog-details?post=indirect-glow" data-route>The Warmth of <em>Indirect Glow</em></a></h3>
+                    <p class="bl-card-excerpt">Coves, reveals and reflected pools of light that never show their source.</p>
+                    <a href="/blog-details?post=indirect-glow" data-route class="bl-link">Read <span>&rarr;</span></a>
                 </div>
-                <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Lighting</p>
-                <h3 class="heading-1" style="font-size: 1.4rem;"><a href="/blog-details?post=indirect-glow" data-route>The Warmth of Indirect Glow</a></h3>
-                <p style="color: var(--text-muted); margin-top: 1rem;">Coves, reveals and reflected pools of light that never show their source.</p>
-            </div>
-            <div class="reveal-up blog-card" style="transition-delay: 0.3s;" data-category="process">
-                <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
-                    <img src="https://i.pinimg.com/736x/63/ae/cd/63aecdc9ac03dda48a896e1bc5dfc888.jpg" alt="Article 11" style="width: 100%; height: 100%; object-fit: cover;">
+            </article>
+            <article class="blog-card bl-card reveal-up" data-category="process">
+                <figure class="bl-card-media">
+                    <img src="https://i.pinimg.com/736x/63/ae/cd/63aecdc9ac03dda48a896e1bc5dfc888.jpg" alt="From Drawing to Delivery" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';">
+                </figure>
+                <div class="bl-card-body">
+                    <div class="bl-card-meta">
+                        <span class="bl-card-cat">Process</span>
+                        <span class="bl-issue">N-11</span>
+                    </div>
+                    <h3 class="bl-card-title"><a href="/blog-details?post=drawing-to-delivery" data-route>From Drawing to <em>Delivery</em></a></h3>
+                    <p class="bl-card-excerpt">The full lifecycle of a custom piece, from first sketch to final placement.</p>
+                    <a href="/blog-details?post=drawing-to-delivery" data-route class="bl-link">Read <span>&rarr;</span></a>
                 </div>
-                <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Process</p>
-                <h3 class="heading-1" style="font-size: 1.4rem;"><a href="/blog-details?post=drawing-to-delivery" data-route>From Drawing to Delivery</a></h3>
-                <p style="color: var(--text-muted); margin-top: 1rem;">The full lifecycle of a custom piece, from first sketch to final placement.</p>
-            </div>
-            <div class="reveal-up blog-card" style="transition-delay: 0.1s;" data-category="studio-notes">
-                <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
-                    <img src="https://i.pinimg.com/736x/0f/1a/b3/0f1ab31f6c27f9ad79106a972e30a9c2.jpg" alt="Article 12" style="width: 100%; height: 100%; object-fit: cover;">
+            </article>
+            <article class="blog-card bl-card reveal-up" style="transition-delay: 0.1s;" data-category="studio-notes">
+                <figure class="bl-card-media">
+                    <img src="https://i.pinimg.com/736x/0f/1a/b3/0f1ab31f6c27f9ad79106a972e30a9c2.jpg" alt="Objects We Keep Returning To" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';">
+                </figure>
+                <div class="bl-card-body">
+                    <div class="bl-card-meta">
+                        <span class="bl-card-cat">Studio Notes</span>
+                        <span class="bl-issue">N-12</span>
+                    </div>
+                    <h3 class="bl-card-title"><a href="/blog-details?post=objects-we-return-to" data-route>Objects We Keep <em>Returning To</em></a></h3>
+                    <p class="bl-card-excerpt">The tableware, brass and ceramics that anchor our most-loved interiors.</p>
+                    <a href="/blog-details?post=objects-we-return-to" data-route class="bl-link">Read <span>&rarr;</span></a>
                 </div>
-                <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Studio Notes</p>
-                <h3 class="heading-1" style="font-size: 1.4rem;"><a href="/blog-details?post=objects-we-return-to" data-route>Objects We Keep Returning To</a></h3>
-                <p style="color: var(--text-muted); margin-top: 1rem;">The tableware, brass and ceramics that anchor our most-loved interiors.</p>
-            </div>
-            <div class="reveal-up blog-card" style="transition-delay: 0.2s;" data-category="materials">
-                <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
-                    <img src="https://i.pinimg.com/736x/c6/4a/12/c64a12e57021d76021ae04f54cc16baf.jpg" alt="Article 13" style="width: 100%; height: 100%; object-fit: cover;">
+            </article>
+            <article class="blog-card bl-card reveal-up" data-category="materials">
+                <figure class="bl-card-media">
+                    <img src="https://i.pinimg.com/736x/c6/4a/12/c64a12e57021d76021ae04f54cc16baf.jpg" alt="Patina: Designing for Age" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';">
+                </figure>
+                <div class="bl-card-body">
+                    <div class="bl-card-meta">
+                        <span class="bl-card-cat">Materials</span>
+                        <span class="bl-issue">N-13</span>
+                    </div>
+                    <h3 class="bl-card-title"><a href="/blog-details?post=patina-designing-age" data-route>Patina: Designing for <em>Age</em></a></h3>
+                    <p class="bl-card-excerpt">Why we choose surfaces that grow more beautiful with every year of use.</p>
+                    <a href="/blog-details?post=patina-designing-age" data-route class="bl-link">Read <span>&rarr;</span></a>
                 </div>
-                <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Materials</p>
-                <h3 class="heading-1" style="font-size: 1.4rem;"><a href="/blog-details?post=patina-designing-age" data-route>Patina: Designing for Age</a></h3>
-                <p style="color: var(--text-muted); margin-top: 1rem;">Why we choose surfaces that grow more beautiful with every year of use.</p>
-            </div>
-            <div class="reveal-up blog-card" style="transition-delay: 0.3s;" data-category="lighting">
-                <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
-                    <img src="https://i.pinimg.com/1200x/ad/bc/bb/adbcbb6638f00604ede175a1b8fcb712.jpg" alt="Article 14" style="width: 100%; height: 100%; object-fit: cover;">
+            </article>
+            <article class="blog-card bl-card reveal-up" style="transition-delay: 0.1s;" data-category="lighting">
+                <figure class="bl-card-media">
+                    <img src="https://i.pinimg.com/1200x/ad/bc/bb/adbcbb6638f00604ede175a1b8fcb712.jpg" alt="Daylight Studies: South-Facing Rooms" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';">
+                </figure>
+                <div class="bl-card-body">
+                    <div class="bl-card-meta">
+                        <span class="bl-card-cat">Lighting</span>
+                        <span class="bl-issue">N-14</span>
+                    </div>
+                    <h3 class="bl-card-title"><a href="/blog-details?post=daylight-studies" data-route>Daylight Studies: <em>South-Facing Rooms</em></a></h3>
+                    <p class="bl-card-excerpt">Tracking the arc of the sun to place each room in its best possible light.</p>
+                    <a href="/blog-details?post=daylight-studies" data-route class="bl-link">Read <span>&rarr;</span></a>
                 </div>
-                <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Lighting</p>
-                <h3 class="heading-1" style="font-size: 1.4rem;"><a href="/blog-details?post=daylight-studies" data-route>Daylight Studies: South-Facing Rooms</a></h3>
-                <p style="color: var(--text-muted); margin-top: 1rem;">Tracking the arc of the sun to place each room in its best possible light.</p>
-            </div>
-            <div class="reveal-up blog-card" data-category="process">
-                <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
-                    <img src="https://i.pinimg.com/736x/5f/ff/7f/5fff7f51be5e8fafd33f95dcfeeb7a75.jpg" alt="Article 15" style="width: 100%; height: 100%; object-fit: cover;">
+            </article>
+            <article class="blog-card bl-card reveal-up" data-category="process">
+                <figure class="bl-card-media">
+                    <img src="https://i.pinimg.com/736x/5f/ff/7f/5fff7f51be5e8fafd33f95dcfeeb7a75.jpg" alt="The Art of the Site Visit" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';">
+                </figure>
+                <div class="bl-card-body">
+                    <div class="bl-card-meta">
+                        <span class="bl-card-cat">Process</span>
+                        <span class="bl-issue">N-15</span>
+                    </div>
+                    <h3 class="bl-card-title"><a href="/blog-details?post=site-visit-art" data-route>The Art of the <em>Site Visit</em></a></h3>
+                    <p class="bl-card-excerpt">What we look for on the ground before a single line is drawn.</p>
+                    <a href="/blog-details?post=site-visit-art" data-route class="bl-link">Read <span>&rarr;</span></a>
                 </div>
-                <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Process</p>
-                <h3 class="heading-1" style="font-size: 1.4rem;"><a href="/blog-details?post=site-visit-art" data-route>The Art of the Site Visit</a></h3>
-                <p style="color: var(--text-muted); margin-top: 1rem;">What we look for on the ground before a single line is drawn.</p>
-            </div>
-            <div class="reveal-up blog-card" style="transition-delay: 0.1s;" data-category="studio-notes">
-                <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
-                    <img src="https://i.pinimg.com/736x/1a/0c/9a/1a0c9a283ef3da46beab7b9aa5ac1413.jpg" alt="Article 16" style="width: 100%; height: 100%; object-fit: cover;">
+            </article>
+            <article class="blog-card bl-card reveal-up" style="transition-delay: 0.1s;" data-category="studio-notes">
+                <figure class="bl-card-media">
+                    <img src="https://i.pinimg.com/736x/1a/0c/9a/1a0c9a283ef3da46beab7b9aa5ac1413.jpg" alt="A Studio Morning with Elena" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';">
+                </figure>
+                <div class="bl-card-body">
+                    <div class="bl-card-meta">
+                        <span class="bl-card-cat">Studio Notes</span>
+                        <span class="bl-issue">N-16</span>
+                    </div>
+                    <h3 class="bl-card-title"><a href="/blog-details?post=studio-morning-elena" data-route>A Studio Morning with <em>Elena</em></a></h3>
+                    <p class="bl-card-excerpt">Coffee, swatches and the first sketch of a penthouse in the making.</p>
+                    <a href="/blog-details?post=studio-morning-elena" data-route class="bl-link">Read <span>&rarr;</span></a>
                 </div>
-                <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Studio Notes</p>
-                <h3 class="heading-1" style="font-size: 1.4rem;"><a href="/blog-details?post=studio-morning-elena" data-route>A Studio Morning with Elena</a></h3>
-                <p style="color: var(--text-muted); margin-top: 1rem;">Coffee, swatches and the first sketch of a penthouse in the making.</p>
-            </div>
+            </article>
         </div>
-        <div style="text-align: center; margin-top: 4rem;" class="reveal-up">
-            <button type="button" class="btn btn-outline blog-view-more">View More</button>
+        <div class="bl-view-wrap reveal-up">
+            <button type="button" class="blog-view-more bl-view-more">View More Essays</button>
         </div>
     </div>
 </section>
 
-<section class="section-padding" style="background-color: var(--color-obsidian); color: var(--color-warm-ivory);">
+<!-- Browse by Topic -->
+<section class="bl-topics">
     <div class="container">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;" class="reveal-up">
-            <div>
-                <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 1rem;">Browse by Topic</p>
-                <h2 class="heading-1" style="color: var(--color-warm-ivory);">The disciplines we write about</h2>
-                <p style="color: var(--text-muted); margin-top: 1rem; max-width: 440px;">Every issue of the Journal explores one theme in depth — from the philosophy of light to the economics of rare stone.</p>
-            </div>
-            <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
-                <a href="/blog" data-route class="btn btn-outline" style="color: var(--color-warm-ivory); border-color: rgba(247,243,237,0.3);">Architecture</a>
-                <a href="/blog" data-route class="btn btn-outline" style="color: var(--color-warm-ivory); border-color: rgba(247,243,237,0.3);">Materials</a>
-                <a href="/blog" data-route class="btn btn-outline" style="color: var(--color-warm-ivory); border-color: rgba(247,243,237,0.3);">Lighting</a>
-                <a href="/blog" data-route class="btn btn-outline" style="color: var(--color-warm-ivory); border-color: rgba(247,243,237,0.3);">Process</a>
-                <a href="/blog" data-route class="btn btn-outline" style="color: var(--color-warm-ivory); border-color: rgba(247,243,237,0.3);">Studio Notes</a>
-                <a href="/blog" data-route class="btn btn-outline" style="color: var(--color-warm-ivory); border-color: rgba(247,243,237,0.3);">Collecting</a>
-            </div>
+        <div class="bl-topics-head reveal-up">
+            <p class="bl-label">03 — Browse</p>
+            <h2 class="bl-topics-title">The disciplines we <em>write about</em></h2>
         </div>
-        <div class="reveal-up" style="border-top: 1px solid rgba(247,243,237,0.15); margin-top: 4rem; padding-top: 4rem; text-align: center;">
-            <p style="font-family: var(--font-heading); font-size: clamp(1.5rem, 3vw, 2.5rem); font-style: italic; max-width: 800px; margin: 0 auto; color: var(--color-warm-ivory);">
-                "A room is not a room until it tells a story — ours begin with silence and end with light."
-            </p>
-            <p style="color: var(--color-antique-gold); margin-top: 1.5rem; letter-spacing: 0.15em; text-transform: uppercase; font-size: 0.8rem;">— Studio Manifesto, 2023</p>
+        <div class="bl-topics-list">
+            <a href="/blog" data-route class="bl-topic reveal-up"><span class="bl-topic-num">01</span><span class="bl-topic-name">Architecture</span><span class="bl-topic-count">04 essays</span></a>
+            <a href="/blog" data-route class="bl-topic reveal-up"><span class="bl-topic-num">02</span><span class="bl-topic-name">Materials</span><span class="bl-topic-count">04 essays</span></a>
+            <a href="/blog" data-route class="bl-topic reveal-up"><span class="bl-topic-num">03</span><span class="bl-topic-name">Lighting</span><span class="bl-topic-count">04 essays</span></a>
+            <a href="/blog" data-route class="bl-topic reveal-up"><span class="bl-topic-num">04</span><span class="bl-topic-name">Process</span><span class="bl-topic-count">04 essays</span></a>
+            <a href="/blog" data-route class="bl-topic reveal-up"><span class="bl-topic-num">05</span><span class="bl-topic-name">Studio Notes</span><span class="bl-topic-count">04 essays</span></a>
         </div>
+        <blockquote class="bl-manifesto reveal-up">
+            <p>"A room is not a room until it tells a story — ours begin with silence and end with light."</p>
+            <cite>— Studio Manifesto, 2023</cite>
+        </blockquote>
     </div>
 </section>
 
-<section class="section-padding" style="background-color: var(--bg-primary);">
-    <div class="container text-center reveal-up">
-        <h2 class="heading-1">The Private List</h2>
-        <p style="max-width: 520px; margin: 1rem auto 3rem; color: var(--text-muted);">
-            Receive each issue of the Journal — and occasional invitations to private studio viewings — before anyone else.
-        </p>
-        <form class="newsletter-form-inline" style="max-width: 480px; margin: 0 auto;">
+<!-- The Private List -->
+<section class="bl-newsletter" id="subscribe">
+    <div class="container bl-newsletter-inner reveal-up">
+        <p class="bl-label">04 — Correspondence</p>
+        <h2 class="bl-newsletter-title">The <em>Private List</em></h2>
+        <p class="bl-newsletter-sub">Receive each issue of the Journal — and occasional invitations to private studio viewings — before anyone else.</p>
+        <form class="newsletter-form-inline bl-newsletter-form" style="max-width: 520px; margin: 0 auto;">
             <input type="email" placeholder="Your email address" required>
-            <button type="submit" class="btn btn-primary" style="background-color: var(--color-antique-gold); color: var(--color-obsidian); border: none; font-weight: 600;">SUBSCRIBE</button>
+            <button type="submit" class="btn btn-primary" style="background-color: var(--color-obsidian); color: var(--color-antique-gold); border: none; font-weight: 600;">SUBSCRIBE</button>
         </form>
-        <div style="margin-top: 3rem;">
-            <a href="/contact" data-route class="btn btn-outline">Discuss a Commission</a>
-        </div>
+        <p class="bl-newsletter-note">One issue a month. No noise, ever.</p>
     </div>
+    <svg class="bl-badge" viewBox="0 0 200 200" aria-hidden="true">
+        <defs>
+            <path id="blBadgePath" d="M 100,100 m -75,0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0"/>
+        </defs>
+        <text><textPath href="#blBadgePath">THE PRIVATE LIST • SUBSCRIBE • THE PRIVATE LIST • </textPath></text>
+    </svg>
 </section>
 
 <style>
+    /* ---- Blog — The Journal, Premium Editorial ---- */
+    .bl-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 0.7rem;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--color-antique-gold);
+        margin-bottom: 2rem;
+    }
+    .bl-eyebrow::before {
+        content: '';
+        width: 28px;
+        height: 1px;
+        background: var(--color-antique-gold);
+        display: inline-block;
+    }
+    .bl-label {
+        font-size: 0.7rem;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--color-antique-gold);
+        margin-bottom: 2rem;
+    }
+
+    /* Hero */
+    .bl-hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        padding: 150px 0 4rem;
+        background-color: var(--bg-primary);
+    }
+    .bl-hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 5rem;
+        align-items: center;
+    }
+    .bl-hero-text { position: relative; }
+    .bl-hero-ghost {
+        position: absolute;
+        top: -5rem;
+        left: -2rem;
+        font-family: var(--font-heading);
+        font-size: clamp(5rem, 13vw, 10rem);
+        color: rgba(23, 23, 23, 0.04);
+        line-height: 1;
+        white-space: nowrap;
+        user-select: none;
+        pointer-events: none;
+        z-index: -1;
+    }
+    .theme-dark .bl-hero-ghost { color: rgba(247, 243, 237, 0.05); }
+    .bl-hero-title {
+        font-size: clamp(3rem, 7vw, 5.5rem);
+        letter-spacing: -0.02em;
+        margin-bottom: 2rem;
+    }
+    .bl-hero-title em {
+        font-style: italic;
+        color: var(--color-antique-gold);
+        display: block;
+    }
+    .bl-hero-lead {
+        max-width: 520px;
+        margin-bottom: 3rem;
+    }
+    .bl-hero-actions {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 3rem;
+    }
+    .bl-hero-meta {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        border-top: 1px solid var(--border-color);
+        padding-top: 1.5rem;
+    }
+    .bl-hero-meta span {
+        font-size: 0.7rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+    }
+    .bl-hero-meta b {
+        color: var(--color-antique-gold);
+        font-weight: 500;
+        margin-inline-end: 0.4rem;
+    }
+    .bl-hero-media { position: relative; }
+    .bl-hero-frame {
+        position: relative;
+        aspect-ratio: 4/5;
+        overflow: hidden;
+        background: var(--color-obsidian-light);
+    }
+    .bl-hero-frame::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        transform: translate(1.25rem, 1.25rem);
+        border: 1px solid var(--color-antique-gold);
+        z-index: 0;
+    }
+    .bl-hero-frame img {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        animation: blKenburns 16s ease-in-out infinite alternate;
+    }
+    @keyframes blKenburns {
+        0% { transform: scale(1) translate(0, 0); }
+        100% { transform: scale(1.1) translate(-1.5%, 1.5%); }
+    }
+    .bl-hero-caption {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-top: 1.25rem;
+        font-size: 0.7rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+    }
+
+    /* Featured */
+    .bl-featured {
+        padding: 9rem 0;
+        background-color: var(--bg-secondary);
+    }
+    .bl-featured-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+    .bl-featured-note {
+        font-family: var(--font-heading);
+        font-style: italic;
+        font-size: 1.1rem;
+        color: var(--text-muted);
+    }
+    .bl-featured-card {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+    .bl-featured-media {
+        position: relative;
+        aspect-ratio: 21/11;
+        overflow: hidden;
+    }
+    .bl-featured-media::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        transform: translate(0.75rem, 0.75rem);
+        border: 1px solid var(--color-antique-gold);
+        z-index: 0;
+    }
+    .bl-featured-media img {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .bl-featured-card:hover .bl-featured-media img { transform: scale(1.04); }
+    .bl-featured-meta {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        align-items: center;
+        margin-bottom: 1.5rem;
+    }
+    .bl-featured-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2rem, 4vw, 3.25rem);
+        font-weight: 300;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+        margin-bottom: 1.25rem;
+    }
+    .bl-featured-title a { color: inherit; }
+    .bl-featured-title em { font-style: italic; color: var(--color-antique-gold); }
+    .bl-featured-excerpt {
+        color: var(--text-muted);
+        max-width: 440px;
+        margin-bottom: 2rem;
+    }
+    .bl-featured-foot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        border-top: 1px solid var(--border-color);
+        padding-top: 1.5rem;
+    }
+    .bl-read-meta {
+        font-size: 0.7rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+    }
+
+    /* Index */
+    .bl-index {
+        padding: 9rem 0 11rem;
+        background-color: var(--bg-primary);
+    }
+    .bl-index-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 3rem;
+        margin-bottom: 3rem;
+    }
+    .bl-index-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2rem, 4vw, 3.5rem);
+        font-weight: 300;
+        letter-spacing: -0.02em;
+        margin: 0;
+    }
+    .bl-index-title em { font-style: italic; color: var(--color-antique-gold); }
+    .bl-index-copy {
+        color: var(--text-muted);
+        max-width: 380px;
+        margin: 0;
+    }
+
+    /* Filters */
+    .bl-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 4rem;
+    }
     .blog-filter-btn {
-        padding: 0.5rem 1.25rem;
+        padding: 0.6rem 1.4rem;
         border: 1px solid var(--border-color);
         background: transparent;
         color: var(--text-secondary);
-        font-size: 0.75rem;
+        font-size: 0.7rem;
         text-transform: uppercase;
-        letter-spacing: 0.15em;
+        letter-spacing: 0.2em;
         cursor: pointer;
         font-family: var(--font-body);
         transition: all 0.3s ease;
@@ -233,15 +621,307 @@
         color: var(--color-antique-gold);
     }
     .blog-filter-btn.active {
-        background-color: var(--color-antique-gold);
+        background-color: var(--color-obsidian);
+        border-color: var(--color-obsidian);
+        color: var(--color-warm-ivory);
+    }
+
+    /* Cards */
+    .bl-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2.5rem 1.75rem;
+    }
+    .bl-card {
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid var(--border-color);
+        padding-top: 1.5rem;
+    }
+    .bl-card-media {
+        position: relative;
+        aspect-ratio: 4/3;
+        overflow: hidden;
+        margin-bottom: 1.5rem;
+        background: var(--color-obsidian-light);
+    }
+    .bl-card-media::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border: 1px solid transparent;
+        transition: border-color 0.5s ease;
+    }
+    .bl-card:hover .bl-card-media::after { border-color: var(--color-antique-gold); }
+    .bl-card-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .bl-card:hover .bl-card-media img { transform: scale(1.06); }
+    .bl-card-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+    .bl-card-cat {
+        font-size: 0.7rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--color-antique-gold);
+    }
+    .bl-issue {
+        font-family: var(--font-heading);
+        font-style: italic;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+    }
+    .bl-card-title {
+        font-family: var(--font-heading);
+        font-size: clamp(1.4rem, 2vw, 1.8rem);
+        font-weight: 300;
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+        margin: 0 0 0.75rem;
+    }
+    .bl-card-title a { color: inherit; transition: color 0.3s ease; }
+    .bl-card:hover .bl-card-title a { color: var(--color-antique-gold); }
+    .bl-card-title em { font-style: italic; color: var(--color-antique-gold); }
+    .bl-card-excerpt {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+        flex: 1;
+    }
+    .bl-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 0.7rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--text-primary);
+        border-bottom: 1px solid var(--text-primary);
+        padding-bottom: 0.4rem;
+        align-self: flex-start;
+        transition: gap 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+    .bl-link:hover { gap: 1rem; color: var(--color-antique-gold); border-color: var(--color-antique-gold); }
+
+    .bl-view-wrap {
+        text-align: center;
+        margin-top: 4.5rem;
+    }
+    .blog-view-more {
+        padding: 1rem 2.5rem;
+        border: 1px solid var(--text-primary);
+        background: transparent;
+        color: var(--text-primary);
+        font-size: 0.75rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        cursor: pointer;
+        font-family: var(--font-body);
+        transition: all 0.3s ease;
+    }
+    .blog-view-more:hover {
+        background: var(--color-obsidian);
+        border-color: var(--color-obsidian);
+        color: var(--color-warm-ivory);
+    }
+
+    /* Topics */
+    .bl-topics {
+        padding: 7rem 0;
+        background-color: var(--color-obsidian);
+        color: var(--color-warm-ivory);
+    }
+    .bl-topics-head {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 2.5rem;
+    }
+    .bl-topics-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2rem, 4vw, 3.5rem);
+        font-weight: 300;
+        color: var(--color-warm-ivory);
+        margin: 0;
+    }
+    .bl-topics-title em { font-style: italic; color: var(--color-antique-gold); }
+    .bl-topics-list {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1rem;
+    }
+    .bl-topic {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 2rem;
+        padding: 1.5rem;
+        border: 1px solid rgba(247, 243, 237, 0.15);
+        color: var(--color-warm-ivory);
+        transition: border-color 0.4s ease, background 0.4s ease, transform 0.4s ease;
+    }
+    .bl-topic:hover {
         border-color: var(--color-antique-gold);
+        background: rgba(183, 154, 99, 0.06);
+        transform: translateY(-4px);
+    }
+    .bl-topic-num {
+        font-family: var(--font-heading);
+        font-style: italic;
+        font-size: 0.9rem;
+        color: var(--color-antique-gold);
+    }
+    .bl-topic-name {
+        font-family: var(--font-heading);
+        font-size: clamp(1.3rem, 2vw, 1.7rem);
+        font-weight: 300;
+        line-height: 1.15;
+        transition: color 0.4s ease;
+    }
+    .bl-topic:hover .bl-topic-name { color: var(--color-antique-gold); }
+    .bl-topic-count {
+        font-size: 0.65rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: rgba(247, 243, 237, 0.5);
+    }
+    .bl-manifesto {
+        margin: 4.5rem 0 0;
+        padding-top: 2.5rem;
+        border-top: 1px solid rgba(247, 243, 237, 0.15);
+        text-align: center;
+    }
+    .bl-manifesto p {
+        font-family: var(--font-heading);
+        font-size: clamp(1.3rem, 2.5vw, 2rem);
+        font-style: italic;
+        font-weight: 300;
+        line-height: 1.35;
+        max-width: 820px;
+        margin: 0 auto;
+        color: var(--color-warm-ivory);
+    }
+    .bl-manifesto cite {
+        display: block;
+        margin-top: 1.25rem;
+        color: var(--color-antique-gold);
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        font-style: normal;
+    }
+
+    /* Newsletter */
+    .bl-newsletter {
+        padding: 9rem 0;
+        background-color: var(--color-antique-gold);
         color: var(--color-obsidian);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    .bl-newsletter .bl-label { color: var(--color-obsidian); opacity: 0.7; }
+    .bl-newsletter-title {
+        font-family: var(--font-heading);
+        font-size: clamp(2.75rem, 6vw, 5rem);
+        font-weight: 300;
+        color: var(--color-obsidian);
+        margin: 0 0 1rem;
+        line-height: 1;
+    }
+    .bl-newsletter-title em { font-style: italic; }
+    .bl-newsletter-sub {
+        color: var(--color-obsidian);
+        opacity: 0.75;
+        max-width: 480px;
+        margin: 0 auto 2.5rem;
+    }
+    .bl-newsletter-form input {
+        border-color: var(--color-obsidian);
+        color: var(--color-obsidian);
+    }
+    .bl-newsletter-form input::placeholder { color: var(--color-obsidian); opacity: 0.5; }
+    .bl-newsletter-form .form-success {
+        border-color: var(--color-obsidian);
+        background: rgba(23, 23, 23, 0.06);
+    }
+    .bl-newsletter-form .form-success-check {
+        border-color: var(--color-obsidian);
+        color: var(--color-obsidian);
+    }
+    .bl-newsletter-form .form-success-title,
+    .bl-newsletter-form .form-success-sub {
+        color: var(--color-obsidian);
+    }
+    .bl-newsletter-note {
+        margin-top: 2rem;
+        font-size: 0.7rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--color-obsidian);
+        opacity: 0.6;
+    }
+    .bl-badge {
+        position: absolute;
+        right: -40px;
+        bottom: -40px;
+        width: 220px;
+        height: 220px;
+        color: var(--color-obsidian);
+        opacity: 0.3;
+        animation: blSpin 24s linear infinite;
+        pointer-events: none;
+    }
+    .bl-badge text {
+        font-family: var(--font-heading);
+        font-size: 12.5px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        fill: currentColor;
+    }
+    @keyframes blSpin {
+        to { transform: rotate(360deg); }
+    }
+
+    /* JS hook — keep hidden state working */
+    .blog-card[data-hidden="true"] {
+        display: none;
     }
     @keyframes blogCardIn {
         from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
     }
-    .blog-card[data-hidden="true"] {
-        display: none;
+
+    @media (max-width: 1200px) {
+        .bl-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem 1.5rem; }
+        .bl-topics-list { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 992px) {
+        .bl-hero { padding-top: 120px; }
+        .bl-hero-grid { grid-template-columns: 1fr; gap: 3rem; }
+        .bl-hero-media { max-width: 460px; }
+        .bl-featured, .bl-index, .bl-topics, .bl-newsletter { padding: 6rem 0 7rem; }
+        .bl-featured-card { grid-template-columns: 1fr; gap: 3rem; }
+        .bl-index-head { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+        .bl-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+        .bl-topics-list { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+        .bl-hero-ghost { font-size: clamp(3rem, 14vw, 5rem); top: -3rem; left: -1rem; }
+        .bl-hero-caption { flex-direction: column; gap: 0.5rem; }
+        .bl-featured-head { flex-direction: column; align-items: flex-start; gap: 1rem; }
+        .bl-grid { grid-template-columns: 1fr; }
+        .bl-topics-list { grid-template-columns: 1fr; }
+        .bl-manifesto { margin-top: 4rem; }
+        .bl-badge { display: none; }
     }
 </style>

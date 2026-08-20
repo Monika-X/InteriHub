@@ -192,7 +192,7 @@ async function handleRoute(path) {
     }
 
     // Minimal pages: hide navbar/footer, show floating controls
-    const minimalPages = ['/login', '/signup', '/dashboard'];
+    const minimalPages = ['/login', '/signup', '/dashboard', '/404', '/maintenance'];
     dom.body.classList.toggle('page-auth', minimalPages.includes(routeKey) || is404);
     
     if (path === '/dashboard') {
@@ -268,6 +268,7 @@ async function renderHome() {
             <div class="container">
                 <div class="home-hero-grid">
                     <div class="home-hero-text">
+                        <span class="home-hero-ghost" aria-hidden="true">Elegance</span>
                         <p class="home-eyebrow reveal-up">Private Interiors — Est. 2020</p>
                         <h1 class="display-1 home-hero-title reveal-up" style="transition-delay: 0.15s;">
                             Where Elegance<br><em>Meets Comfort.</em>
@@ -284,6 +285,20 @@ async function renderHome() {
                         <div class="home-hero-frame">
                             <img src="assets/images/hero-interior.jpg" alt="Luxury Interior" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';">
                         </div>
+                        <div class="home-hero-thumb">
+                            <img src="assets/images/project-1.jpg" alt="Detail" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';">
+                        </div>
+                        <div class="home-hero-badge reveal-up" style="transition-delay: 0.6s;">
+                            <svg viewBox="0 0 100 100" aria-hidden="true">
+                                <defs>
+                                    <path id="homeBadgeCircle" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"></path>
+                                </defs>
+                                <text>
+                                    <textPath href="#homeBadgeCircle">PRIVATE INTERIORS &bull; EST. 2020 &bull; NEW YORK &bull; LONDON &bull;</textPath>
+                                </text>
+                            </svg>
+                            <span class="home-hero-badge-center" aria-hidden="true">&darr;</span>
+                        </div>
                         <div class="home-hero-caption">Plate 01 — The Obsidian Residence</div>
                     </div>
                 </div>
@@ -296,11 +311,18 @@ async function renderHome() {
 
         <section class="home-band">
             <div class="container">
+                <span class="home-band-mark reveal-up" aria-hidden="true"></span>
                 <p class="home-eyebrow home-eyebrow-center reveal-up">The Studio</p>
                 <h2 class="home-statement reveal-up">
                     Every residence is a single, continuous composition — where light, proportion and material converge to shape how a home is <em>felt</em>, not just seen.
                 </h2>
                 <a href="/about" data-route class="home-underline-link reveal-up">Discover the Studio <span>&rarr;</span></a>
+                <div class="home-disciplines reveal-up">
+                    <span>Spatial Design</span><i></i>
+                    <span>Material Culture</span><i></i>
+                    <span>Artisan Craft</span><i></i>
+                    <span>Light Studies</span>
+                </div>
             </div>
         </section>
 
@@ -426,26 +448,32 @@ async function renderHome() {
                 <div class="home-journal-grid">
                     <article class="home-journal-card reveal-up">
                         <a href="/blog-details?post=sourcing-travertine" data-route>
-                            <div class="home-journal-img"><img src="https://i.pinimg.com/1200x/54/4a/69/544a69bcc199297c4c7b6386d81d58af.jpg" alt="Journal" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';"></div>
-                            <p class="home-journal-tag">Materials — 4 Min Read</p>
-                            <h3>The Quiet Power of Honest Stone</h3>
-                            <p class="home-journal-text">Why we let raw surfaces age gracefully — and how texture becomes memory.</p>
+                            <div class="home-journal-img"><img src="https://i.pinimg.com/736x/33/95/70/33957001a5d064a3237a9f689e91b52a.jpg" alt="Sourcing Italian Travertine" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';"></div>
+                            <p class="home-journal-num">01</p>
+                            <p class="home-journal-tag">Materials — 6 Min Read</p>
+                            <h3>Sourcing Italian Travertine</h3>
+                            <p class="home-journal-text">A journey to the quarries of Tivoli, east of Rome, where travertine has been pulled from the earth since the days of the Colosseum.</p>
+                            <span class="home-journal-read">Read Article &rarr;</span>
                         </a>
                     </article>
                     <article class="home-journal-card reveal-up" style="transition-delay: 0.1s;">
                         <a href="/blog-details?post=layered-light-living" data-route>
-                            <div class="home-journal-img"><img src="https://i.pinimg.com/736x/a9/0a/59/a90a59ecce0c3a7e1352f913a0110929.jpg" alt="Journal" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';"></div>
-                            <p class="home-journal-tag">Lighting — 6 Min Read</p>
-                            <h3>Light as the Fifth Wall</h3>
-                            <p class="home-journal-text">Layering daylight, task and accent light to compose rooms that shift through the day.</p>
+                            <div class="home-journal-img"><img src="https://i.pinimg.com/736x/d3/12/a0/d312a07cd64e6018409d811361cdfe34.jpg" alt="Layered Light in the Living Room" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';"></div>
+                            <p class="home-journal-num">02</p>
+                            <p class="home-journal-tag">Lighting — 4 Min Read</p>
+                            <h3>Layered Light in the Living Room</h3>
+                            <p class="home-journal-text">Combining daylight, task and accent light to compose rooms that shift through the day — three rooms by dinner, only light can do that.</p>
+                            <span class="home-journal-read">Read Article &rarr;</span>
                         </a>
                     </article>
                     <article class="home-journal-card reveal-up" style="transition-delay: 0.2s;">
                         <a href="/blog-details?post=budgeting-invisible" data-route>
-                            <div class="home-journal-img"><img src="https://i.pinimg.com/736x/5d/56/86/5d5686bf3c8b0356ddd96e829a0f8b55.jpg" alt="Journal" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';"></div>
-                            <p class="home-journal-tag">Process — 5 Min Read</p>
-                            <h3>Renovating Without Displacing a Life</h3>
-                            <p class="home-journal-text">A behind-the-scenes look at how we stage construction around the families who call it home.</p>
+                            <div class="home-journal-img"><img src="https://i.pinimg.com/736x/2b/cb/a5/2bcba5fad2e3953134d42035da8b6afa.jpg" alt="Budgeting the Invisible" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';"></div>
+                            <p class="home-journal-num">03</p>
+                            <p class="home-journal-tag">Process — 6 Min Read</p>
+                            <h3>Budgeting the Invisible</h3>
+                            <p class="home-journal-text">Why the most important spend in any renovation is the part you never see — the unglamorous skeleton that makes luxury possible.</p>
+                            <span class="home-journal-read">Read Article &rarr;</span>
                         </a>
                     </article>
                 </div>
@@ -454,8 +482,9 @@ async function renderHome() {
 
         <section class="home-quote">
             <div class="container">
+                <p class="home-quote-mark reveal-up" aria-hidden="true">&ldquo;</p>
                 <p class="home-quote-text reveal-up">
-                    &ldquo;InteriHub doesn't decorate rooms — they compose them. Every corner feels deliberate, every material speaks.&rdquo;
+                    InteriHub doesn't decorate rooms — they compose them. Every corner feels deliberate, every material speaks.
                 </p>
                 <p class="home-quote-attr reveal-up">— The Harrison Family, Manhattan</p>
                 <div class="home-quote-actions reveal-up">
@@ -515,6 +544,21 @@ async function renderHome() {
                 gap: 5rem;
                 align-items: center;
             }
+            .home-hero-text { position: relative; }
+            .home-hero-ghost {
+                position: absolute;
+                top: -5rem;
+                left: -2rem;
+                font-family: var(--font-heading);
+                font-size: clamp(5rem, 13vw, 10rem);
+                color: rgba(23, 23, 23, 0.04);
+                line-height: 1;
+                white-space: nowrap;
+                user-select: none;
+                pointer-events: none;
+                z-index: -1;
+            }
+            .theme-dark .home-hero-ghost { color: rgba(247, 243, 237, 0.05); }
             .home-hero-title {
                 margin-bottom: 2rem;
                 letter-spacing: -0.02em;
@@ -527,6 +571,7 @@ async function renderHome() {
                 max-width: 500px;
                 margin-bottom: 3rem;
             }
+            .home-hero-media { position: relative; }
             .home-hero-frame {
                 position: relative;
                 aspect-ratio: 4/5;
@@ -550,6 +595,59 @@ async function renderHome() {
                 transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
             .home-hero-frame:hover img { transform: scale(1.04); }
+            .home-hero-thumb {
+                position: absolute;
+                left: -18%;
+                bottom: 10%;
+                width: 44%;
+                aspect-ratio: 4/5;
+                border: 6px solid var(--bg-primary);
+                overflow: hidden;
+                z-index: 2;
+            }
+            .home-hero-thumb img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                filter: saturate(0.92);
+                transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
+            .home-hero-thumb:hover img { transform: scale(1.06); }
+            .home-hero-badge {
+                position: absolute;
+                right: -3.25rem;
+                bottom: -2.25rem;
+                width: 132px;
+                height: 132px;
+                z-index: 3;
+                animation: homeBadgeSpin 16s linear infinite;
+            }
+            .home-hero-badge svg { width: 100%; height: 100%; }
+            .home-hero-badge text {
+                font-size: 7.5px;
+                letter-spacing: 0.22em;
+                text-transform: uppercase;
+                fill: var(--color-antique-gold);
+                font-family: var(--font-body);
+            }
+            .home-hero-badge-center {
+                position: absolute;
+                inset: 0;
+                margin: auto;
+                width: 42px;
+                height: 42px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: var(--color-antique-gold);
+                color: var(--color-obsidian);
+                border-radius: 50%;
+                font-size: 1rem;
+            }
+            @keyframes homeBadgeSpin {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
             .home-hero-caption {
                 display: flex;
                 justify-content: space-between;
@@ -576,6 +674,39 @@ async function renderHome() {
                 padding: 9rem 0;
                 background-color: var(--bg-secondary);
                 text-align: center;
+                position: relative;
+                overflow: hidden;
+            }
+            .home-band-mark {
+                display: block;
+                width: 10px;
+                height: 10px;
+                margin: 0 auto 2.5rem;
+                border: 1px solid var(--color-antique-gold);
+                transform: rotate(45deg);
+            }
+            .home-disciplines {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 1.25rem;
+                margin-top: 4rem;
+                padding-top: 2rem;
+                border-top: 1px solid var(--border-color);
+            }
+            .home-disciplines span {
+                font-size: 0.7rem;
+                letter-spacing: 0.25em;
+                text-transform: uppercase;
+                color: var(--text-muted);
+            }
+            .home-disciplines i {
+                width: 4px;
+                height: 4px;
+                border-radius: 50%;
+                background: var(--color-antique-gold);
+                display: inline-block;
             }
             .home-statement {
                 font-family: var(--font-heading);
@@ -815,6 +946,13 @@ async function renderHome() {
                 letter-spacing: 0.2em;
                 margin-bottom: 0.75rem;
             }
+            .home-journal-num {
+                font-family: var(--font-heading);
+                font-size: 1rem;
+                font-style: italic;
+                color: var(--color-antique-gold);
+                margin-bottom: 0.5rem;
+            }
             .home-journal-card h3 {
                 font-family: var(--font-heading);
                 font-size: 1.5rem;
@@ -826,7 +964,20 @@ async function renderHome() {
             .home-journal-text {
                 color: var(--text-muted);
                 font-size: 0.9rem;
-                margin: 0;
+                margin-bottom: 1.25rem;
+            }
+            .home-journal-read {
+                font-size: 0.7rem;
+                letter-spacing: 0.25em;
+                text-transform: uppercase;
+                color: var(--text-primary);
+                border-bottom: 1px solid var(--border-color);
+                padding-bottom: 0.35rem;
+                transition: color 0.3s ease, border-color 0.3s ease;
+            }
+            .home-journal-card:hover .home-journal-read {
+                color: var(--color-antique-gold);
+                border-color: var(--color-antique-gold);
             }
 
             .home-quote {
@@ -834,6 +985,13 @@ async function renderHome() {
                 background-color: var(--color-obsidian);
                 color: var(--color-warm-ivory);
                 text-align: center;
+            }
+            .home-quote-mark {
+                font-family: var(--font-heading);
+                font-size: clamp(5rem, 10vw, 8rem);
+                line-height: 0.4;
+                color: var(--color-antique-gold);
+                margin-bottom: 2rem;
             }
             .home-quote-text {
                 font-family: var(--font-heading);
@@ -863,7 +1021,9 @@ async function renderHome() {
             @media (max-width: 992px) {
                 .home-hero-grid { grid-template-columns: 1fr; gap: 3rem; }
                 .home-hero-meta { margin-top: 2.5rem; }
-                .home-hero-frame { max-width: 460px; }
+                .home-hero-media { max-width: 460px; }
+                .home-hero-thumb { left: auto; right: -1rem; width: 40%; }
+                .home-hero-badge { right: -1rem; width: 110px; height: 110px; }
                 .home-philosophy-grid { grid-template-columns: 1fr; gap: 3rem; }
                 .home-process-grid { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
                 .home-journal-grid { grid-template-columns: 1fr; }
@@ -871,6 +1031,8 @@ async function renderHome() {
                 .home-works-grid { grid-template-columns: 1fr; gap: 2.5rem; }
             }
             @media (max-width: 640px) {
+                .home-hero-ghost { font-size: clamp(3rem, 14vw, 5rem); top: -3rem; left: -1rem; }
+                .home-hero-badge { width: 92px; height: 92px; }
                 .home-works { padding: 5rem 0 6rem; }
                 .home-work-card-body { flex-direction: column; gap: 0.25rem; align-items: flex-start; }
                 .home-work-card-body p { text-align: start; }
@@ -890,13 +1052,18 @@ async function render404() {
     } catch (e) {
         // Fallback
     }
-    return `<div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background-color: var(--bg-primary);">
-        <div>
-            <h1 class="display-1">404</h1>
-            <p class="text-lead">Page not found.</p>
-            <a href="/" data-route class="btn btn-primary" style="margin-top: 2rem;">Return Home</a>
+    return `<section style="min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:120px 24px;background-color:var(--bg-primary);">
+        <div style="position:relative;z-index:1;max-width:640px;width:100%;padding:4rem 3rem;border:1px solid var(--border-color);background:var(--bg-primary);box-shadow:0 40px 80px -40px rgba(0,0,0,0.2);">
+            <span style="position:absolute;top:-2.5rem;left:50%;transform:translateX(-50%);font-family:var(--font-heading);font-style:italic;font-size:4.5rem;color:rgba(23,23,23,0.05);white-space:nowrap;user-select:none;pointer-events:none;line-height:1;">Error</span>
+            <p style="font-family:var(--font-heading);font-size:clamp(5rem,18vw,10rem);font-weight:300;line-height:0.9;color:var(--text-primary);margin:0 0 1.5rem;">4<span style="font-style:italic;color:var(--color-antique-gold);">0</span>4</p>
+            <h1 style="font-family:var(--font-heading);font-size:clamp(1.5rem,3.5vw,2.5rem);font-weight:300;margin:0 0 1.25rem;">Space <em style="font-style:italic;color:var(--color-antique-gold);">Not Found</em></h1>
+            <p style="color:var(--text-muted);max-width:420px;margin:0 auto 2.5rem;line-height:1.7;font-size:0.95rem;">The page you are looking for has been relocated or never existed — an empty volume awaiting its first line.</p>
+            <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+                <a href="/" data-route style="display:inline-block;padding:1rem 2.25rem;border:1px solid var(--color-obsidian);background:var(--color-obsidian);color:var(--color-warm-ivory);font-size:0.72rem;letter-spacing:0.3em;text-transform:uppercase;">Return Home</a>
+                <a href="/sitemap" data-route style="display:inline-block;padding:1rem 2.25rem;border:1px solid var(--text-primary);color:var(--text-primary);font-size:0.72rem;letter-spacing:0.3em;text-transform:uppercase;">View Sitemap</a>
+            </div>
         </div>
-    </div>`;
+    </section>`;
 }
 
 // --- Blog Filters ---
@@ -1163,44 +1330,347 @@ async function renderBlogDetails() {
 
 function buildBlogPostHTML(post) {
     const postOrder = Object.keys(BLOG_POSTS);
-    const idx = postOrder.indexOf(post.title ? Object.keys(BLOG_POSTS).find(k => BLOG_POSTS[k] === post) : -1);
+    const idx = postOrder.indexOf(Object.keys(BLOG_POSTS).find(k => BLOG_POSTS[k] === post));
+    const issue = String(idx + 1).padStart(2, '0');
     const prev = idx > 0 ? BLOG_POSTS[postOrder[idx - 1]] : null;
     const next = idx < postOrder.length - 1 ? BLOG_POSTS[postOrder[idx + 1]] : null;
     const prevSlug = prev ? Object.keys(BLOG_POSTS).find(k => BLOG_POSTS[k] === prev) : null;
     const nextSlug = next ? Object.keys(BLOG_POSTS).find(k => BLOG_POSTS[k] === next) : null;
 
-    const sections = post.sections.map(s => `
-        <h2 class="heading-1" style="margin: 3rem 0 1.5rem; color: var(--text-primary);">${s.heading}</h2>
-        <p style="margin-bottom: 2rem;">${s.body}</p>
+    const sections = post.sections.map((s, i) => `
+        <div class="bd-section">
+            <p class="bd-section-num">${String(i + 1).padStart(2, '0')}</p>
+            <h2 class="bd-section-title">${s.heading}</h2>
+            <p class="bd-section-body">${s.body}</p>
+        </div>
     `).join('');
 
+    const prevCard = prev && prevSlug ? `
+        <a href="/blog-details?post=${prevSlug}" data-route class="bd-pn bd-prev">
+            <span class="bd-pn-img"><img src="${prev.image}" alt="${prev.title}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';"></span>
+            <span class="bd-pn-body">
+                <span class="bd-pn-label">&larr; Previous Essay</span>
+                <span class="bd-pn-title">${prev.title}</span>
+            </span>
+        </a>` : '<span></span>';
+
+    const nextCard = next && nextSlug ? `
+        <a href="/blog-details?post=${nextSlug}" data-route class="bd-pn bd-next">
+            <span class="bd-pn-img"><img src="${next.image}" alt="${next.title}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';"></span>
+            <span class="bd-pn-body">
+                <span class="bd-pn-label">Next Essay &rarr;</span>
+                <span class="bd-pn-title">${next.title}</span>
+            </span>
+        </a>` : '<span></span>';
+
     return `
-        <section class="section-padding" style="padding-top: 150px; background-color: var(--bg-primary);">
-            <div class="container" style="max-width: 900px;">
-                <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;" class="reveal-up">${post.category}</p>
-                <h1 class="display-2 reveal-up" style="margin-bottom: 2rem;">${post.title}</h1>
-                <div style="display: flex; gap: 2rem; color: var(--text-muted); font-size: 0.875rem; border-bottom: 1px solid var(--border-color); padding-bottom: 2rem; margin-bottom: 4rem;" class="reveal-up">
-                    <span>By ${post.author}</span>
+        <section class="bd-hero">
+            <div class="container">
+                <span class="bd-ghost" aria-hidden="true">Essay</span>
+                <div class="bd-topline reveal-up">
+                    <p class="bd-cat">${post.category}</p>
+                    <p class="bd-issue">The Journal &mdash; Issue 04 &middot; ${issue}</p>
+                </div>
+                <h1 class="bd-title reveal-up">${post.title}</h1>
+                <div class="bd-meta reveal-up">
+                    <span><b>By</b> ${post.author}</span>
                     <span>${post.date}</span>
                     <span>${post.readTime}</span>
                 </div>
-                <div class="reveal-up" style="margin-bottom: 4rem;">
-                    <img src="${post.image}" alt="${post.title}" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
-                </div>
-                <div class="reveal-up" style="font-size: 1.125rem; line-height: 1.8; color: var(--text-secondary);">
-                    <p style="margin-bottom: 2rem;">${post.intro}</p>
+                <p class="bd-standfirst reveal-up">${post.intro}</p>
+            </div>
+        </section>
+        <section class="bd-article">
+            <div class="container bd-article-inner">
+                <figure class="bd-media reveal-up">
+                    <img src="${post.image}" alt="${post.title}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';">
+                    <figcaption><span>Plate ${issue}</span> ${post.category}</figcaption>
+                </figure>
+                <div class="bd-body reveal-up">
                     ${sections}
-                    <blockquote style="border-left: 2px solid var(--color-antique-gold); padding-left: 2rem; margin: 3rem 0; font-family: var(--font-heading); font-size: 2rem; color: var(--text-primary); font-style: italic;">
-                        &ldquo;${post.quote}&rdquo;
+                    <blockquote class="bd-quote">
+                        <span class="bd-quote-mark" aria-hidden="true">&ldquo;</span>
+                        <p>${post.quote}</p>
                     </blockquote>
-                    <p style="margin-bottom: 2rem;">${post.outro}</p>
-                </div>
-                <div class="reveal-up" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 2rem; margin-top: 4rem;">
-                    ${prev && prevSlug ? `<a href="/blog-details?post=${prevSlug}" data-route class="btn btn-outline">&larr; ${prev.title}</a>` : '<span></span>'}
-                    ${next && nextSlug ? `<a href="/blog-details?post=${nextSlug}" data-route class="btn btn-outline">${next.title} &rarr;</a>` : ''}
+                    <p class="bd-outro">${post.outro}</p>
                 </div>
             </div>
-        </section>`;
+        </section>
+        <section class="bd-footer">
+            <div class="container">
+                <a href="/blog" data-route class="bd-back"><span aria-hidden="true">&larr;</span> Back to The Journal</a>
+                <div class="bd-prevnext">
+                    ${prevCard}
+                    ${nextCard}
+                </div>
+            </div>
+        </section>
+        <style>
+            /* ---- Blog Details — Premium Editorial ---- */
+            .bd-hero {
+                position: relative;
+                overflow: hidden;
+                padding: 190px 0 5rem;
+                background-color: var(--bg-primary);
+            }
+            .bd-ghost {
+                position: absolute;
+                top: 4rem;
+                right: -2rem;
+                font-family: var(--font-heading);
+                font-style: italic;
+                font-size: clamp(5rem, 14vw, 11rem);
+                color: rgba(23, 23, 23, 0.04);
+                line-height: 1;
+                white-space: nowrap;
+                user-select: none;
+                pointer-events: none;
+                z-index: 0;
+            }
+            .theme-dark .bd-ghost { color: rgba(247, 243, 237, 0.05); }
+            .bd-topline {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 2rem;
+                margin-bottom: 2.5rem;
+                position: relative;
+                z-index: 1;
+            }
+            .bd-cat {
+                font-size: 0.7rem;
+                letter-spacing: 0.35em;
+                text-transform: uppercase;
+                color: var(--color-antique-gold);
+                margin: 0;
+            }
+            .bd-issue {
+                font-size: 0.7rem;
+                letter-spacing: 0.25em;
+                text-transform: uppercase;
+                color: var(--text-muted);
+                margin: 0;
+            }
+            .bd-title {
+                max-width: 960px;
+                font-family: var(--font-heading);
+                font-size: clamp(2.75rem, 6vw, 5rem);
+                font-weight: 300;
+                letter-spacing: -0.02em;
+                line-height: 1.05;
+                margin: 0 0 2.5rem;
+                position: relative;
+                z-index: 1;
+            }
+            .bd-meta {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1.5rem;
+                border-top: 1px solid var(--border-color);
+                border-bottom: 1px solid var(--border-color);
+                padding: 1.25rem 0;
+                margin-bottom: 2.5rem;
+                position: relative;
+                z-index: 1;
+            }
+            .bd-meta span {
+                font-size: 0.7rem;
+                letter-spacing: 0.2em;
+                text-transform: uppercase;
+                color: var(--text-muted);
+            }
+            .bd-meta b { color: var(--color-antique-gold); font-weight: 500; }
+            .bd-standfirst {
+                max-width: 760px;
+                font-family: var(--font-heading);
+                font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+                font-weight: 300;
+                font-style: italic;
+                line-height: 1.5;
+                color: var(--text-secondary);
+                margin: 0;
+                position: relative;
+                z-index: 1;
+            }
+
+            .bd-article {
+                padding: 0 0 8rem;
+                background-color: var(--bg-primary);
+            }
+            .bd-article-inner {
+                max-width: 920px;
+            }
+            .bd-media {
+                margin: 0 0 5rem;
+                position: relative;
+            }
+            .bd-media::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                transform: translate(1rem, 1rem);
+                border: 1px solid var(--color-antique-gold);
+                z-index: 0;
+            }
+            .bd-media img {
+                position: relative;
+                z-index: 1;
+                width: 100%;
+                aspect-ratio: 21/10;
+                object-fit: cover;
+                background: var(--color-obsidian-light);
+            }
+            .bd-media figcaption {
+                display: flex;
+                justify-content: space-between;
+                gap: 1rem;
+                margin-top: 1.25rem;
+                font-size: 0.7rem;
+                letter-spacing: 0.25em;
+                text-transform: uppercase;
+                color: var(--text-muted);
+                position: relative;
+                z-index: 1;
+            }
+            .bd-media figcaption span { color: var(--color-antique-gold); }
+
+            .bd-body {
+                max-width: 760px;
+                margin: 0 auto;
+                font-size: 1.1rem;
+                line-height: 1.85;
+                color: var(--text-secondary);
+            }
+            .bd-section {
+                margin-bottom: 3.5rem;
+                border-top: 1px solid var(--border-color);
+                padding-top: 2.5rem;
+            }
+            .bd-section-num {
+                font-family: var(--font-heading);
+                font-style: italic;
+                font-size: 0.9rem;
+                letter-spacing: 0.2em;
+                color: var(--color-antique-gold);
+                margin: 0 0 1.25rem;
+            }
+            .bd-section-title {
+                font-family: var(--font-heading);
+                font-size: clamp(1.6rem, 3vw, 2.2rem);
+                font-weight: 300;
+                letter-spacing: -0.01em;
+                color: var(--text-primary);
+                margin: 0 0 1.5rem;
+            }
+            .bd-section-body { margin: 0; }
+
+            .bd-quote {
+                margin: 4rem 0;
+                padding: 3rem 2rem;
+                text-align: center;
+                background: var(--bg-secondary);
+                border-top: 1px solid var(--color-antique-gold);
+                border-bottom: 1px solid var(--color-antique-gold);
+            }
+            .bd-quote-mark {
+                display: block;
+                font-family: var(--font-heading);
+                font-size: 4rem;
+                line-height: 0.6;
+                color: var(--color-antique-gold);
+                margin-bottom: 1.5rem;
+            }
+            .bd-quote p {
+                font-family: var(--font-heading);
+                font-size: clamp(1.5rem, 3vw, 2.25rem);
+                font-weight: 300;
+                font-style: italic;
+                line-height: 1.35;
+                color: var(--text-primary);
+                margin: 0;
+            }
+            .bd-outro {
+                color: var(--text-muted);
+                font-size: 1.05rem;
+                border-inline-start: 1px solid var(--color-antique-gold);
+                padding-inline-start: 1.5rem;
+            }
+
+            .bd-footer {
+                padding: 6rem 0 8rem;
+                background-color: var(--bg-secondary);
+            }
+            .bd-back {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.75rem;
+                font-size: 0.75rem;
+                letter-spacing: 0.25em;
+                text-transform: uppercase;
+                color: var(--text-primary);
+                border-bottom: 1px solid var(--text-primary);
+                padding-bottom: 0.5rem;
+                margin-bottom: 4rem;
+                transition: gap 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+            }
+            .bd-back:hover { gap: 1.25rem; color: var(--color-antique-gold); border-color: var(--color-antique-gold); }
+            .bd-prevnext {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
+            }
+            .bd-pn {
+                display: grid;
+                grid-template-columns: 140px 1fr;
+                gap: 1.5rem;
+                align-items: center;
+                padding: 1.5rem;
+                border: 1px solid var(--border-color);
+                background: var(--bg-primary);
+                color: var(--text-primary);
+                transition: border-color 0.4s ease, transform 0.4s ease;
+            }
+            .bd-pn:hover { border-color: var(--color-antique-gold); transform: translateY(-4px); }
+            .bd-pn.next { text-align: end; grid-template-columns: 1fr 140px; }
+            .bd-pn.next .bd-pn-body { order: 1; }
+            .bd-pn.next .bd-pn-img { order: 2; }
+            .bd-pn-img { overflow: hidden; display: block; }
+            .bd-pn-img img {
+                display: block;
+                width: 100%;
+                aspect-ratio: 16/11;
+                object-fit: cover;
+                transition: transform 0.6s ease;
+            }
+            .bd-pn:hover .bd-pn-img img { transform: scale(1.05); }
+            .bd-pn-body { display: flex; flex-direction: column; gap: 0.5rem; }
+            .bd-pn-label {
+                font-size: 0.65rem;
+                letter-spacing: 0.25em;
+                text-transform: uppercase;
+                color: var(--color-antique-gold);
+            }
+            .bd-pn-title {
+                font-family: var(--font-heading);
+                font-size: clamp(1.2rem, 2vw, 1.6rem);
+                font-weight: 300;
+                line-height: 1.2;
+            }
+
+            @media (max-width: 992px) {
+                .bd-hero { padding-top: 140px; }
+                .bd-prevnext { grid-template-columns: 1fr; }
+            }
+            @media (max-width: 640px) {
+                .bd-topline { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+                .bd-media::after { transform: translate(0.5rem, 0.5rem); }
+                .bd-media img { aspect-ratio: 16/9; }
+                .bd-pn, .bd-pn.next { grid-template-columns: 1fr; text-align: start; }
+                .bd-pn.next .bd-pn-body { order: 2; }
+                .bd-pn.next .bd-pn-img { order: 1; }
+                .bd-pn-img img { aspect-ratio: 16/9; }
+            }
+        </style>`;
 }
 
 // --- Dashboard Logic ---
@@ -1366,11 +1836,87 @@ function sendMessage() {
     }, 1600);
 }
 
+// --- Global Form Success Handling ---
+function formSuccessMessage(form) {
+    const isNewsletter = form.classList.contains('newsletter-form-inline');
+    const hasPassword = !!form.querySelector('input[type="password"]');
+    const hasSelect = !!form.querySelector('select');
+    const hasTextarea = !!form.querySelector('textarea');
+
+    if (isNewsletter) {
+        return {
+            title: "You're on the list.",
+            sub: "Welcome to The Private List — issue No. 05 arrives soon."
+        };
+    }
+    if (hasPassword) {
+        return {
+            title: "Welcome back.",
+            sub: "You've signed in successfully."
+        };
+    }
+    if (hasSelect && !hasTextarea) {
+        return {
+            title: "Request received.",
+            sub: "Our team will review your access request within 48 hours."
+        };
+    }
+    if (hasTextarea) {
+        return {
+            title: "Message sent.",
+            sub: "Thank you — we'll respond within two business days."
+        };
+    }
+    return {
+        title: "Thank you.",
+        sub: "Your submission has been received."
+    };
+}
+
+function showFormSuccess(form) {
+    const msg = formSuccessMessage(form);
+    const savedHTML = form.innerHTML;
+    const isLogin = !!form.querySelector('input[type="password"]');
+    const isAuth = isLogin || (!!form.querySelector('select') && !form.querySelector('textarea'));
+
+    form.innerHTML = `
+        <div class="form-success" role="status">
+            <span class="form-success-check" aria-hidden="true">✓</span>
+            <p class="form-success-title">${msg.title}</p>
+            <p class="form-success-sub">${msg.sub}</p>
+        </div>`;
+
+    const restore = () => {
+        form.innerHTML = savedHTML;
+        form.removeAttribute('data-refreshed');
+    };
+
+    if (isAuth) {
+        setTimeout(() => {
+            window.location.hash = isLogin ? '/dashboard' : '/login';
+            setTimeout(restore, 600);
+        }, 1600);
+    } else {
+        setTimeout(restore, 4200);
+    }
+}
+
+function initGlobalForms() {
+    document.addEventListener('submit', (e) => {
+        const form = e.target.closest('form');
+        if (!form) return;
+        if (form.hasAttribute('data-no-success')) return;
+        e.preventDefault();
+        showFormSuccess(form);
+    });
+}
+
 // --- Initialization ---
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     initRTL();
     initNavigation();
     initProfileMenu();
+    initGlobalForms();
     initRouter();
 });

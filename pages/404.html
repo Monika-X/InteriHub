@@ -1,14 +1,193 @@
-<!-- 404 Error Page -->
-<section style="min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background-color: var(--bg-primary); padding: 100px 0;">
-    <div class="container reveal-up">
-        <h1 class="display-1" style="font-size: clamp(6rem, 15vw, 12rem); color: var(--color-antique-gold); line-height: 1; margin-bottom: 1rem;">404</h1>
-        <h2 class="heading-1" style="margin-bottom: 2rem;">Space Not Found</h2>
-        <p class="text-lead" style="max-width: 500px; margin: 0 auto 3rem; color: var(--text-muted);">
-            It appears you've wandered into an uncharted architectural volume. The page you are looking for has been relocated or no longer exists.
-        </p>
-        <div style="display: flex; gap: 1rem; justify-content: center;">
-            <a href="/" data-route class="btn btn-primary">Return Home</a>
-            <a href="/sitemap" data-route class="btn btn-outline">View Sitemap</a>
+<!-- 404 Error Page — Premium Editorial -->
+<section class="nf-page">
+    <svg class="nf-plan" viewBox="0 0 600 600" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M40 560 L40 140 L140 40 L560 40"/>
+            <path d="M140 40 L140 240 L340 240 L340 560"/>
+            <path d="M40 360 L100 360"/>
+            <path d="M100 360 L100 300 L160 300"/>
+            <circle cx="520" cy="120" r="3" fill="currentColor" stroke="none"/>
+            <path d="M520 120 L520 80"/>
+            <path d="M80 520 L80 460"/>
+            <path d="M80 460 L140 460"/>
+        </g>
+    </svg>
+
+    <div class="nf-inner">
+        <span class="nf-ghost" aria-hidden="true">Error</span>
+        <p class="nf-code reveal-up">4<span aria-hidden="true">0</span>4</p>
+        <h1 class="nf-title reveal-up">Space <em>Not Found</em></h1>
+        <p class="nf-lead reveal-up">The page you are looking for has been relocated or never existed — an empty volume awaiting its first line.</p>
+        <div class="nf-actions reveal-up">
+            <a href="/" data-route class="nf-btn nf-btn-solid">Return Home</a>
+            <a href="/sitemap" data-route class="nf-btn">View Sitemap</a>
         </div>
     </div>
+
+    <div class="nf-corner nf-corner-tl" aria-hidden="true"></div>
+    <div class="nf-corner nf-corner-tr" aria-hidden="true"></div>
+    <div class="nf-corner nf-corner-bl" aria-hidden="true"></div>
+    <div class="nf-corner nf-corner-br" aria-hidden="true"></div>
+
+    <p class="nf-coords">40&deg;44&prime;N &middot; 73&deg;59&prime;W &mdash; UNCHARTED VOLUME</p>
 </section>
+
+<style>
+    /* ---- 404 — Premium Editorial ---- */
+    .nf-page {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        padding: 120px 24px;
+        background-color: var(--bg-primary);
+    }
+    .nf-plan {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: min(70vw, 560px);
+        height: min(70vw, 560px);
+        transform: translate(-50%, -50%);
+        color: var(--color-antique-gold);
+        opacity: 0.18;
+        pointer-events: none;
+    }
+    .nf-inner {
+        position: relative;
+        z-index: 1;
+        max-width: 640px;
+        width: 100%;
+        padding: 4rem 3rem;
+        border: 1px solid var(--border-color);
+        background: var(--bg-primary);
+        box-shadow: 0 40px 80px -40px rgba(0, 0, 0, 0.2);
+    }
+    .nf-inner::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        transform: translate(0.75rem, 0.75rem);
+        border: 1px solid var(--color-antique-gold);
+        z-index: -1;
+    }
+    .nf-ghost {
+        position: absolute;
+        top: -2.75rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: var(--font-heading);
+        font-style: italic;
+        font-size: 5rem;
+        color: rgba(23, 23, 23, 0.05);
+        white-space: nowrap;
+        user-select: none;
+        pointer-events: none;
+        line-height: 1;
+    }
+    .theme-dark .nf-ghost { color: rgba(247, 243, 237, 0.06); }
+    .nf-code {
+        font-family: var(--font-heading);
+        font-size: clamp(5rem, 18vw, 11rem);
+        font-weight: 300;
+        line-height: 0.9;
+        color: var(--text-primary);
+        margin: 0 0 1.5rem;
+        letter-spacing: -0.02em;
+    }
+    .nf-code span {
+        font-style: italic;
+        color: var(--color-antique-gold);
+        display: inline-block;
+        animation: nfFloat 4s ease-in-out infinite;
+    }
+    @keyframes nfFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-0.35rem); }
+    }
+    .nf-title {
+        font-family: var(--font-heading);
+        font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+        font-weight: 300;
+        letter-spacing: -0.01em;
+        margin: 0 0 1.25rem;
+    }
+    .nf-title em { font-style: italic; color: var(--color-antique-gold); }
+    .nf-lead {
+        color: var(--text-muted);
+        max-width: 420px;
+        margin: 0 auto 2.5rem;
+        line-height: 1.7;
+        font-size: 0.95rem;
+    }
+    .nf-actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .nf-btn {
+        display: inline-block;
+        padding: 1rem 2.25rem;
+        border: 1px solid var(--text-primary);
+        color: var(--text-primary);
+        font-size: 0.72rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        transition: all 0.4s ease;
+    }
+    .nf-btn:hover {
+        border-color: var(--color-antique-gold);
+        color: var(--color-antique-gold);
+    }
+    .nf-btn-solid {
+        background: var(--color-obsidian);
+        border-color: var(--color-obsidian);
+        color: var(--color-warm-ivory);
+    }
+    .theme-dark .nf-btn-solid {
+        background: var(--color-antique-gold);
+        border-color: var(--color-antique-gold);
+        color: var(--color-obsidian);
+    }
+    .nf-btn-solid:hover {
+        background: var(--color-antique-gold);
+        border-color: var(--color-antique-gold);
+        color: var(--color-obsidian);
+    }
+    .nf-corner {
+        position: absolute;
+        width: 28px;
+        height: 28px;
+        border-color: var(--color-antique-gold);
+        border-style: solid;
+        opacity: 0.6;
+        z-index: 2;
+        pointer-events: none;
+    }
+    .nf-corner-tl { top: 28px; left: 28px; border-width: 1px 0 0 1px; }
+    .nf-corner-tr { top: 28px; right: 28px; border-width: 1px 1px 0 0; }
+    .nf-corner-bl { bottom: 28px; left: 28px; border-width: 0 0 1px 1px; }
+    .nf-corner-br { bottom: 28px; right: 28px; border-width: 0 1px 1px 0; }
+    .nf-coords {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.6rem;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        white-space: nowrap;
+        z-index: 2;
+    }
+
+    @media (max-width: 640px) {
+        .nf-inner { padding: 3rem 1.5rem; }
+        .nf-plan { opacity: 0.12; }
+        .nf-corner { width: 18px; height: 18px; }
+    }
+</style>
