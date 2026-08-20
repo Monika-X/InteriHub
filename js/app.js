@@ -264,187 +264,208 @@ function initScrollReveal() {
 
 async function renderHome() {
     return `
-        <section class="hero" style="min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; padding-top: 100px;">
-            <div class="container" style="position: relative; z-index: 2;">
-                <h1 class="display-1 reveal-up" style="max-width: 800px; margin-bottom: 2rem; transform: translateY(50px); opacity: 0; animation: fadeUp 1s forwards 0.5s;">
-                    Where Elegance Meets Comfort.
-                </h1>
-                <p class="text-lead reveal-up" style="max-width: 500px; margin-bottom: 3rem; transform: translateY(50px); opacity: 0; animation: fadeUp 1s forwards 0.7s;">
-                    Architectural elegance for modern living. We craft timeless interiors that merge profound artistic vision with sophisticated, livable spaces.
-                </p>
-                <div class="reveal-up" style="transform: translateY(50px); opacity: 0; animation: fadeUp 1s forwards 0.9s;">
-                    <a href="/services" data-route class="btn btn-primary">Begin Consultation</a>
-                </div>
-            </div>
-            
-            <!-- Hero Image Background -->
-            <div style="position: absolute; top: 0; right: 0; width: 50%; height: 100%; z-index: 1;">
-                <img src="assets/images/hero-interior.jpg" alt="Luxury Interior" style="width: 100%; height: 100%; object-fit: cover; opacity: 0; animation: fadeIn 2s forwards 0.2s;" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';">
-            </div>
-        </section>
-
-        <section class="section-padding" style="background-color: var(--bg-secondary);">
+        <section class="home-hero">
             <div class="container">
-                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem;">
-                    <h2 class="heading-1 reveal-up">Curated spaces <br>with artistic intent</h2>
-                    <a href="/portfolio" data-route class="btn btn-outline reveal-up">View Selected Works</a>
-                </div>
-                
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
-                    <!-- Card 1 -->
-                    <div class="reveal-up" style="transition-delay: 0.1s;">
-                        <div style="aspect-ratio: 3/4; overflow: hidden; margin-bottom: 1rem;">
-                            <img src="assets/images/project-1.jpg" alt="Project 1" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';">
-                        </div>
-                        <h3>The Obsidian Residence</h3>
-                        <p style="color: var(--text-muted)">Living Room Design</p>
-                    </div>
-                    <!-- Card 2 -->
-                    <div class="reveal-up" style="transition-delay: 0.3s; transform: translateY(40px);">
-                        <div style="aspect-ratio: 3/4; overflow: hidden; margin-bottom: 1rem;">
-                            <img src="assets/images/project-2.jpg" alt="Project 2" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';">
-                        </div>
-                        <h3>Ivory Coastal Villa</h3>
-                        <p style="color: var(--text-muted)">Full Home Renovation</p>
-                    </div>
-                    <!-- Card 3 -->
-                    <div class="reveal-up" style="transition-delay: 0.5s;">
-                        <div style="aspect-ratio: 3/4; overflow: hidden; margin-bottom: 1rem;">
-                            <img src="assets/images/project-3.jpg" alt="Project 3" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';">
-                        </div>
-                        <h3>Taupe Penthouse</h3>
-                        <p style="color: var(--text-muted)">Master Suite</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-padding" style="background-color: var(--bg-primary);">
-            <div class="container">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;" class="reveal-up">
-                    <div>
-                        <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 1rem;">Design Philosophy</p>
-                        <h2 class="heading-1">Spaces conceived as living architecture</h2>
-                        <p style="color: var(--text-muted); margin-top: 1.5rem; max-width: 480px;">
-                            We treat every residence as a single, continuous composition — where light, proportion and material converge to shape how a home is felt, not just seen.
+                <div class="home-hero-grid">
+                    <div class="home-hero-text">
+                        <p class="home-eyebrow reveal-up">Private Interiors — Est. 2020</p>
+                        <h1 class="display-1 home-hero-title reveal-up" style="transition-delay: 0.15s;">
+                            Where Elegance<br><em>Meets Comfort.</em>
+                        </h1>
+                        <p class="text-lead home-hero-lead reveal-up" style="transition-delay: 0.3s;">
+                            Architectural elegance for modern living. We craft timeless interiors that merge profound artistic vision with sophisticated, livable spaces.
                         </p>
-                        <div style="display: flex; gap: 1rem; margin-top: 2rem;">
-                            <a href="/about" data-route class="btn btn-outline">The Studio</a>
+                        <div class="reveal-up" style="transition-delay: 0.45s;">
+                            <a href="/services" data-route class="btn btn-primary">Begin Consultation</a>
+                            <a href="/about" data-route class="btn btn-outline" style="margin-inline-start: 1rem;">The Studio</a>
                         </div>
                     </div>
-                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
-                        <div style="border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
-                            <h3 style="font-family: var(--font-heading); font-size: 3.5rem; color: var(--color-antique-gold);">12+</h3>
-                            <p style="color: var(--text-muted); font-size: 0.875rem;">Years of practice</p>
+                    <div class="home-hero-media reveal-up" style="transition-delay: 0.3s;">
+                        <div class="home-hero-frame">
+                            <img src="assets/images/hero-interior.jpg" alt="Luxury Interior" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';">
                         </div>
-                        <div style="border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
-                            <h3 style="font-family: var(--font-heading); font-size: 3.5rem; color: var(--color-antique-gold);">240</h3>
-                            <p style="color: var(--text-muted); font-size: 0.875rem;">Projects delivered</p>
-                        </div>
-                        <div style="border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
-                            <h3 style="font-family: var(--font-heading); font-size: 3.5rem; color: var(--color-antique-gold);">18</h3>
-                            <p style="color: var(--text-muted); font-size: 0.875rem;">Design awards won</p>
-                        </div>
-                        <div style="border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
-                            <h3 style="font-family: var(--font-heading); font-size: 3.5rem; color: var(--color-antique-gold);">96%</h3>
-                            <p style="color: var(--text-muted); font-size: 0.875rem;">Client retention</p>
-                        </div>
+                        <div class="home-hero-caption">Plate 01 — The Obsidian Residence</div>
+                    </div>
+                </div>
+                <div class="home-hero-meta reveal-up">
+                    <span>New York — London — Dubai</span>
+                    <span class="home-hero-scroll">Scroll to explore &darr;</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="home-band">
+            <div class="container">
+                <p class="home-eyebrow home-eyebrow-center reveal-up">The Studio</p>
+                <h2 class="home-statement reveal-up">
+                    Every residence is a single, continuous composition — where light, proportion and material converge to shape how a home is <em>felt</em>, not just seen.
+                </h2>
+                <a href="/about" data-route class="home-underline-link reveal-up">Discover the Studio <span>&rarr;</span></a>
+            </div>
+        </section>
+
+        <section class="home-works">
+            <div class="container">
+                <div class="home-works-head reveal-up">
+                    <div>
+                        <p class="home-eyebrow">Selected Works</p>
+                        <h2 class="home-works-title">Curated spaces, <em>artistic intent</em></h2>
+                    </div>
+                    <a href="/obsidian-residence" data-route class="home-works-link">View All Works &rarr;</a>
+                </div>
+            </div>
+            <div class="container">
+                <div class="home-works-grid reveal-up">
+                <a href="/obsidian-residence" data-route class="home-work-card">
+                    <span class="home-work-card-num">I</span>
+                    <div class="home-work-card-img">
+                        <img src="assets/images/project-1.jpg" alt="The Obsidian Residence" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';">
+                        <span class="home-work-card-arrow" aria-hidden="true">&rarr;</span>
+                    </div>
+                    <div class="home-work-card-body">
+                        <h3>The Obsidian Residence</h3>
+                        <p>Living Room Design — New York</p>
+                    </div>
+                </a>
+                <a href="/ivory-coastal-villa" data-route class="home-work-card">
+                    <span class="home-work-card-num">II</span>
+                    <div class="home-work-card-img">
+                        <img src="assets/images/project-2.jpg" alt="Ivory Coastal Villa" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';">
+                        <span class="home-work-card-arrow" aria-hidden="true">&rarr;</span>
+                    </div>
+                    <div class="home-work-card-body">
+                        <h3>Ivory Coastal Villa</h3>
+                        <p>Full Home Renovation — Malibu</p>
+                    </div>
+                </a>
+                <a href="/taupe-penthouse" data-route class="home-work-card">
+                    <span class="home-work-card-num">III</span>
+                    <div class="home-work-card-img">
+                        <img src="assets/images/project-3.jpg" alt="Taupe Penthouse" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';">
+                        <span class="home-work-card-arrow" aria-hidden="true">&rarr;</span>
+                    </div>
+                    <div class="home-work-card-body">
+                        <h3>Taupe Penthouse</h3>
+                        <p>Master Suite — Manhattan</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="home-philosophy">
+            <div class="container home-philosophy-grid">
+                <div class="reveal-up">
+                    <p class="home-eyebrow">Design Philosophy</p>
+                    <h2 class="home-statement home-statement-left">Spaces conceived as <em>living architecture</em></h2>
+                    <p class="home-philosophy-text">We approach every residence as a unique dialogue between structure and soul — where light, proportion and material converge to shape how a home is felt, not just seen.</p>
+                    <a href="/about" data-route class="btn btn-outline">The Studio</a>
+                </div>
+                <div class="home-stats reveal-up">
+                    <div class="home-stat">
+                        <h3>12+</h3>
+                        <p>Years of practice</p>
+                    </div>
+                    <div class="home-stat">
+                        <h3>240</h3>
+                        <p>Projects delivered</p>
+                    </div>
+                    <div class="home-stat">
+                        <h3>18</h3>
+                        <p>Design awards won</p>
+                    </div>
+                    <div class="home-stat">
+                        <h3>96%</h3>
+                        <p>Client retention</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section-padding" style="background-color: var(--color-obsidian); color: var(--color-warm-ivory); text-align: center;">
+        <section class="home-process">
             <div class="container">
-                <p class="reveal-up" style="font-family: var(--font-heading); font-size: clamp(1.75rem, 3vw, 2.75rem); font-style: italic; max-width: 900px; margin: 0 auto; line-height: 1.4; color: var(--color-warm-ivory);">
-                    "InteriHub doesn't decorate rooms — they compose them. Every corner feels deliberate, every material speaks."
+                <div class="home-works-head reveal-up">
+                    <div>
+                        <p class="home-eyebrow">How We Work</p>
+                        <h2 class="home-works-title">A considered path from brief to home</h2>
+                    </div>
+                </div>
+                <div class="home-process-grid">
+                    <div class="home-process-step reveal-up">
+                        <span class="home-process-num">01</span>
+                        <h3>Consult</h3>
+                        <p>A private session to understand your rituals, tastes and the life the space must hold.</p>
+                    </div>
+                    <div class="home-process-step reveal-up" style="transition-delay: 0.1s;">
+                        <span class="home-process-num">02</span>
+                        <h3>Design</h3>
+                        <p>Concept boards, material studies and 3D walkthroughs refined until every detail is resolved.</p>
+                    </div>
+                    <div class="home-process-step reveal-up" style="transition-delay: 0.2s;">
+                        <span class="home-process-num">03</span>
+                        <h3>Build</h3>
+                        <p>A dedicated crew handles fabrication, procurement and installation with obsessive precision.</p>
+                    </div>
+                    <div class="home-process-step reveal-up" style="transition-delay: 0.3s;">
+                        <span class="home-process-num">04</span>
+                        <h3>Live</h3>
+                        <p>A styled handover and lifetime care program — the home continues to evolve with you.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="home-journal">
+            <div class="container">
+                <div class="home-works-head reveal-up">
+                    <div>
+                        <p class="home-eyebrow">From the Journal</p>
+                        <h2 class="home-works-title">Notes on material &amp; light</h2>
+                    </div>
+                    <a href="/blog" data-route class="btn btn-outline">All Insights</a>
+                </div>
+                <div class="home-journal-grid">
+                    <article class="home-journal-card reveal-up">
+                        <a href="/blog-details?post=sourcing-travertine" data-route>
+                            <div class="home-journal-img"><img src="https://i.pinimg.com/1200x/54/4a/69/544a69bcc199297c4c7b6386d81d58af.jpg" alt="Journal" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';"></div>
+                            <p class="home-journal-tag">Materials — 4 Min Read</p>
+                            <h3>The Quiet Power of Honest Stone</h3>
+                            <p class="home-journal-text">Why we let raw surfaces age gracefully — and how texture becomes memory.</p>
+                        </a>
+                    </article>
+                    <article class="home-journal-card reveal-up" style="transition-delay: 0.1s;">
+                        <a href="/blog-details?post=layered-light-living" data-route>
+                            <div class="home-journal-img"><img src="https://i.pinimg.com/736x/a9/0a/59/a90a59ecce0c3a7e1352f913a0110929.jpg" alt="Journal" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';"></div>
+                            <p class="home-journal-tag">Lighting — 6 Min Read</p>
+                            <h3>Light as the Fifth Wall</h3>
+                            <p class="home-journal-text">Layering daylight, task and accent light to compose rooms that shift through the day.</p>
+                        </a>
+                    </article>
+                    <article class="home-journal-card reveal-up" style="transition-delay: 0.2s;">
+                        <a href="/blog-details?post=budgeting-invisible" data-route>
+                            <div class="home-journal-img"><img src="https://i.pinimg.com/736x/5d/56/86/5d5686bf3c8b0356ddd96e829a0f8b55.jpg" alt="Journal" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';"></div>
+                            <p class="home-journal-tag">Process — 5 Min Read</p>
+                            <h3>Renovating Without Displacing a Life</h3>
+                            <p class="home-journal-text">A behind-the-scenes look at how we stage construction around the families who call it home.</p>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="home-quote">
+            <div class="container">
+                <p class="home-quote-text reveal-up">
+                    &ldquo;InteriHub doesn't decorate rooms — they compose them. Every corner feels deliberate, every material speaks.&rdquo;
                 </p>
-                <p class="reveal-up" style="color: var(--color-antique-gold); margin-top: 2rem; letter-spacing: 0.15em; text-transform: uppercase; font-size: 0.8rem;">— The Harrison Family, Manhattan</p>
-                <div class="reveal-up" style="margin-top: 3rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <p class="home-quote-attr reveal-up">— The Harrison Family, Manhattan</p>
+                <div class="home-quote-actions reveal-up">
                     <a href="/services" data-route class="btn btn-primary" style="background-color: var(--color-antique-gold); color: var(--color-obsidian); border: none;">Explore Services</a>
                     <a href="/contact" data-route class="btn btn-outline" style="color: var(--color-warm-ivory); border-color: var(--color-warm-ivory);">Begin Your Project</a>
                 </div>
             </div>
         </section>
 
-        <section class="section-padding" style="background-color: var(--bg-secondary);">
-            <div class="container">
-                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem;" class="reveal-up">
-                    <div>
-                        <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 1rem;">How We Work</p>
-                        <h2 class="heading-1">A considered path from brief to home</h2>
-                    </div>
-                </div>
-                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;">
-                    <div class="reveal-up" style="border-top: 1px solid var(--border-color); padding-top: 2rem;">
-                        <p style="font-family: var(--font-heading); font-size: 2.5rem; color: var(--color-antique-gold); margin-bottom: 1rem;">01</p>
-                        <h3 style="font-size: 1rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem;">Consult</h3>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">A private session to understand your rituals, tastes and the life the space must hold.</p>
-                    </div>
-                    <div class="reveal-up" style="transition-delay: 0.15s; border-top: 1px solid var(--border-color); padding-top: 2rem;">
-                        <p style="font-family: var(--font-heading); font-size: 2.5rem; color: var(--color-antique-gold); margin-bottom: 1rem;">02</p>
-                        <h3 style="font-size: 1rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem;">Design</h3>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Concept boards, material studies and 3D walkthroughs refined until every detail is resolved.</p>
-                    </div>
-                    <div class="reveal-up" style="transition-delay: 0.3s; border-top: 1px solid var(--border-color); padding-top: 2rem;">
-                        <p style="font-family: var(--font-heading); font-size: 2.5rem; color: var(--color-antique-gold); margin-bottom: 1rem;">03</p>
-                        <h3 style="font-size: 1rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem;">Build</h3>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">A dedicated crew handles fabrication, procurement and installation with obsessive precision.</p>
-                    </div>
-                    <div class="reveal-up" style="transition-delay: 0.45s; border-top: 1px solid var(--border-color); padding-top: 2rem;">
-                        <p style="font-family: var(--font-heading); font-size: 2.5rem; color: var(--color-antique-gold); margin-bottom: 1rem;">04</p>
-                        <h3 style="font-size: 1rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem;">Live</h3>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">A styled handover and lifetime care program — the home continues to evolve with you.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-padding" style="background-color: var(--bg-primary);">
-            <div class="container">
-                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem;" class="reveal-up">
-                    <div>
-                        <p style="color: var(--color-antique-gold); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 1rem;">From the Journal</p>
-                        <h2 class="heading-1">Notes on material & light</h2>
-                    </div>
-                    <a href="/blog" data-route class="btn btn-outline">All Insights</a>
-                </div>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
-                    <article class="reveal-up">
-                        <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
-                            <img src="https://i.pinimg.com/1200x/54/4a/69/544a69bcc199297c4c7b6386d81d58af.jpg" alt="Journal" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';">
-                        </div>
-                        <p style="color: var(--color-antique-gold); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.5rem;">Materials — 4 Min Read</p>
-                        <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">The Quiet Power of Honest Stone</h3>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Why we let raw surfaces age gracefully — and how texture becomes memory.</p>
-                    </article>
-                    <article class="reveal-up" style="transition-delay: 0.15s;">
-                        <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
-                            <img src="https://i.pinimg.com/736x/a9/0a/59/a90a59ecce0c3a7e1352f913a0110929.jpg" alt="Journal" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';">
-                        </div>
-                        <p style="color: var(--color-antique-gold); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.5rem;">Lighting — 6 Min Read</p>
-                        <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Light as the Fifth Wall</h3>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Layering daylight, task and accent light to compose rooms that shift through the day.</p>
-                    </article>
-                    <article class="reveal-up" style="transition-delay: 0.3s;">
-                        <div style="aspect-ratio: 4/3; overflow: hidden; margin-bottom: 1.5rem;">
-                            <img src="https://i.pinimg.com/736x/5d/56/86/5d5686bf3c8b0356ddd96e829a0f8b55.jpg" alt="Journal" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlYmU2ZGYiLz48L3N2Zz4=';">
-                        </div>
-                        <p style="color: var(--color-antique-gold); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.5rem;">Process — 5 Min Read</p>
-                        <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Renovating Without Displacing a Life</h3>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">A behind-the-scenes look at how we stage construction around the families who call it home.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-        
         <style>
-            @keyframes fadeUp {
-                to { transform: translateY(0); opacity: 1; }
-            }
-            @keyframes fadeIn {
-                to { opacity: 1; }
-            }
             .reveal-up {
                 opacity: 0;
                 transform: translateY(40px);
@@ -453,6 +474,408 @@ async function renderHome() {
             .reveal-up.revealed {
                 opacity: 1;
                 transform: translateY(0);
+            }
+
+            .home-eyebrow {
+                font-size: 0.7rem;
+                letter-spacing: 0.35em;
+                text-transform: uppercase;
+                color: var(--color-antique-gold);
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                margin-bottom: 2rem;
+            }
+            .home-eyebrow::before {
+                content: '';
+                width: 28px;
+                height: 1px;
+                background: var(--color-antique-gold);
+                display: inline-block;
+            }
+            .home-eyebrow-center {
+                justify-content: center;
+                margin-bottom: 3rem;
+            }
+            .home-eyebrow-center::before { display: none; }
+
+            .home-hero {
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                position: relative;
+                overflow: hidden;
+                padding-top: 110px;
+                padding-bottom: 2rem;
+                background-color: var(--bg-primary);
+            }
+            .home-hero-grid {
+                display: grid;
+                grid-template-columns: 1.1fr 0.9fr;
+                gap: 5rem;
+                align-items: center;
+            }
+            .home-hero-title {
+                margin-bottom: 2rem;
+                letter-spacing: -0.02em;
+            }
+            .home-hero-title em {
+                font-style: italic;
+                color: var(--color-antique-gold);
+            }
+            .home-hero-lead {
+                max-width: 500px;
+                margin-bottom: 3rem;
+            }
+            .home-hero-frame {
+                position: relative;
+                aspect-ratio: 4/5;
+                overflow: hidden;
+                background: var(--color-obsidian-light);
+            }
+            .home-hero-frame::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                transform: translate(1.25rem, 1.25rem);
+                border: 1px solid var(--color-antique-gold);
+                z-index: 0;
+            }
+            .home-hero-frame img {
+                position: relative;
+                z-index: 1;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
+            .home-hero-frame:hover img { transform: scale(1.04); }
+            .home-hero-caption {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 1.25rem;
+                font-size: 0.7rem;
+                letter-spacing: 0.25em;
+                text-transform: uppercase;
+                color: var(--text-muted);
+            }
+            .home-hero-meta {
+                display: flex;
+                justify-content: space-between;
+                border-top: 1px solid var(--border-color);
+                padding-top: 1.25rem;
+                margin-top: 4rem;
+                font-size: 0.7rem;
+                letter-spacing: 0.25em;
+                text-transform: uppercase;
+                color: var(--text-muted);
+            }
+            .home-hero-scroll { color: var(--color-antique-gold); }
+
+            .home-band {
+                padding: 9rem 0;
+                background-color: var(--bg-secondary);
+                text-align: center;
+            }
+            .home-statement {
+                font-family: var(--font-heading);
+                font-size: clamp(2.25rem, 5vw, 4rem);
+                font-weight: 300;
+                line-height: 1.15;
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+            .home-statement em { font-style: italic; color: var(--color-antique-gold); }
+            .home-underline-link {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.75rem;
+                margin-top: 3rem;
+                font-size: 0.75rem;
+                letter-spacing: 0.25em;
+                text-transform: uppercase;
+                color: var(--text-primary);
+                border-bottom: 1px solid var(--text-primary);
+                padding-bottom: 0.5rem;
+                transition: gap 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+            }
+            .home-underline-link:hover { gap: 1.25rem; color: var(--color-antique-gold); border-color: var(--color-antique-gold); }
+
+            .home-works {
+                padding: 6rem 0 7rem;
+                background-color: var(--bg-primary);
+            }
+            .home-works-head {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                margin-bottom: 3rem;
+            }
+            .home-works-title {
+                font-family: var(--font-heading);
+                font-size: clamp(1.75rem, 3vw, 2.5rem);
+                font-weight: 300;
+                margin: 0;
+            }
+            .home-works-title em {
+                font-style: italic;
+                color: var(--color-antique-gold);
+            }
+            .home-works-link {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                font-size: 0.7rem;
+                letter-spacing: 0.25em;
+                text-transform: uppercase;
+                color: var(--text-muted);
+                border-bottom: 1px solid var(--border-color);
+                padding-bottom: 0.4rem;
+                transition: gap 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+            }
+            .home-works-link:hover { gap: 1rem; color: var(--color-antique-gold); border-color: var(--color-antique-gold); }
+            .home-works-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2.5rem;
+                align-items: start;
+            }
+            .home-work-card { color: var(--text-primary); }
+            .home-work-card-num {
+                display: inline-block;
+                font-family: var(--font-heading);
+                font-size: 0.8rem;
+                font-style: italic;
+                color: var(--color-antique-gold);
+                margin-bottom: 0.75rem;
+                letter-spacing: 0.15em;
+            }
+            .home-work-card-img {
+                position: relative;
+                aspect-ratio: 4/3;
+                overflow: hidden;
+                background: var(--color-obsidian-light);
+                border: 1px solid var(--border-color);
+            }
+            .home-work-card-img img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
+            .home-work-card:hover .home-work-card-img img { transform: scale(1.05); }
+            .home-work-card-arrow {
+                position: absolute;
+                inset-inline-end: 0.9rem;
+                bottom: 0.9rem;
+                width: 34px;
+                height: 34px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: var(--color-warm-ivory);
+                color: var(--color-obsidian);
+                font-size: 1rem;
+                border-radius: 50%;
+                opacity: 0;
+                transform: translateY(8px);
+                transition: opacity 0.4s ease, transform 0.4s ease;
+            }
+            .home-work-card:hover .home-work-card-arrow {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .home-work-card-body {
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+                gap: 1rem;
+                margin-top: 1rem;
+                padding-top: 1rem;
+                border-top: 1px solid var(--border-color);
+            }
+            .home-work-card-body h3 {
+                font-family: var(--font-heading);
+                font-size: 1.25rem;
+                font-weight: 300;
+                margin: 0;
+                transition: color 0.4s ease;
+            }
+            .home-work-card:hover .home-work-card-body h3 { color: var(--color-antique-gold); }
+            .home-work-card-body p {
+                font-size: 0.65rem;
+                letter-spacing: 0.18em;
+                text-transform: uppercase;
+                color: var(--text-muted);
+                margin: 0;
+                text-align: end;
+            }
+
+            .home-philosophy {
+                padding: 9rem 0;
+                background-color: var(--bg-secondary);
+            }
+            .home-philosophy-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 5rem;
+                align-items: center;
+            }
+            .home-statement-left {
+                text-align: left;
+                margin: 0 0 2rem;
+                max-width: 560px;
+            }
+            .home-philosophy-text {
+                color: var(--text-muted);
+                max-width: 480px;
+                margin-bottom: 2.5rem;
+            }
+            .home-stats {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 3rem 2rem;
+            }
+            .home-stat {
+                border-top: 1px solid var(--border-color);
+                padding-top: 1.5rem;
+            }
+            .home-stat h3 {
+                font-family: var(--font-heading);
+                font-size: clamp(2.5rem, 4vw, 3.5rem);
+                font-weight: 300;
+                color: var(--color-antique-gold);
+                margin-bottom: 0.5rem;
+            }
+            .home-stat p {
+                color: var(--text-muted);
+                font-size: 0.75rem;
+                letter-spacing: 0.2em;
+                text-transform: uppercase;
+            }
+
+            .home-process {
+                padding: 9rem 0;
+                background-color: var(--bg-primary);
+            }
+            .home-process-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2rem;
+            }
+            .home-process-step {
+                border-top: 1px solid var(--border-color);
+                padding-top: 2rem;
+            }
+            .home-process-num {
+                font-family: var(--font-heading);
+                font-size: 2.5rem;
+                color: var(--color-antique-gold);
+                display: block;
+                margin-bottom: 1rem;
+            }
+            .home-process-step h3 {
+                font-size: 1rem;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                margin-bottom: 0.75rem;
+            }
+            .home-process-step p {
+                color: var(--text-muted);
+                font-size: 0.9rem;
+            }
+
+            .home-journal {
+                padding: 9rem 0;
+                background-color: var(--bg-secondary);
+            }
+            .home-journal-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+            .home-journal-card a { display: block; }
+            .home-journal-img {
+                aspect-ratio: 4/3;
+                overflow: hidden;
+                margin-bottom: 1.5rem;
+                background: var(--color-obsidian-light);
+            }
+            .home-journal-img img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
+            .home-journal-card:hover .home-journal-img img { transform: scale(1.06); }
+            .home-journal-tag {
+                color: var(--color-antique-gold);
+                font-size: 0.7rem;
+                text-transform: uppercase;
+                letter-spacing: 0.2em;
+                margin-bottom: 0.75rem;
+            }
+            .home-journal-card h3 {
+                font-family: var(--font-heading);
+                font-size: 1.5rem;
+                font-weight: 300;
+                margin-bottom: 0.75rem;
+                transition: color 0.3s ease;
+            }
+            .home-journal-card:hover h3 { color: var(--color-antique-gold); }
+            .home-journal-text {
+                color: var(--text-muted);
+                font-size: 0.9rem;
+                margin: 0;
+            }
+
+            .home-quote {
+                padding: 9rem 0;
+                background-color: var(--color-obsidian);
+                color: var(--color-warm-ivory);
+                text-align: center;
+            }
+            .home-quote-text {
+                font-family: var(--font-heading);
+                font-size: clamp(1.75rem, 4vw, 3.25rem);
+                font-style: italic;
+                font-weight: 300;
+                max-width: 900px;
+                margin: 0 auto;
+                line-height: 1.35;
+                color: var(--color-warm-ivory);
+            }
+            .home-quote-attr {
+                color: var(--color-antique-gold);
+                margin-top: 2rem;
+                letter-spacing: 0.25em;
+                text-transform: uppercase;
+                font-size: 0.75rem;
+            }
+            .home-quote-actions {
+                margin-top: 3rem;
+                display: flex;
+                gap: 1rem;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            @media (max-width: 992px) {
+                .home-hero-grid { grid-template-columns: 1fr; gap: 3rem; }
+                .home-hero-meta { margin-top: 2.5rem; }
+                .home-hero-frame { max-width: 460px; }
+                .home-philosophy-grid { grid-template-columns: 1fr; gap: 3rem; }
+                .home-process-grid { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
+                .home-journal-grid { grid-template-columns: 1fr; }
+                .home-works-head { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+                .home-works-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            }
+            @media (max-width: 640px) {
+                .home-works { padding: 5rem 0 6rem; }
+                .home-work-card-body { flex-direction: column; gap: 0.25rem; align-items: flex-start; }
+                .home-work-card-body p { text-align: start; }
+                .home-process-grid { grid-template-columns: 1fr; }
+                .home-stats { grid-template-columns: 1fr 1fr; }
             }
         </style>
     `;
