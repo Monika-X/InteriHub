@@ -1,5 +1,21 @@
 // Main Application Logic - InteriHub
 
+// Detect the GitHub Pages base path (e.g. "/InteriHub") at runtime
+// NOTE: must be declared before `state` because getRoute() reads it during initialization
+const BASE_PATH = (() => {
+    const scriptSrc = document.querySelector('script[src*="app.js"]');
+    if (scriptSrc) {
+        const src = scriptSrc.getAttribute('src');
+        const idx = src.indexOf('/js/app.js');
+        if (idx > 0) return src.slice(0, idx);
+    }
+    const parts = window.location.pathname.split('/').filter(Boolean);
+    if (parts.length > 0 && window.location.hostname.endsWith('github.io')) {
+        return '/' + parts[0];
+    }
+    return '';
+})();
+
 // --- State & Config ---
 const state = {
     theme: localStorage.getItem('theme') || 'light',
@@ -133,21 +149,6 @@ function initMobileMenu() {
         toggle(false);
     });
 }
-
-// Detect the GitHub Pages base path (e.g. "/InteriHub") at runtime
-const BASE_PATH = (() => {
-    const scriptSrc = document.querySelector('script[src*="app.js"]');
-    if (scriptSrc) {
-        const src = scriptSrc.getAttribute('src');
-        const idx = src.indexOf('/js/app.js');
-        if (idx > 0) return src.slice(0, idx);
-    }
-    const parts = window.location.pathname.split('/').filter(Boolean);
-    if (parts.length > 0 && window.location.hostname.endsWith('github.io')) {
-        return '/' + parts[0];
-    }
-    return '';
-})();
 
 function getRoute() {
     const hash = window.location.hash.replace(/^#/, '');
