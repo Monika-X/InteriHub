@@ -192,11 +192,15 @@ async function handleRoute(path) {
     }
 
     // Minimal pages: hide navbar/footer, show floating controls
-    const minimalPages = ['/login', '/signup', '/dashboard', '/404', '/maintenance'];
+    const minimalPages = ['/login', '/signup', '/dashboard', '/admin-dashboard', '/404', '/maintenance'];
     dom.body.classList.toggle('page-auth', minimalPages.includes(routeKey) || is404);
     
     if (path === '/dashboard') {
         initDashboard();
+    }
+    
+    if (path === '/admin-dashboard') {
+        initAdminDashboard();
     }
     
     if (path === '/blog') {
@@ -1671,6 +1675,488 @@ function buildBlogPostHTML(post) {
                 .bd-pn-img img { aspect-ratio: 16/9; }
             }
         </style>`;
+}
+
+// --- Admin Dashboard Logic ---
+function initAdminDashboard() {
+    // Tab navigation
+    const tabs = document.querySelectorAll('.admin-tab');
+    const sections = document.querySelectorAll('.admin-section');
+
+    function switchTab(targetId) {
+        tabs.forEach(t => t.classList.remove('active'));
+        sections.forEach(s => s.style.display = 'none');
+        const matchTab = document.querySelector(`.admin-tab[data-target="${targetId}"]`);
+        if (matchTab) matchTab.classList.add('active');
+        const sec = document.getElementById(targetId);
+        if (sec) {
+            sec.style.display = 'block';
+            sec.querySelectorAll('.reveal-up').forEach(el => {
+                el.classList.remove('revealed');
+                setTimeout(() => el.classList.add('revealed'), 50);
+            });
+        }
+        if (window.lucide) window.lucide.createIcons();
+    }
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', e => {
+            e.preventDefault();
+            switchTab(tab.getAttribute('data-target'));
+        });
+    });
+
+    // Quick action buttons
+    document.querySelectorAll('.admin-tab-trigger').forEach(btn => {
+        btn.addEventListener('click', () => switchTab(btn.getAttribute('data-target')));
+    });
+
+    // Logout
+    const logoutBtn = document.getElementById('adm-logout');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', e => {
+            e.preventDefault();
+            try { localStorage.removeItem('interihub_user'); } catch (err) {}
+            window.location.hash = '/login';
+        });
+    }
+
+    // Client search & filter
+    const clientSearch = document.getElementById('client-search');
+    if (clientSearch) {
+        clientSearch.addEventListener('input', () => {
+            const q = clientSearch.value.toLowerCase();
+            document.querySelectorAll('#clients-table tbody tr').forEach(row => {
+                row.style.display = row.textContent.toLowerCase().includes(q) ? '' : 'none';
+            });
+        });
+    }
+    document.querySelectorAll('[data-filter]').forEach(chip => {
+        chip.addEventListener('click', () => {
+            document.querySelectorAll('[data-filter]').forEach(c => c.classList.remove('active'));
+            chip.classList.add('active');
+            const f = chip.getAttribute('data-filter');
+            document.querySelectorAll('#clients-table tbody tr').forEach(row => {
+                row.style.display = (f === 'all' || row.getAttribute('data-status') === f) ? '' : 'none';
+            });
+        });
+    });
+
+    // Photo filter
+    document.querySelectorAll('[data-photo-filter]').forEach(chip => {
+        chip.addEventListener('click', () => {
+            document.querySelectorAll('[data-photo-filter]').forEach(c => c.classList.remove('active'));
+            chip.classList.add('active');
+            const f = chip.getAttribute('data-photo-filter');
+            document.querySelectorAll('.adm-photo-submission').forEach(sub => {
+                sub.style.display = (f === 'all' || sub.getAttribute('data-photo-status') === f) ? '' : 'none';
+            });
+        });
+    });
+
+    // Photo approve/retry
+    document.querySelectorAll('.adm-photo-approve').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const card = btn.closest('.adm-photo-submission');
+            const header = card.querySelector('.adm-chip');
+            if (header) { header.textContent = 'Approved'; header.className = 'adm-chip adm-chip-olive adm-chip-sm'; }
+            card.setAttribute('data-photo-status', 'approved');
+            btn.textContent = '✓ Forwarded to Designer';
+            btn.disabled = true;
+            btn.style.opacity = '0.6';
+            card.querySelector('.adm-photo-retry').style.display = 'none';
+        });
+    });
+    document.querySelectorAll('.adm-photo-retry').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const card = btn.closest('.adm-photo-submission');
+            const header = card.querySelector('.adm-chip');
+            if (header) { header.textContent = 'Retry Requested'; header.className = 'adm-chip adm-chip-clay adm-chip-sm'; }
+            card.setAttribute('data-photo-status', 'retry');
+            btn.textContent = '↩ Retry Requested';
+            btn.disabled = true;
+            btn.style.opacity = '0.6';
+            card.querySelector('.adm-photo-approve').style.display = 'none';
+        });
+    });
+
+    // Mood board dropzone
+    const moodDrop = document.getElementById('adm-mood-dropzone');
+    const moodFile = document.getElementById('adm-mood-file');
+    if (moodDrop && moodFile) {
+        moodDrop.addEventListener('click', () => moodFile.click());
+        moodFile.addEventListener('change', e => {
+            if (e.target.files.length > 0) {
+                moodDrop.querySelector('h3').textContent = e.target.files[0].name;
+            }
+        });
+    }
+
+    // Mood board form submit
+    const moodSubmit = document.getElementById('adm-mood-submit');
+    if (moodSubmit) {
+        moodSubmit.closest('form').addEventListener('submit', e => {
+            e.preventDefault();
+            const suc = document.getElementById('adm-mood-success');
+            if (suc) {
+                suc.style.display = 'flex';
+                setTimeout(() => { suc.style.display = 'none'; }, 4000);
+            }
+        });
+    }
+
+    // Mood board recall / publish
+    document.querySelectorAll('.adm-mb-recall').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const mbTop = btn.closest('.adm-mb-actions').previousElementSibling
+                ? btn.closest('.adm-mb-info').querySelector('.adm-mb-top')
+                : null;
+            const statusChip = btn.closest('.adm-mb-info') ? btn.closest('.adm-mb-info').querySelector('.adm-chip') : null;
+            if (statusChip) { statusChip.textContent = 'Recalled'; statusChip.className = 'adm-chip adm-chip-clay adm-chip-sm'; }
+            btn.textContent = 'Recalled';
+            btn.disabled = true;
+            btn.style.opacity = '0.5';
+            admToast('Mood board recalled from client portal.');
+        });
+    });
+    document.querySelectorAll('.adm-mb-publish').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const info = btn.closest('.adm-mb-info');
+            const statusChip = info ? info.querySelector('.adm-chip') : null;
+            if (statusChip) { statusChip.textContent = 'Pending Approval'; statusChip.className = 'adm-chip adm-chip-dark adm-chip-sm'; }
+            btn.textContent = '✓ Published';
+            btn.disabled = true;
+            btn.style.opacity = '0.5';
+            admToast('Mood board published to client portal.');
+        });
+    });
+
+    // Onboard client form — use specific ID not generic selector
+    const onboardForm = document.getElementById('onboard-submit-btn')
+        ? document.getElementById('onboard-submit-btn').closest('form')
+        : null;
+    if (onboardForm) {
+        onboardForm.addEventListener('submit', e => {
+            e.preventDefault();
+            const nameVal = onboardForm.querySelector('input[type="text"]').value.trim();
+            const emailVal = onboardForm.querySelector('input[type="email"]').value.trim();
+            const designerVal = onboardForm.querySelectorAll('.adm-select')[1].value;
+            const typeVal = onboardForm.querySelector('.adm-select').value;
+            if (!nameVal || !emailVal) return;
+            // Add row to table
+            const initials = nameVal.split(' ').map(p => p[0]).join('').toUpperCase().slice(0, 2);
+            const refNum = 'IH-2026-0' + (17 + Math.floor(Math.random() * 10));
+            const tbody = document.querySelector('#clients-table tbody');
+            if (tbody) {
+                const tr = document.createElement('tr');
+                tr.setAttribute('data-status', 'pending');
+                tr.innerHTML = `
+                    <td>
+                        <div class="adm-client-cell">
+                            <div class="adm-client-mini-avatar">${initials}</div>
+                            <div>
+                                <p class="adm-client-name">${nameVal}</p>
+                                <p class="adm-client-email">${emailVal}</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="adm-project-id">#${refNum}</span><br><small>${typeVal.split(' ')[0]}</small></td>
+                    <td>${designerVal.split(' ')[0]}</td>
+                    <td><span class="adm-chip adm-chip-dark adm-chip-sm">Discovery</span></td>
+                    <td>
+                        <div class="adm-mini-bar-wrap"><div class="adm-mini-bar" style="width:0%;"></div></div>
+                        <small>0%</small>
+                    </td>
+                    <td><span class="adm-chip adm-chip-olive adm-chip-sm">Onboarding</span></td>
+                    <td>
+                        <div class="adm-table-actions">
+                            <button class="adm-tbl-btn" title="View Profile"><i data-lucide="eye" style="width:13px;height:13px;"></i></button>
+                            <button class="adm-tbl-btn" title="Message"><i data-lucide="message-circle" style="width:13px;height:13px;"></i></button>
+                        </div>
+                    </td>`;
+                tbody.appendChild(tr);
+                if (window.lucide) window.lucide.createIcons();
+                // Wire new table action buttons
+                bindTableActionBtns(tr);
+            }
+            // Update KPI
+            const clientKpi = document.querySelector('.adm-kpi:nth-child(2) .adm-kpi-value');
+            if (clientKpi) clientKpi.textContent = parseInt(clientKpi.textContent) + 1;
+            const suc = document.getElementById('onboard-success');
+            if (suc) {
+                suc.style.display = 'flex';
+                setTimeout(() => { suc.style.display = 'none'; onboardForm.reset(); }, 4000);
+            }
+            // Add to activity feed
+            admAddActivity(`${nameVal} onboarded — ${typeVal}`, 'Just now', 'gold', 'New');
+        });
+    }
+
+    // Approval items
+    let resolvedCount = 0;
+    const totalApprovals = document.querySelectorAll('.adm-approval-item').length;
+    document.querySelectorAll('.adm-approve-item').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = document.getElementById(btn.getAttribute('data-id'));
+            if (!item) return;
+            item.classList.add('resolved');
+            resolvedCount++;
+            if (resolvedCount >= totalApprovals) {
+                const empty = document.getElementById('approvals-empty');
+                if (empty) empty.style.display = 'block';
+            }
+            if (window.lucide) window.lucide.createIcons();
+        });
+    });
+    document.querySelectorAll('.adm-escalate-item').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = document.getElementById(btn.getAttribute('data-id'));
+            if (!item) return;
+            const type = item.querySelector('.adm-approval-type');
+            if (type) type.textContent = 'ESCALATED — Awaiting Director Review';
+            const icon = item.querySelector('.adm-approval-icon');
+            if (icon) { icon.className = 'adm-approval-icon adm-approval-icon-clay'; }
+            btn.textContent = '⚠ Escalated';
+            btn.disabled = true;
+            btn.style.opacity = '0.5';
+        });
+    });
+
+    // Admin messaging
+    const msgSend = document.getElementById('adm-msg-send');
+    const msgInput = document.getElementById('adm-msg-input');
+    const msgList = document.getElementById('adm-msg-list');
+    if (msgSend && msgInput && msgList) {
+        const doSend = () => {
+            const txt = msgInput.value.trim();
+            if (!txt) return;
+            const replyAs = document.querySelector('.adm-reply-as');
+            const signer = replyAs ? replyAs.value.replace('Reply as: ', '') : 'Studio Admin';
+            msgInput.value = '';
+            msgList.innerHTML += `
+                <div class="adm-msg adm-msg-out">
+                    <div class="adm-msg-bub adm-msg-bub-out">
+                        <p>${txt.replace(/</g, '&lt;')}</p>
+                        <span>Just now · ${signer}</span>
+                    </div>
+                </div>`;
+            msgList.scrollTop = msgList.scrollHeight;
+        };
+        msgSend.addEventListener('click', doSend);
+        msgInput.addEventListener('keydown', e => { if (e.key === 'Enter') doSend(); });
+    }
+
+    // Thread switching with dynamic chat content per client
+    const threadChats = {
+        'thread-amara': {
+            name: 'Amara Chen', avatar: 'AC', project: '#IH-2026-014', designer: 'Elena Rostova',
+            msgs: [
+                { from: 'in', ava: 'AC', text: 'Good morning! I love the obsidian direction for the mood board.', time: 'Today, 9:45 AM' },
+                { from: 'in', ava: 'AC', text: 'Could you share the fabric swatches digitally? I want to show them to my partner.', time: 'Today, 10:30 AM' },
+                { from: 'out', text: 'Of course! Elena will prepare a digital swatch pack and share it by end of day.', time: 'Today, 10:40 AM · Elena R.' }
+            ]
+        },
+        'thread-marcus': {
+            name: 'Marcus Webb', avatar: 'MW', project: '#IH-2026-009', designer: 'Marco Levi',
+            msgs: [
+                { from: 'in', ava: 'MW', text: 'The 3D renders look great but the bedroom viewing angle doesn\'t match our brief.', time: 'Today, 9:10 AM' },
+                { from: 'in', ava: 'MW', text: 'Can we set up a call this week to go over the revisions together?', time: 'Today, 9:15 AM' }
+            ]
+        },
+        'thread-lena': {
+            name: 'Lena Park', avatar: 'LP', project: '#IH-2026-016', designer: 'Jia Kim',
+            msgs: [
+                { from: 'in', ava: 'LP', text: 'When is our next check-in scheduled? I have some material preferences to share.', time: 'Yesterday, 2:30 PM' }
+            ]
+        },
+        'thread-sofia': {
+            name: 'Sofia Reyes', avatar: 'SR', project: '#IH-2026-011', designer: 'Elena Rostova',
+            msgs: [
+                { from: 'out', text: 'The procurement phase has started. Delivery window is January 2027.', time: 'Aug 22 · Elena R.' },
+                { from: 'in', ava: 'SR', text: 'Everything looks perfect, thank you! We\'re so excited to see the final result.', time: 'Aug 22, 4:10 PM' }
+            ]
+        }
+    };
+
+    function renderThreadChat(threadKey) {
+        const data = threadChats[threadKey];
+        if (!data) return;
+        // Update header
+        const winAva = document.querySelector('.adm-chat-win-avatar');
+        const winName = document.querySelector('.adm-chat-win-name');
+        const winSub = document.querySelector('.adm-chat-win-sub');
+        if (winAva) winAva.textContent = data.avatar;
+        if (winName) winName.textContent = data.name;
+        if (winSub) winSub.textContent = `Project ${data.project} · Designer: ${data.designer}`;
+        // Render messages
+        const msgList = document.getElementById('adm-msg-list');
+        if (!msgList) return;
+        msgList.innerHTML = data.msgs.map(m => {
+            if (m.from === 'in') return `
+                <div class="adm-msg adm-msg-in">
+                    <div class="adm-msg-ava">${m.ava}</div>
+                    <div class="adm-msg-bub adm-msg-bub-in">
+                        <p>${m.text}</p><span>${m.time}</span>
+                    </div>
+                </div>`;
+            return `
+                <div class="adm-msg adm-msg-out">
+                    <div class="adm-msg-bub adm-msg-bub-out">
+                        <p>${m.text}</p><span>${m.time}</span>
+                    </div>
+                </div>`;
+        }).join('') + '<div id="adm-typing" style="display:none;" class="adm-typing"><span class="adm-typing-dots"><span></span><span></span><span></span></span>Client is typing...</div>';
+        msgList.scrollTop = msgList.scrollHeight;
+    }
+
+    document.querySelectorAll('.adm-thread-item').forEach(item => {
+        item.addEventListener('click', () => {
+            document.querySelectorAll('.adm-thread-item').forEach(t => t.classList.remove('active'));
+            item.classList.add('active');
+            const unread = item.querySelector('.adm-thread-unread');
+            if (unread) unread.remove();
+            renderThreadChat(item.getAttribute('data-thread'));
+        });
+    });
+
+    // Project stage advance
+    document.querySelectorAll('.adm-advance-stage').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const card = btn.closest('.adm-project-card');
+            if (!card) return;
+            const dots = card.querySelectorAll('.adm-pt-dot');
+            const lines = card.querySelectorAll('.adm-pt-line');
+            const stages = card.querySelectorAll('.adm-pt-stage');
+            let pulsing = card.querySelector('.adm-pt-dot-pulse');
+            if (!pulsing) return;
+            // Clear pulse from current
+            pulsing.classList.remove('adm-pt-dot-pulse', 'adm-pt-dot-clay');
+            pulsing.classList.add('adm-pt-dot-gold');
+            // Find current stage index
+            let curIdx = Array.from(dots).indexOf(pulsing);
+            stages[curIdx].classList.remove('adm-pt-active');
+            stages[curIdx].classList.add('adm-pt-done');
+            if (curIdx + 1 < dots.length) {
+                // Advance the line
+                if (lines[curIdx]) lines[curIdx].classList.add('adm-pt-line-done');
+                dots[curIdx + 1].classList.add('adm-pt-dot-pulse');
+                stages[curIdx + 1].classList.add('adm-pt-active');
+                stages[curIdx + 1].classList.remove('adm-pt-done');
+            } else {
+                btn.textContent = 'All Stages Done';
+                btn.disabled = true;
+                btn.style.opacity = '0.5';
+            }
+        });
+    });
+
+    // Notification bell panel
+    const notifBtn = document.getElementById('adm-notif-btn');
+    if (notifBtn) {
+        const notifications = [
+            { text: 'Amara Chen submitted 3 photos', time: '10:30 AM', dot: 'gold' },
+            { text: 'Marcus Webb requested a revision', time: '9:15 AM', dot: 'clay' },
+            { text: 'New booking — Lena Park', time: 'Yesterday', dot: '' },
+            { text: 'Mood board V2 approved by Sofia', time: 'Yesterday', dot: 'gold' },
+            { text: 'Designer reply pending — #IH-016', time: 'Aug 21', dot: 'clay' },
+            { text: 'Studio capacity at 67%', time: 'Aug 21', dot: '' }
+        ];
+        let panel = null;
+        notifBtn.addEventListener('click', e => {
+            e.stopPropagation();
+            if (panel) { panel.remove(); panel = null; return; }
+            panel = document.createElement('div');
+            panel.className = 'adm-notif-panel';
+            panel.innerHTML = `
+                <div class="adm-notif-panel-head">
+                    <p class="adm-label" style="margin:0;">Notifications</p>
+                    <span class="adm-notif-clear" id="adm-notif-clear">Clear all</span>
+                </div>
+                ${notifications.map(n => `
+                    <div class="adm-notif-row">
+                        <span class="adm-act-dot ${n.dot ? 'adm-act-dot-' + n.dot : ''}"></span>
+                        <div class="adm-act-body">
+                            <p class="adm-act-title">${n.text}</p>
+                            <p class="adm-act-meta">${n.time}</p>
+                        </div>
+                    </div>`).join('')}
+            `;
+            notifBtn.style.position = 'relative';
+            notifBtn.appendChild(panel);
+            document.getElementById('adm-notif-clear').addEventListener('click', () => {
+                const count = notifBtn.querySelector('.adm-notif-count');
+                if (count) count.remove();
+                panel.remove(); panel = null;
+            });
+        });
+        document.addEventListener('click', () => { if (panel) { panel.remove(); panel = null; } });
+    }
+
+    // Table action buttons (eye = view profile modal, message = go to messages tab)
+    function bindTableActionBtns(scope) {
+        (scope || document).querySelectorAll('.adm-tbl-btn[title="View Profile"]').forEach(btn => {
+            if (btn._bound) return; btn._bound = true;
+            btn.addEventListener('click', () => {
+                const row = btn.closest('tr');
+                const name = row ? row.querySelector('.adm-client-name').textContent : 'Client';
+                const ref = row ? row.querySelector('.adm-project-id').textContent : '';
+                admToast(`Viewing profile: ${name} ${ref}`);
+            });
+        });
+        (scope || document).querySelectorAll('.adm-tbl-btn[title="Message"]').forEach(btn => {
+            if (btn._bound) return; btn._bound = true;
+            btn.addEventListener('click', () => {
+                switchTab('adm-messages');
+            });
+        });
+        (scope || document).querySelectorAll('.adm-tbl-btn[title="Archive"]').forEach(btn => {
+            if (btn._bound) return; btn._bound = true;
+            btn.addEventListener('click', () => {
+                const row = btn.closest('tr');
+                if (row) { row.style.opacity = '0'; setTimeout(() => row.remove(), 400); }
+                admToast('Client archived successfully.');
+            });
+        });
+    }
+    bindTableActionBtns();
+
+    // Toast helper
+    function admToast(msg) {
+        const t = document.createElement('div');
+        t.className = 'adm-toast';
+        t.textContent = msg;
+        document.body.appendChild(t);
+        setTimeout(() => t.classList.add('adm-toast-show'), 10);
+        setTimeout(() => { t.classList.remove('adm-toast-show'); setTimeout(() => t.remove(), 400); }, 3200);
+    }
+
+    // Activity feed helper
+    function admAddActivity(title, time, dot, tag) {
+        const list = document.querySelector('.adm-activity-list');
+        if (!list) return;
+        const tagClass = { gold: 'adm-act-tag-new', clay: 'adm-act-tag-warn', ok: 'adm-act-tag-ok' }[dot] || 'adm-act-tag-new';
+        const dotClass = dot === 'gold' ? 'adm-act-dot-gold' : dot === 'clay' ? 'adm-act-dot-clay' : '';
+        const item = document.createElement('div');
+        item.className = 'adm-act-item adm-act-item-new';
+        item.innerHTML = `
+            <span class="adm-act-dot ${dotClass}"></span>
+            <div class="adm-act-body">
+                <p class="adm-act-title">${title}</p>
+                <p class="adm-act-meta">${time}</p>
+            </div>
+            <span class="adm-act-tag ${tagClass}">${tag}</span>`;
+        list.insertBefore(item, list.firstChild);
+    }
+
+    // Reveal initial section
+    const firstSection = document.getElementById('adm-overview');
+    if (firstSection) {
+        firstSection.querySelectorAll('.reveal-up').forEach(el => {
+            setTimeout(() => el.classList.add('revealed'), 100);
+        });
+    }
+
+    if (window.lucide) window.lucide.createIcons();
 }
 
 // --- Dashboard Logic ---

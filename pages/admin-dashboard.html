@@ -1,0 +1,1638 @@
+<!-- Admin Dashboard — InteriHub Command Centre -->
+<div class="adm-wrap">
+
+    <!-- ======== SIDEBAR ======== -->
+    <aside class="adm-side">
+        <div class="adm-side-top">
+            <div class="adm-brand">
+                <span class="adm-brand-mark">IH</span>
+                <span class="adm-brand-name">InteriHub</span>
+            </div>
+            <p class="adm-label adm-label-admin">Admin Portal</p>
+        </div>
+
+        <div class="adm-id">
+            <div class="adm-avatar" id="adm-avatar">SR</div>
+            <div class="adm-id-text">
+                <span class="adm-id-eyebrow">Studio Director</span>
+                <strong class="adm-id-name">Studio Admin</strong>
+            </div>
+        </div>
+
+        <nav class="adm-nav">
+            <a href="#" class="admin-tab active" data-target="adm-overview">
+                <span class="adm-nav-icon"><i data-lucide="layout-dashboard" style="width:14px;height:14px;"></i></span>
+                <span class="adm-nav-num">01</span> Overview
+            </a>
+            <a href="#" class="admin-tab" data-target="adm-clients">
+                <span class="adm-nav-icon"><i data-lucide="users" style="width:14px;height:14px;"></i></span>
+                <span class="adm-nav-num">02</span> Clients
+            </a>
+            <a href="#" class="admin-tab" data-target="adm-projects">
+                <span class="adm-nav-icon"><i data-lucide="folder-open" style="width:14px;height:14px;"></i></span>
+                <span class="adm-nav-num">03</span> Projects
+                <span class="adm-nav-badge">3</span>
+            </a>
+            <a href="#" class="admin-tab" data-target="adm-photos">
+                <span class="adm-nav-icon"><i data-lucide="image" style="width:14px;height:14px;"></i></span>
+                <span class="adm-nav-num">04</span> Room Photos
+                <span class="adm-nav-badge adm-nav-badge-clay">5</span>
+            </a>
+            <a href="#" class="admin-tab" data-target="adm-moodboards">
+                <span class="adm-nav-icon"><i data-lucide="layers" style="width:14px;height:14px;"></i></span>
+                <span class="adm-nav-num">05</span> Mood Boards
+            </a>
+            <a href="#" class="admin-tab" data-target="adm-messages">
+                <span class="adm-nav-icon"><i data-lucide="message-square" style="width:14px;height:14px;"></i></span>
+                <span class="adm-nav-num">06</span> Messages
+                <span class="adm-nav-badge">4</span>
+            </a>
+            <a href="#" class="admin-tab" data-target="adm-approvals">
+                <span class="adm-nav-icon"><i data-lucide="check-circle" style="width:14px;height:14px;"></i></span>
+                <span class="adm-nav-num">07</span> Approvals
+                <span class="adm-nav-badge adm-nav-badge-clay">2</span>
+            </a>
+        </nav>
+
+        <div class="adm-side-meta">
+            <p>Studio <b>InteriHub</b></p>
+            <p>Role <b>Senior Administrator</b></p>
+            <p>Last Login <b>Today, 08:42 AM</b></p>
+        </div>
+
+        <div class="adm-side-actions">
+            <a href="/dashboard" data-route class="adm-side-link">
+                <i data-lucide="user" style="width:14px;height:14px;"></i> Client View
+            </a>
+            <a href="#" id="adm-logout" class="adm-side-link adm-side-link-logout">
+                <i data-lucide="log-out" style="width:14px;height:14px;"></i> Logout
+            </a>
+        </div>
+    </aside>
+
+    <!-- ======== MAIN ======== -->
+    <main class="adm-main">
+
+        <header class="adm-header reveal-up">
+            <div>
+                <p class="adm-label">Studio Command Centre</p>
+                <h1 class="adm-title">Admin <em>Dashboard.</em></h1>
+            </div>
+            <div class="adm-header-right">
+                <div class="adm-header-status">
+                    <span class="adm-status-dot adm-status-dot-live"></span> 8 Active Projects
+                </div>
+                <div class="adm-header-notif" id="adm-notif-btn" title="Notifications">
+                    <i data-lucide="bell" style="width:18px;height:18px;"></i>
+                    <span class="adm-notif-count">6</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- ====== SECTION 01 — OVERVIEW ====== -->
+        <section id="adm-overview" class="admin-section">
+            <div class="adm-sec-head reveal-up">
+                <p class="adm-label">01 — Studio Overview</p>
+                <h2 class="adm-sec-title">The studio <em>at a glance.</em></h2>
+                <span class="adm-sec-index" aria-hidden="true">I</span>
+            </div>
+
+            <!-- KPI Cards -->
+            <div class="adm-kpis reveal-up">
+                <div class="adm-kpi adm-kpi-accent">
+                    <div class="adm-kpi-icon"><i data-lucide="briefcase" style="width:20px;height:20px;"></i></div>
+                    <span class="adm-kpi-label">Active Projects</span>
+                    <p class="adm-kpi-value">8</p>
+                    <span class="adm-kpi-change adm-kpi-change-up">↑ 2 this month</span>
+                </div>
+                <div class="adm-kpi">
+                    <div class="adm-kpi-icon"><i data-lucide="users" style="width:20px;height:20px;"></i></div>
+                    <span class="adm-kpi-label">Total Clients</span>
+                    <p class="adm-kpi-value">24</p>
+                    <span class="adm-kpi-change adm-kpi-change-up">↑ 3 new onboarded</span>
+                </div>
+                <div class="adm-kpi">
+                    <div class="adm-kpi-icon"><i data-lucide="clock" style="width:20px;height:20px;"></i></div>
+                    <span class="adm-kpi-label">Pending Approvals</span>
+                    <p class="adm-kpi-value">2</p>
+                    <span class="adm-kpi-change adm-kpi-change-warn">Needs attention</span>
+                </div>
+                <div class="adm-kpi">
+                    <div class="adm-kpi-icon"><i data-lucide="image" style="width:20px;height:20px;"></i></div>
+                    <span class="adm-kpi-label">Photo Submissions</span>
+                    <p class="adm-kpi-value">5</p>
+                    <span class="adm-kpi-change adm-kpi-change-warn">Unreviewed</span>
+                </div>
+                <div class="adm-kpi">
+                    <div class="adm-kpi-icon"><i data-lucide="message-circle" style="width:20px;height:20px;"></i></div>
+                    <span class="adm-kpi-label">Unread Messages</span>
+                    <p class="adm-kpi-value">4</p>
+                    <span class="adm-kpi-change">Across 3 clients</span>
+                </div>
+                <div class="adm-kpi adm-kpi-dark">
+                    <div class="adm-kpi-icon"><i data-lucide="check-circle-2" style="width:20px;height:20px;"></i></div>
+                    <span class="adm-kpi-label">Completed This Year</span>
+                    <p class="adm-kpi-value">17</p>
+                    <span class="adm-kpi-change adm-kpi-change-up">↑ 96% on time</span>
+                </div>
+            </div>
+
+            <!-- Activity Feed + Quick Actions -->
+            <div class="adm-overview-grid reveal-up">
+
+                <!-- Recent Activity -->
+                <div class="adm-activity-block">
+                    <div class="adm-block-head">
+                        <p class="adm-label">Recent Activity</p>
+                    </div>
+                    <div class="adm-activity-list">
+                        <div class="adm-act-item adm-act-item-new">
+                            <span class="adm-act-dot adm-act-dot-gold"></span>
+                            <div class="adm-act-body">
+                                <p class="adm-act-title">Amara Chen submitted 3 room photos</p>
+                                <p class="adm-act-meta">Project #IH-2026-014 · Today, 10:30 AM</p>
+                            </div>
+                            <span class="adm-act-tag adm-act-tag-new">New</span>
+                        </div>
+                        <div class="adm-act-item">
+                            <span class="adm-act-dot adm-act-dot-clay"></span>
+                            <div class="adm-act-body">
+                                <p class="adm-act-title">Marcus Webb requests stage revision</p>
+                                <p class="adm-act-meta">Project #IH-2026-009 · Today, 9:15 AM</p>
+                            </div>
+                            <span class="adm-act-tag adm-act-tag-warn">Action</span>
+                        </div>
+                        <div class="adm-act-item">
+                            <span class="adm-act-dot adm-act-dot-gold"></span>
+                            <div class="adm-act-body">
+                                <p class="adm-act-title">Mood Board V2 approved by Sofia Reyes</p>
+                                <p class="adm-act-meta">Project #IH-2026-011 · Yesterday, 4:22 PM</p>
+                            </div>
+                            <span class="adm-act-tag adm-act-tag-ok">Done</span>
+                        </div>
+                        <div class="adm-act-item">
+                            <span class="adm-act-dot"></span>
+                            <div class="adm-act-body">
+                                <p class="adm-act-title">New consultation booking — Lena Park</p>
+                                <p class="adm-act-meta">Penthouse Suite · Yesterday, 11:00 AM</p>
+                            </div>
+                            <span class="adm-act-tag adm-act-tag-new">New</span>
+                        </div>
+                        <div class="adm-act-item">
+                            <span class="adm-act-dot adm-act-dot-gold"></span>
+                            <div class="adm-act-body">
+                                <p class="adm-act-title">Stage III approved — The Ivory Villa</p>
+                                <p class="adm-act-meta">Project #IH-2026-007 · Aug 22, 2026</p>
+                            </div>
+                            <span class="adm-act-tag adm-act-tag-ok">Done</span>
+                        </div>
+                        <div class="adm-act-item">
+                            <span class="adm-act-dot adm-act-dot-clay"></span>
+                            <div class="adm-act-body">
+                                <p class="adm-act-title">Client message — awaiting designer reply</p>
+                                <p class="adm-act-meta">Project #IH-2026-016 · Aug 21, 2026</p>
+                            </div>
+                            <span class="adm-act-tag adm-act-tag-warn">Pending</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="adm-quick-block">
+                    <div class="adm-block-head">
+                        <p class="adm-label">Quick Actions</p>
+                    </div>
+                    <div class="adm-quick-actions">
+                        <button class="adm-quick-btn admin-tab-trigger" data-target="adm-clients">
+                            <i data-lucide="user-plus" style="width:20px;height:20px;"></i>
+                            <span>Onboard Client</span>
+                        </button>
+                        <button class="adm-quick-btn admin-tab-trigger" data-target="adm-projects">
+                            <i data-lucide="folder-plus" style="width:20px;height:20px;"></i>
+                            <span>New Project</span>
+                        </button>
+                        <button class="adm-quick-btn admin-tab-trigger" data-target="adm-moodboards">
+                            <i data-lucide="layers" style="width:20px;height:20px;"></i>
+                            <span>Upload Mood Board</span>
+                        </button>
+                        <button class="adm-quick-btn admin-tab-trigger" data-target="adm-approvals">
+                            <i data-lucide="check-circle" style="width:20px;height:20px;"></i>
+                            <span>Review Approvals</span>
+                        </button>
+                        <button class="adm-quick-btn admin-tab-trigger" data-target="adm-messages">
+                            <i data-lucide="send" style="width:20px;height:20px;"></i>
+                            <span>Send Message</span>
+                        </button>
+                        <button class="adm-quick-btn admin-tab-trigger" data-target="adm-photos">
+                            <i data-lucide="image" style="width:20px;height:20px;"></i>
+                            <span>Review Photos</span>
+                        </button>
+                    </div>
+
+                    <!-- Studio Capacity -->
+                    <div class="adm-capacity-block">
+                        <div class="adm-block-head" style="margin-bottom: 1rem;">
+                            <p class="adm-label">Studio Capacity</p>
+                            <span class="adm-capacity-pct">67%</span>
+                        </div>
+                        <div class="adm-capacity-track">
+                            <div class="adm-capacity-bar" style="width: 67%;"></div>
+                        </div>
+                        <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.6rem;">8 of 12 project slots filled</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Designer Workload -->
+            <div class="adm-designers-block reveal-up">
+                <div class="adm-block-head">
+                    <p class="adm-label">Designer Workload</p>
+                </div>
+                <div class="adm-designers-grid">
+                    <div class="adm-designer-card">
+                        <div class="adm-designer-avatar">ER</div>
+                        <div class="adm-designer-info">
+                            <p class="adm-designer-name">Elena Rostova</p>
+                            <p class="adm-designer-role">Principal Designer</p>
+                        </div>
+                        <div class="adm-designer-load">
+                            <span class="adm-designer-projects">3 projects</span>
+                            <div class="adm-designer-bar-wrap">
+                                <div class="adm-designer-bar" style="width:75%;"></div>
+                            </div>
+                        </div>
+                        <span class="adm-chip adm-chip-gold">Active</span>
+                    </div>
+                    <div class="adm-designer-card">
+                        <div class="adm-designer-avatar">ML</div>
+                        <div class="adm-designer-info">
+                            <p class="adm-designer-name">Marco Levi</p>
+                            <p class="adm-designer-role">Senior Designer</p>
+                        </div>
+                        <div class="adm-designer-load">
+                            <span class="adm-designer-projects">2 projects</span>
+                            <div class="adm-designer-bar-wrap">
+                                <div class="adm-designer-bar" style="width:50%;"></div>
+                            </div>
+                        </div>
+                        <span class="adm-chip adm-chip-olive">Moderate</span>
+                    </div>
+                    <div class="adm-designer-card">
+                        <div class="adm-designer-avatar">JK</div>
+                        <div class="adm-designer-info">
+                            <p class="adm-designer-name">Jia Kim</p>
+                            <p class="adm-designer-role">Junior Designer</p>
+                        </div>
+                        <div class="adm-designer-load">
+                            <span class="adm-designer-projects">3 projects</span>
+                            <div class="adm-designer-bar-wrap">
+                                <div class="adm-designer-bar adm-designer-bar-warn" style="width:90%;"></div>
+                            </div>
+                        </div>
+                        <span class="adm-chip adm-chip-clay">High Load</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== SECTION 02 — CLIENTS ====== -->
+        <section id="adm-clients" class="admin-section" style="display:none;">
+            <div class="adm-sec-head reveal-up">
+                <p class="adm-label">02 — Client Management</p>
+                <h2 class="adm-sec-title">Client <em>registry.</em></h2>
+                <span class="adm-sec-index" aria-hidden="true">II</span>
+            </div>
+            <p class="adm-sec-sub reveal-up">All onboarded clients and their project statuses. Click a client to view their full profile and portal activity.</p>
+
+            <!-- Filter Bar -->
+            <div class="adm-filter-bar reveal-up">
+                <div class="adm-search-wrap">
+                    <i data-lucide="search" style="width:14px;height:14px; color:var(--text-muted);"></i>
+                    <input type="text" id="client-search" placeholder="Search clients by name or project..." class="adm-search-input">
+                </div>
+                <div class="adm-filter-chips">
+                    <button class="adm-filter-chip active" data-filter="all">All</button>
+                    <button class="adm-filter-chip" data-filter="active">Active</button>
+                    <button class="adm-filter-chip" data-filter="pending">Pending</button>
+                    <button class="adm-filter-chip" data-filter="completed">Completed</button>
+                </div>
+            </div>
+
+            <!-- Client Table -->
+            <div class="adm-table-wrap reveal-up">
+                <table class="adm-table" id="clients-table">
+                    <thead>
+                        <tr>
+                            <th>Client</th>
+                            <th>Project</th>
+                            <th>Designer</th>
+                            <th>Stage</th>
+                            <th>Progress</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-status="active">
+                            <td>
+                                <div class="adm-client-cell">
+                                    <div class="adm-client-mini-avatar">AC</div>
+                                    <div>
+                                        <p class="adm-client-name">Amara Chen</p>
+                                        <p class="adm-client-email">amara@email.com</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="adm-project-id">#IH-2026-014</span><br><small>Penthouse Suite</small></td>
+                            <td>Elena Rostova</td>
+                            <td><span class="adm-chip adm-chip-dark adm-chip-sm">Concept Design</span></td>
+                            <td>
+                                <div class="adm-mini-bar-wrap">
+                                    <div class="adm-mini-bar" style="width:25%;"></div>
+                                </div>
+                                <small>25%</small>
+                            </td>
+                            <td><span class="adm-chip adm-chip-gold adm-chip-sm">Active</span></td>
+                            <td>
+                                <div class="adm-table-actions">
+                                    <button class="adm-tbl-btn" title="View Profile"><i data-lucide="eye" style="width:13px;height:13px;"></i></button>
+                                    <button class="adm-tbl-btn" title="Message"><i data-lucide="message-circle" style="width:13px;height:13px;"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-status="active">
+                            <td>
+                                <div class="adm-client-cell">
+                                    <div class="adm-client-mini-avatar">MW</div>
+                                    <div>
+                                        <p class="adm-client-name">Marcus Webb</p>
+                                        <p class="adm-client-email">marcus@email.com</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="adm-project-id">#IH-2026-009</span><br><small>Urban Loft</small></td>
+                            <td>Marco Levi</td>
+                            <td><span class="adm-chip adm-chip-olive adm-chip-sm">3D Renders</span></td>
+                            <td>
+                                <div class="adm-mini-bar-wrap">
+                                    <div class="adm-mini-bar" style="width:50%;"></div>
+                                </div>
+                                <small>50%</small>
+                            </td>
+                            <td><span class="adm-chip adm-chip-clay adm-chip-sm">Revision</span></td>
+                            <td>
+                                <div class="adm-table-actions">
+                                    <button class="adm-tbl-btn" title="View Profile"><i data-lucide="eye" style="width:13px;height:13px;"></i></button>
+                                    <button class="adm-tbl-btn" title="Message"><i data-lucide="message-circle" style="width:13px;height:13px;"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-status="active">
+                            <td>
+                                <div class="adm-client-cell">
+                                    <div class="adm-client-mini-avatar">SR</div>
+                                    <div>
+                                        <p class="adm-client-name">Sofia Reyes</p>
+                                        <p class="adm-client-email">sofia@email.com</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="adm-project-id">#IH-2026-011</span><br><small>Coastal Villa</small></td>
+                            <td>Elena Rostova</td>
+                            <td><span class="adm-chip adm-chip-dark adm-chip-sm">Procurement</span></td>
+                            <td>
+                                <div class="adm-mini-bar-wrap">
+                                    <div class="adm-mini-bar" style="width:75%;"></div>
+                                </div>
+                                <small>75%</small>
+                            </td>
+                            <td><span class="adm-chip adm-chip-gold adm-chip-sm">Active</span></td>
+                            <td>
+                                <div class="adm-table-actions">
+                                    <button class="adm-tbl-btn" title="View Profile"><i data-lucide="eye" style="width:13px;height:13px;"></i></button>
+                                    <button class="adm-tbl-btn" title="Message"><i data-lucide="message-circle" style="width:13px;height:13px;"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-status="pending">
+                            <td>
+                                <div class="adm-client-cell">
+                                    <div class="adm-client-mini-avatar">LP</div>
+                                    <div>
+                                        <p class="adm-client-name">Lena Park</p>
+                                        <p class="adm-client-email">lena@email.com</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="adm-project-id">#IH-2026-016</span><br><small>Manhattan Studio</small></td>
+                            <td>Jia Kim</td>
+                            <td><span class="adm-chip adm-chip-dark adm-chip-sm">Discovery</span></td>
+                            <td>
+                                <div class="adm-mini-bar-wrap">
+                                    <div class="adm-mini-bar" style="width:10%;"></div>
+                                </div>
+                                <small>10%</small>
+                            </td>
+                            <td><span class="adm-chip adm-chip-olive adm-chip-sm">Onboarding</span></td>
+                            <td>
+                                <div class="adm-table-actions">
+                                    <button class="adm-tbl-btn" title="View Profile"><i data-lucide="eye" style="width:13px;height:13px;"></i></button>
+                                    <button class="adm-tbl-btn" title="Message"><i data-lucide="message-circle" style="width:13px;height:13px;"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-status="completed">
+                            <td>
+                                <div class="adm-client-cell">
+                                    <div class="adm-client-mini-avatar">DH</div>
+                                    <div>
+                                        <p class="adm-client-name">David Harrison</p>
+                                        <p class="adm-client-email">d.harrison@email.com</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="adm-project-id">#IH-2026-007</span><br><small>Ivory Villa</small></td>
+                            <td>Marco Levi</td>
+                            <td><span class="adm-chip adm-chip-olive adm-chip-sm">Handover</span></td>
+                            <td>
+                                <div class="adm-mini-bar-wrap">
+                                    <div class="adm-mini-bar" style="width:100%;"></div>
+                                </div>
+                                <small>100%</small>
+                            </td>
+                            <td><span class="adm-chip adm-chip-olive adm-chip-sm">Completed</span></td>
+                            <td>
+                                <div class="adm-table-actions">
+                                    <button class="adm-tbl-btn" title="View Profile"><i data-lucide="eye" style="width:13px;height:13px;"></i></button>
+                                    <button class="adm-tbl-btn" title="Archive"><i data-lucide="archive" style="width:13px;height:13px;"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Onboard New Client Form -->
+            <div class="adm-form-block reveal-up">
+                <div class="adm-block-head">
+                    <p class="adm-label">Onboard New Client</p>
+                </div>
+                <form class="adm-form" data-no-success>
+                    <div class="adm-form-row">
+                        <div class="adm-form-group">
+                            <label class="adm-form-label">Full Name</label>
+                            <input type="text" class="adm-input" placeholder="Client full name" required>
+                        </div>
+                        <div class="adm-form-group">
+                            <label class="adm-form-label">Email</label>
+                            <input type="email" class="adm-input" placeholder="client@email.com" required>
+                        </div>
+                    </div>
+                    <div class="adm-form-row">
+                        <div class="adm-form-group">
+                            <label class="adm-form-label">Project Type</label>
+                            <select class="adm-input adm-select">
+                                <option>Full Home Renovation</option>
+                                <option>Living Space Design</option>
+                                <option>Bedroom Suite</option>
+                                <option>Kitchen & Dining</option>
+                                <option>Outdoor & Garden</option>
+                            </select>
+                        </div>
+                        <div class="adm-form-group">
+                            <label class="adm-form-label">Assign Designer</label>
+                            <select class="adm-input adm-select">
+                                <option>Elena Rostova</option>
+                                <option>Marco Levi</option>
+                                <option>Jia Kim</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="adm-form-group">
+                        <label class="adm-form-label">Initial Notes</label>
+                        <textarea class="adm-input adm-textarea" placeholder="Key requirements, style preferences, budget range..." rows="3"></textarea>
+                    </div>
+                    <div class="adm-form-footer">
+                        <button type="submit" class="adm-btn adm-btn-gold" id="onboard-submit-btn">
+                            <i data-lucide="user-plus" style="width:14px;height:14px;"></i>
+                            Onboard Client
+                        </button>
+                    </div>
+                    <div id="onboard-success" class="adm-form-success" style="display:none;">
+                        <span class="adm-form-success-icon">✓</span>
+                        <p>Client onboarded successfully. Portal access link has been sent.</p>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- ====== SECTION 03 — PROJECTS ====== -->
+        <section id="adm-projects" class="admin-section" style="display:none;">
+            <div class="adm-sec-head reveal-up">
+                <p class="adm-label">03 — Project Tracker</p>
+                <h2 class="adm-sec-title">All active <em>engagements.</em></h2>
+                <span class="adm-sec-index" aria-hidden="true">III</span>
+            </div>
+            <p class="adm-sec-sub reveal-up">Monitor every project's delivery stage and timeline. Advance stages or flag reviews directly from here.</p>
+
+            <!-- Project Cards -->
+            <div class="adm-projects-grid">
+
+                <div class="adm-project-card reveal-up">
+                    <div class="adm-project-card-header">
+                        <div>
+                            <span class="adm-project-ref">#IH-2026-014</span>
+                            <h3 class="adm-project-title">Penthouse Suite</h3>
+                            <p class="adm-project-client">Client: Amara Chen</p>
+                        </div>
+                        <span class="adm-chip adm-chip-dark">Concept Design</span>
+                    </div>
+                    <div class="adm-project-timeline">
+                        <div class="adm-pt-stage adm-pt-done">
+                            <span class="adm-pt-dot adm-pt-dot-gold"></span>
+                            <span>Discovery</span>
+                        </div>
+                        <div class="adm-pt-line adm-pt-line-done"></div>
+                        <div class="adm-pt-stage adm-pt-active">
+                            <span class="adm-pt-dot adm-pt-dot-pulse"></span>
+                            <span>Concept</span>
+                        </div>
+                        <div class="adm-pt-line"></div>
+                        <div class="adm-pt-stage">
+                            <span class="adm-pt-dot"></span>
+                            <span>3D Render</span>
+                        </div>
+                        <div class="adm-pt-line"></div>
+                        <div class="adm-pt-stage">
+                            <span class="adm-pt-dot"></span>
+                            <span>Procurement</span>
+                        </div>
+                    </div>
+                    <div class="adm-project-card-footer">
+                        <div class="adm-mini-bar-wrap adm-mini-bar-lg">
+                            <div class="adm-mini-bar" style="width:25%;"></div>
+                        </div>
+                        <div class="adm-project-meta-row">
+                            <span><i data-lucide="user" style="width:12px;height:12px;"></i> Elena Rostova</span>
+                            <span><i data-lucide="calendar" style="width:12px;height:12px;"></i> Due Nov 2026</span>
+                        </div>
+                        <div class="adm-project-actions">
+                            <button class="adm-btn adm-btn-sm adm-btn-ghost adm-advance-stage" data-project="IH-2026-014">Advance Stage</button>
+                            <button class="adm-btn adm-btn-sm adm-btn-ghost">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="adm-project-card reveal-up" style="transition-delay:.08s">
+                    <div class="adm-project-card-header">
+                        <div>
+                            <span class="adm-project-ref">#IH-2026-009</span>
+                            <h3 class="adm-project-title">Urban Loft</h3>
+                            <p class="adm-project-client">Client: Marcus Webb</p>
+                        </div>
+                        <span class="adm-chip adm-chip-clay">Revision</span>
+                    </div>
+                    <div class="adm-project-timeline">
+                        <div class="adm-pt-stage adm-pt-done">
+                            <span class="adm-pt-dot adm-pt-dot-gold"></span>
+                            <span>Discovery</span>
+                        </div>
+                        <div class="adm-pt-line adm-pt-line-done"></div>
+                        <div class="adm-pt-stage adm-pt-done">
+                            <span class="adm-pt-dot adm-pt-dot-gold"></span>
+                            <span>Concept</span>
+                        </div>
+                        <div class="adm-pt-line adm-pt-line-done"></div>
+                        <div class="adm-pt-stage adm-pt-active">
+                            <span class="adm-pt-dot adm-pt-dot-pulse adm-pt-dot-clay"></span>
+                            <span>3D Render</span>
+                        </div>
+                        <div class="adm-pt-line"></div>
+                        <div class="adm-pt-stage">
+                            <span class="adm-pt-dot"></span>
+                            <span>Procurement</span>
+                        </div>
+                    </div>
+                    <div class="adm-project-card-footer">
+                        <div class="adm-mini-bar-wrap adm-mini-bar-lg">
+                            <div class="adm-mini-bar adm-mini-bar-clay" style="width:50%;"></div>
+                        </div>
+                        <div class="adm-project-meta-row">
+                            <span><i data-lucide="user" style="width:12px;height:12px;"></i> Marco Levi</span>
+                            <span><i data-lucide="calendar" style="width:12px;height:12px;"></i> Due Dec 2026</span>
+                        </div>
+                        <div class="adm-project-actions">
+                            <button class="adm-btn adm-btn-sm adm-btn-ghost adm-advance-stage" data-project="IH-2026-009">Advance Stage</button>
+                            <button class="adm-btn adm-btn-sm adm-btn-ghost">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="adm-project-card reveal-up" style="transition-delay:.16s">
+                    <div class="adm-project-card-header">
+                        <div>
+                            <span class="adm-project-ref">#IH-2026-011</span>
+                            <h3 class="adm-project-title">Coastal Villa</h3>
+                            <p class="adm-project-client">Client: Sofia Reyes</p>
+                        </div>
+                        <span class="adm-chip adm-chip-gold">On Track</span>
+                    </div>
+                    <div class="adm-project-timeline">
+                        <div class="adm-pt-stage adm-pt-done">
+                            <span class="adm-pt-dot adm-pt-dot-gold"></span>
+                            <span>Discovery</span>
+                        </div>
+                        <div class="adm-pt-line adm-pt-line-done"></div>
+                        <div class="adm-pt-stage adm-pt-done">
+                            <span class="adm-pt-dot adm-pt-dot-gold"></span>
+                            <span>Concept</span>
+                        </div>
+                        <div class="adm-pt-line adm-pt-line-done"></div>
+                        <div class="adm-pt-stage adm-pt-done">
+                            <span class="adm-pt-dot adm-pt-dot-gold"></span>
+                            <span>3D Render</span>
+                        </div>
+                        <div class="adm-pt-line adm-pt-line-done"></div>
+                        <div class="adm-pt-stage adm-pt-active">
+                            <span class="adm-pt-dot adm-pt-dot-pulse"></span>
+                            <span>Procurement</span>
+                        </div>
+                    </div>
+                    <div class="adm-project-card-footer">
+                        <div class="adm-mini-bar-wrap adm-mini-bar-lg">
+                            <div class="adm-mini-bar" style="width:75%;"></div>
+                        </div>
+                        <div class="adm-project-meta-row">
+                            <span><i data-lucide="user" style="width:12px;height:12px;"></i> Elena Rostova</span>
+                            <span><i data-lucide="calendar" style="width:12px;height:12px;"></i> Due Jan 2027</span>
+                        </div>
+                        <div class="adm-project-actions">
+                            <button class="adm-btn adm-btn-sm adm-btn-ghost adm-advance-stage" data-project="IH-2026-011">Advance Stage</button>
+                            <button class="adm-btn adm-btn-sm adm-btn-ghost">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ====== SECTION 04 — ROOM PHOTOS ====== -->
+        <section id="adm-photos" class="admin-section" style="display:none;">
+            <div class="adm-sec-head reveal-up">
+                <p class="adm-label">04 — Room Photo Review</p>
+                <h2 class="adm-sec-title">Client-submitted <em>spaces.</em></h2>
+                <span class="adm-sec-index" aria-hidden="true">IV</span>
+            </div>
+            <p class="adm-sec-sub reveal-up">Review photos submitted by clients. Annotate, approve or request better-quality shots before briefing designers.</p>
+
+            <div class="adm-photos-filter reveal-up">
+                <button class="adm-filter-chip active" data-photo-filter="all">All Submissions</button>
+                <button class="adm-filter-chip" data-photo-filter="unreviewed">Unreviewed <span class="adm-filter-count">5</span></button>
+                <button class="adm-filter-chip" data-photo-filter="approved">Approved</button>
+                <button class="adm-filter-chip" data-photo-filter="retry">Retry Requested</button>
+            </div>
+
+            <div class="adm-photo-submissions reveal-up">
+
+                <div class="adm-photo-submission" data-photo-status="unreviewed">
+                    <div class="adm-photo-header">
+                        <div>
+                            <p class="adm-photo-client">Amara Chen — #IH-2026-014</p>
+                            <p class="adm-photo-date">Submitted Today, 10:30 AM</p>
+                        </div>
+                        <span class="adm-chip adm-chip-dark adm-chip-sm">Unreviewed</span>
+                    </div>
+                    <div class="adm-photo-gallery">
+                        <div class="adm-photo-thumb">
+                            <div class="adm-photo-tile">living_room_north.jpg</div>
+                            <p>Living — North</p>
+                        </div>
+                        <div class="adm-photo-thumb">
+                            <div class="adm-photo-tile">living_room_south.jpg</div>
+                            <p>Living — South</p>
+                        </div>
+                        <div class="adm-photo-thumb">
+                            <div class="adm-photo-tile">kitchen_west.jpg</div>
+                            <p>Kitchen — West</p>
+                        </div>
+                    </div>
+                    <div class="adm-photo-notes">
+                        <textarea class="adm-input adm-textarea" placeholder="Add annotation notes for the designer..." rows="2"></textarea>
+                    </div>
+                    <div class="adm-photo-actions">
+                        <button class="adm-btn adm-btn-gold adm-btn-sm adm-photo-approve">
+                            <i data-lucide="check" style="width:13px;height:13px;"></i> Approve & Forward to Designer
+                        </button>
+                        <button class="adm-btn adm-btn-ghost adm-btn-sm adm-photo-retry">
+                            <i data-lucide="refresh-cw" style="width:13px;height:13px;"></i> Request Better Photos
+                        </button>
+                    </div>
+                </div>
+
+                <div class="adm-photo-submission" data-photo-status="unreviewed">
+                    <div class="adm-photo-header">
+                        <div>
+                            <p class="adm-photo-client">Lena Park — #IH-2026-016</p>
+                            <p class="adm-photo-date">Submitted Today, 8:55 AM</p>
+                        </div>
+                        <span class="adm-chip adm-chip-dark adm-chip-sm">Unreviewed</span>
+                    </div>
+                    <div class="adm-photo-gallery">
+                        <div class="adm-photo-thumb">
+                            <div class="adm-photo-tile">bedroom_main.jpg</div>
+                            <p>Bedroom — Main</p>
+                        </div>
+                        <div class="adm-photo-thumb">
+                            <div class="adm-photo-tile">bathroom_ensuite.jpg</div>
+                            <p>Bathroom — En Suite</p>
+                        </div>
+                    </div>
+                    <div class="adm-photo-notes">
+                        <textarea class="adm-input adm-textarea" placeholder="Add annotation notes for the designer..." rows="2"></textarea>
+                    </div>
+                    <div class="adm-photo-actions">
+                        <button class="adm-btn adm-btn-gold adm-btn-sm adm-photo-approve">
+                            <i data-lucide="check" style="width:13px;height:13px;"></i> Approve & Forward to Designer
+                        </button>
+                        <button class="adm-btn adm-btn-ghost adm-btn-sm adm-photo-retry">
+                            <i data-lucide="refresh-cw" style="width:13px;height:13px;"></i> Request Better Photos
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ====== SECTION 05 — MOOD BOARDS ====== -->
+        <section id="adm-moodboards" class="admin-section" style="display:none;">
+            <div class="adm-sec-head reveal-up">
+                <p class="adm-label">05 — Mood Board Management</p>
+                <h2 class="adm-sec-title">Design <em>proposals.</em></h2>
+                <span class="adm-sec-index" aria-hidden="true">V</span>
+            </div>
+            <p class="adm-sec-sub reveal-up">Upload, manage and share mood board proposals with clients. Track approval status for each concept.</p>
+
+            <!-- Upload New Mood Board -->
+            <div class="adm-upload-block reveal-up">
+                <div class="adm-block-head">
+                    <p class="adm-label">Upload New Mood Board</p>
+                </div>
+                <form class="adm-form" data-no-success>
+                    <div class="adm-form-row">
+                        <div class="adm-form-group">
+                            <label class="adm-form-label">Select Client</label>
+                            <select class="adm-input adm-select">
+                                <option>Amara Chen — #IH-2026-014</option>
+                                <option>Marcus Webb — #IH-2026-009</option>
+                                <option>Sofia Reyes — #IH-2026-011</option>
+                                <option>Lena Park — #IH-2026-016</option>
+                            </select>
+                        </div>
+                        <div class="adm-form-group">
+                            <label class="adm-form-label">Concept Version</label>
+                            <input type="text" class="adm-input" placeholder="e.g. V3 — Dark Palette" required>
+                        </div>
+                    </div>
+                    <div id="adm-mood-dropzone" class="adm-dropzone">
+                        <i data-lucide="upload-cloud" style="width:36px;height:36px;color:var(--color-antique-gold);"></i>
+                        <h3>Drop mood board image here</h3>
+                        <p>JPG, PNG or PDF — Max 30MB</p>
+                        <span class="adm-dropzone-line">DROP INTAKE</span>
+                        <input type="file" id="adm-mood-file" accept="image/*,.pdf" style="display:none;">
+                    </div>
+                    <div class="adm-form-group">
+                        <label class="adm-form-label">Concept Description</label>
+                        <textarea class="adm-input adm-textarea" placeholder="Describe the design direction for the client..." rows="3"></textarea>
+                    </div>
+                    <div class="adm-form-footer">
+                        <button type="submit" class="adm-btn adm-btn-gold" id="adm-mood-submit">
+                            <i data-lucide="send" style="width:14px;height:14px;"></i>
+                            Publish to Client Portal
+                        </button>
+                    </div>
+                    <div id="adm-mood-success" class="adm-form-success" style="display:none;">
+                        <span class="adm-form-success-icon">✓</span>
+                        <p>Mood board published. Client will be notified via their portal.</p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Existing Mood Boards -->
+            <div class="adm-block-head reveal-up" style="margin-top: 3rem; margin-bottom: 1.5rem;">
+                <p class="adm-label">Published Concepts</p>
+            </div>
+
+            <div class="adm-moodboard-list reveal-up">
+                <div class="adm-mb-row">
+                    <div class="adm-mb-img">
+                        <img src="../assets/images/project-1.jpg" alt="Mood Board V1" onerror="this.parentElement.style.background='var(--bg-secondary)'; this.style.display='none';">
+                    </div>
+                    <div class="adm-mb-info">
+                        <div class="adm-mb-top">
+                            <span class="adm-mb-ver">V1</span>
+                            <h3 class="adm-mb-title">Living Space Concept — Obsidian Direction</h3>
+                            <span class="adm-chip adm-chip-dark adm-chip-sm">Pending Approval</span>
+                        </div>
+                        <p class="adm-mb-client">Amara Chen — #IH-2026-014</p>
+                        <p class="adm-mb-desc">Dark obsidian tones with warm ivory fabrics and antique gold accents. Textural depth over colour variety.</p>
+                        <div class="adm-mb-actions">
+                            <button class="adm-btn adm-btn-sm adm-btn-ghost">Edit Description</button>
+                            <button class="adm-btn adm-btn-sm adm-btn-ghost adm-mb-recall">Recall Draft</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="adm-mb-row">
+                    <div class="adm-mb-img">
+                        <img src="../assets/images/project-2.jpg" alt="Mood Board V2" onerror="this.parentElement.style.background='var(--bg-secondary)'; this.style.display='none';">
+                    </div>
+                    <div class="adm-mb-info">
+                        <div class="adm-mb-top">
+                            <span class="adm-mb-ver">V2</span>
+                            <h3 class="adm-mb-title">Living Space Concept — Lighter Palette</h3>
+                            <span class="adm-chip adm-chip-olive adm-chip-sm">In Draft</span>
+                        </div>
+                        <p class="adm-mb-client">Amara Chen — #IH-2026-014</p>
+                        <p class="adm-mb-desc">Warm ivory expanses, olive-gray stone and soft taupe textiles. For clients who prefer luminosity over drama.</p>
+                        <div class="adm-mb-actions">
+                            <button class="adm-btn adm-btn-sm adm-btn-gold adm-mb-publish">Publish to Client</button>
+                            <button class="adm-btn adm-btn-sm adm-btn-ghost">Edit Description</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== SECTION 06 — MESSAGES ====== -->
+        <section id="adm-messages" class="admin-section" style="display:none;">
+            <div class="adm-sec-head reveal-up">
+                <p class="adm-label">06 — Client Messaging Hub</p>
+                <h2 class="adm-sec-title">All <em>conversations.</em></h2>
+                <span class="adm-sec-index" aria-hidden="true">VI</span>
+            </div>
+            <p class="adm-sec-sub reveal-up">Manage all client-to-designer conversations from one place. Reply on behalf of designers or assign threads.</p>
+
+            <div class="adm-messaging-layout reveal-up">
+                <!-- Thread List -->
+                <div class="adm-thread-list">
+                    <div class="adm-thread-item active" data-thread="thread-amara">
+                        <div class="adm-thread-avatar">AC</div>
+                        <div class="adm-thread-info">
+                            <p class="adm-thread-name">Amara Chen</p>
+                            <p class="adm-thread-preview">Could you share the fabric swatches...</p>
+                        </div>
+                        <div class="adm-thread-meta">
+                            <span class="adm-thread-time">10:30</span>
+                            <span class="adm-thread-unread">2</span>
+                        </div>
+                    </div>
+                    <div class="adm-thread-item" data-thread="thread-marcus">
+                        <div class="adm-thread-avatar">MW</div>
+                        <div class="adm-thread-info">
+                            <p class="adm-thread-name">Marcus Webb</p>
+                            <p class="adm-thread-preview">The 3D renders look great but the...</p>
+                        </div>
+                        <div class="adm-thread-meta">
+                            <span class="adm-thread-time">09:15</span>
+                            <span class="adm-thread-unread">1</span>
+                        </div>
+                    </div>
+                    <div class="adm-thread-item" data-thread="thread-lena">
+                        <div class="adm-thread-avatar">LP</div>
+                        <div class="adm-thread-info">
+                            <p class="adm-thread-name">Lena Park</p>
+                            <p class="adm-thread-preview">When is our next check-in scheduled?</p>
+                        </div>
+                        <div class="adm-thread-meta">
+                            <span class="adm-thread-time">Yesterday</span>
+                            <span class="adm-thread-unread">1</span>
+                        </div>
+                    </div>
+                    <div class="adm-thread-item" data-thread="thread-sofia">
+                        <div class="adm-thread-avatar">SR</div>
+                        <div class="adm-thread-info">
+                            <p class="adm-thread-name">Sofia Reyes</p>
+                            <p class="adm-thread-preview">Everything looks perfect, thank you!</p>
+                        </div>
+                        <div class="adm-thread-meta">
+                            <span class="adm-thread-time">Aug 22</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Window -->
+                <div class="adm-chat-window">
+                    <div class="adm-chat-win-head">
+                        <div class="adm-chat-win-avatar">AC</div>
+                        <div>
+                            <p class="adm-chat-win-name">Amara Chen</p>
+                            <p class="adm-chat-win-sub">Project #IH-2026-014 · Designer: Elena Rostova</p>
+                        </div>
+                        <div class="adm-chat-win-actions">
+                            <button class="adm-tbl-btn" title="Assign Thread"><i data-lucide="user-check" style="width:14px;height:14px;"></i></button>
+                            <button class="adm-tbl-btn" title="Archive Thread"><i data-lucide="archive" style="width:14px;height:14px;"></i></button>
+                        </div>
+                    </div>
+                    <div class="adm-chat-win-body" id="adm-msg-list">
+                        <div class="adm-msg adm-msg-in">
+                            <div class="adm-msg-ava">AC</div>
+                            <div class="adm-msg-bub adm-msg-bub-in">
+                                <p>Good morning! I've had a look at the mood board and I absolutely love the obsidian direction.</p>
+                                <span>Today, 9:45 AM</span>
+                            </div>
+                        </div>
+                        <div class="adm-msg adm-msg-in">
+                            <div class="adm-msg-ava">AC</div>
+                            <div class="adm-msg-bub adm-msg-bub-in">
+                                <p>Could you share the fabric swatches digitally? I'd like to show them to my partner before approving.</p>
+                                <span>Today, 10:30 AM</span>
+                            </div>
+                        </div>
+                        <div class="adm-msg adm-msg-out">
+                            <div class="adm-msg-bub adm-msg-bub-out">
+                                <p>Of course! Elena will prepare a digital swatch pack and share it by end of day.</p>
+                                <span>Today, 10:40 AM · Elena R.</span>
+                            </div>
+                        </div>
+                        <div id="adm-typing" style="display:none;" class="adm-typing">
+                            <span class="adm-typing-dots"><span></span><span></span><span></span></span>
+                            Client is typing...
+                        </div>
+                    </div>
+                    <div class="adm-chat-win-input">
+                        <select class="adm-input adm-reply-as" style="width:auto; flex-shrink:0; font-size:0.75rem;">
+                            <option>Reply as: Elena Rostova</option>
+                            <option>Reply as: Marco Levi</option>
+                            <option>Reply as: Studio Admin</option>
+                        </select>
+                        <input type="text" id="adm-msg-input" class="adm-input" placeholder="Type a reply..." style="flex:1;">
+                        <button class="adm-btn adm-btn-gold adm-btn-sm" id="adm-msg-send">
+                            <i data-lucide="send" style="width:13px;height:13px;"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== SECTION 07 — APPROVALS ====== -->
+        <section id="adm-approvals" class="admin-section" style="display:none;">
+            <div class="adm-sec-head reveal-up">
+                <p class="adm-label">07 — Pending Approvals</p>
+                <h2 class="adm-sec-title">Decisions <em>awaiting action.</em></h2>
+                <span class="adm-sec-index" aria-hidden="true">VII</span>
+            </div>
+            <p class="adm-sec-sub reveal-up">Items flagged for administrative review. Approve, escalate or request changes before advancing client projects.</p>
+
+            <div class="adm-approvals-list reveal-up">
+
+                <div class="adm-approval-item" id="approval-1">
+                    <div class="adm-approval-icon adm-approval-icon-warn">
+                        <i data-lucide="layers" style="width:18px;height:18px;"></i>
+                    </div>
+                    <div class="adm-approval-body">
+                        <p class="adm-approval-type">Mood Board Approval</p>
+                        <h3 class="adm-approval-title">Living Space Concept V1 — Obsidian Direction</h3>
+                        <p class="adm-approval-meta">Client: Amara Chen · #IH-2026-014 · Submitted Today</p>
+                        <p class="adm-approval-desc">Client has viewed but not yet approved the mood board. Pending for 2 days. Consider sending a reminder or scheduling a review call.</p>
+                    </div>
+                    <div class="adm-approval-actions">
+                        <button class="adm-btn adm-btn-gold adm-btn-sm adm-approve-item" data-id="approval-1">
+                            <i data-lucide="check" style="width:13px;height:13px;"></i> Mark Approved
+                        </button>
+                        <button class="adm-btn adm-btn-ghost adm-btn-sm adm-escalate-item" data-id="approval-1">
+                            <i data-lucide="alert-triangle" style="width:13px;height:13px;"></i> Escalate
+                        </button>
+                        <button class="adm-btn adm-btn-ghost adm-btn-sm">
+                            <i data-lucide="send" style="width:13px;height:13px;"></i> Send Reminder
+                        </button>
+                    </div>
+                </div>
+
+                <div class="adm-approval-item" id="approval-2">
+                    <div class="adm-approval-icon adm-approval-icon-clay">
+                        <i data-lucide="git-branch" style="width:18px;height:18px;"></i>
+                    </div>
+                    <div class="adm-approval-body">
+                        <p class="adm-approval-type">Stage Revision Request</p>
+                        <h3 class="adm-approval-title">3D Render Stage — Urban Loft</h3>
+                        <p class="adm-approval-meta">Client: Marcus Webb · #IH-2026-009 · Requested Today, 9:15 AM</p>
+                        <p class="adm-approval-desc">Client has requested changes to the 3D renderings. The viewing angle of the bedroom doesn't match the brief. Marco Levi needs to action this.</p>
+                    </div>
+                    <div class="adm-approval-actions">
+                        <button class="adm-btn adm-btn-gold adm-btn-sm adm-approve-item" data-id="approval-2">
+                            <i data-lucide="check" style="width:13px;height:13px;"></i> Acknowledge & Assign
+                        </button>
+                        <button class="adm-btn adm-btn-ghost adm-btn-sm adm-escalate-item" data-id="approval-2">
+                            <i data-lucide="alert-triangle" style="width:13px;height:13px;"></i> Flag for Review
+                        </button>
+                    </div>
+                </div>
+
+                <div class="adm-approvals-empty" id="approvals-empty" style="display:none;">
+                    <i data-lucide="check-circle-2" style="width:40px;height:40px; color:var(--color-antique-gold);"></i>
+                    <p>All caught up — no pending approvals.</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<style>
+/* ==================== Admin Dashboard — InteriHub Command Centre ==================== */
+.adm-wrap {
+    padding: 140px 0 9rem;
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-inline: 24px;
+}
+
+/* ---------- Sidebar ---------- */
+.adm-side {
+    width: 290px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 120px;
+    background: var(--color-obsidian);
+    color: var(--color-warm-ivory);
+    border: 1px solid rgba(183, 154, 99, 0.35);
+    padding: 2.25rem 2rem;
+    max-height: calc(100vh - 140px);
+    overflow-y: auto;
+}
+.adm-side::-webkit-scrollbar { width: 3px; }
+.adm-side::-webkit-scrollbar-track { background: transparent; }
+.adm-side::-webkit-scrollbar-thumb { background: rgba(183,154,99,0.3); }
+.adm-side-top { border-bottom: 1px solid rgba(247,243,237,0.12); padding-bottom: 1.75rem; }
+.adm-brand { display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1rem; }
+.adm-brand-mark {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 34px; height: 34px; border: 1px solid var(--color-antique-gold);
+    font-family: var(--font-heading); font-size: 0.9rem; color: var(--color-antique-gold);
+}
+.adm-brand-name { font-family: var(--font-heading); font-size: 1.35rem; letter-spacing: 0.02em; }
+.adm-label {
+    font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--color-antique-gold); margin: 0 0 0.5rem;
+}
+.adm-label-admin {
+    background: rgba(183,154,99,0.15);
+    border: 1px solid rgba(183,154,99,0.3);
+    padding: 0.2rem 0.65rem;
+    display: inline-block;
+    margin-top: 0.5rem;
+    border-radius: 2px;
+}
+
+.adm-id {
+    display: flex; align-items: center; gap: 1rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(247,243,237,0.12);
+}
+.adm-avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--color-antique-gold); color: var(--color-obsidian);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-heading); font-size: 1rem; font-weight: 600;
+    flex-shrink: 0;
+}
+.adm-id-eyebrow { display: block; font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(247,243,237,0.5); margin-bottom: 0.25rem; }
+.adm-id-name { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 500; color: var(--color-warm-ivory); }
+
+.adm-nav { padding: 1.25rem 0; border-bottom: 1px solid rgba(247,243,237,0.12); }
+.adm-nav a {
+    position: relative; display: flex; align-items: center; gap: 0.75rem;
+    padding: 0.8rem 0 0.8rem 1rem;
+    color: rgba(247,243,237,0.65);
+    font-size: 0.78rem; letter-spacing: 0.06em;
+    transition: color 0.3s ease;
+}
+.adm-nav a::before {
+    content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+    width: 2px; height: 0; background: var(--color-antique-gold);
+    transition: height 0.3s ease;
+}
+.adm-nav a:hover { color: var(--color-warm-ivory); }
+.adm-nav a:hover::before, .adm-nav a.active::before { height: 55%; }
+.adm-nav a.active { color: var(--color-warm-ivory); }
+.adm-nav-icon { display: flex; align-items: center; opacity: 0.6; }
+.adm-nav a.active .adm-nav-icon, .adm-nav a:hover .adm-nav-icon { opacity: 1; }
+.adm-nav-num { font-family: var(--font-heading); font-style: italic; font-size: 0.9rem; color: var(--color-antique-gold); opacity: 0.45; }
+.adm-nav a.active .adm-nav-num { opacity: 1; }
+.adm-nav-badge {
+    margin-inline-start: auto; background: var(--color-antique-gold); color: var(--color-obsidian);
+    font-size: 0.6rem; padding: 0.1rem 0.45rem; border-radius: 10px; font-weight: 700;
+}
+.adm-nav-badge-clay { background: var(--color-clay); color: #fff; }
+
+.adm-side-meta { padding: 1.25rem 0; font-size: 0.7rem; letter-spacing: 0.05em; border-bottom: 1px solid rgba(247,243,237,0.12); }
+.adm-side-meta p { color: rgba(247,243,237,0.45); margin-bottom: 0.35rem; }
+.adm-side-meta b { display: block; color: var(--color-warm-ivory); font-weight: 500; font-size: 0.72rem; }
+
+.adm-side-actions { padding-top: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.adm-side-link {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    color: rgba(247,243,237,0.55); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+.adm-side-link:hover { color: var(--color-warm-ivory); }
+.adm-side-link-logout { color: rgba(184,117,98,0.8); }
+.adm-side-link-logout:hover { color: var(--color-clay); }
+
+/* ---------- Main Panel ---------- */
+.adm-main {
+    flex: 1;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    padding: 3.5rem 4rem;
+    min-height: 640px;
+    overflow: hidden;
+}
+
+.adm-header {
+    display: flex; justify-content: space-between; align-items: flex-end; gap: 2rem;
+    padding-bottom: 2.5rem; margin-bottom: 4rem;
+    border-bottom: 1px solid var(--border-color);
+}
+.adm-title {
+    font-family: var(--font-heading); font-weight: 300;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    letter-spacing: -0.01em; color: var(--text-primary); margin: 0.6rem 0 0;
+}
+.adm-title em { font-style: italic; color: var(--color-antique-gold); }
+.adm-header-right { display: flex; align-items: center; gap: 1.5rem; }
+.adm-header-status {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--text-muted); white-space: nowrap;
+}
+.adm-status-dot { width: 8px; height: 8px; border-radius: 50%; }
+.adm-status-dot-live { background: #6DBF7E; box-shadow: 0 0 0 4px rgba(109,191,126,0.2); animation: admPulse 2s ease infinite; }
+@keyframes admPulse { 0%, 100% { box-shadow: 0 0 0 4px rgba(109,191,126,0.2); } 50% { box-shadow: 0 0 0 8px rgba(109,191,126,0.05); } }
+.adm-header-notif {
+    position: relative; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px; border: 1px solid var(--border-color);
+    color: var(--text-muted); transition: all 0.3s ease;
+}
+.adm-header-notif:hover { border-color: var(--color-antique-gold); color: var(--color-antique-gold); }
+.adm-notif-count {
+    position: absolute; top: -4px; right: -4px;
+    background: var(--color-clay); color: #fff;
+    font-size: 0.55rem; width: 16px; height: 16px;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700;
+}
+
+/* ---------- Section Headers ---------- */
+.adm-sec-head { position: relative; margin-bottom: 2.5rem; }
+.adm-sec-title {
+    font-family: var(--font-heading); font-weight: 300;
+    font-size: clamp(1.9rem, 3vw, 2.6rem);
+    letter-spacing: -0.01em; color: var(--text-primary); margin: 0;
+}
+.adm-sec-title em { font-style: italic; color: var(--color-antique-gold); }
+.adm-sec-index {
+    position: absolute; right: 0; top: -0.7rem;
+    font-family: var(--font-heading); font-size: clamp(4rem, 8vw, 6rem);
+    line-height: 1; color: var(--text-primary);
+    opacity: 0.04; user-select: none; pointer-events: none;
+}
+.adm-sec-sub { color: var(--text-muted); max-width: 580px; margin: -1rem 0 3rem; font-size: 0.95rem; }
+
+/* ---------- KPI Cards ---------- */
+.adm-kpis {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-bottom: 3rem;
+}
+.adm-kpi {
+    position: relative; padding: 1.75rem 1.75rem 1.5rem;
+    border: 1px solid var(--border-color);
+    transition: border-color 0.4s ease, transform 0.3s ease;
+}
+.adm-kpi:hover { border-color: var(--color-antique-gold); transform: translateY(-2px); }
+.adm-kpi-icon {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 36px; height: 36px; border: 1px solid var(--border-color);
+    color: var(--color-antique-gold); margin-bottom: 1rem;
+}
+.adm-kpi-accent { border-color: var(--color-antique-gold); background: rgba(183,154,99,0.04); }
+.adm-kpi-dark { background: var(--color-obsidian); border-color: var(--color-obsidian); }
+.adm-kpi-dark .adm-kpi-label { color: rgba(247,243,237,0.5); }
+.adm-kpi-dark .adm-kpi-value { color: var(--color-antique-gold); }
+.adm-kpi-dark .adm-kpi-change { color: rgba(247,243,237,0.5); }
+.adm-kpi-dark .adm-kpi-icon { border-color: rgba(247,243,237,0.15); }
+.adm-kpi-label { font-size: 0.66rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-muted); display: block; }
+.adm-kpi-value { font-family: var(--font-heading); font-size: 2rem; font-weight: 400; color: var(--text-primary); margin: 0.5rem 0 0.3rem; }
+.adm-kpi-change { font-size: 0.72rem; color: var(--text-muted); }
+.adm-kpi-change-up { color: #6DBF7E; }
+.adm-kpi-change-warn { color: var(--color-clay); }
+
+/* ---------- Overview Grid ---------- */
+.adm-overview-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 1.5rem; margin-bottom: 3rem; }
+.adm-activity-block, .adm-quick-block {
+    border: 1px solid var(--border-color); padding: 1.75rem;
+}
+.adm-block-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+.adm-block-head .adm-label { margin: 0; }
+
+/* Activity List */
+.adm-activity-list { display: flex; flex-direction: column; gap: 0; }
+.adm-act-item {
+    display: flex; align-items: flex-start; gap: 1rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--border-color);
+    transition: background 0.2s ease;
+}
+.adm-act-item:last-child { border-bottom: none; }
+.adm-act-item-new { background: rgba(183,154,99,0.04); }
+.adm-act-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--border-color); flex-shrink: 0; margin-top: 4px;
+}
+.adm-act-dot-gold { background: var(--color-antique-gold); box-shadow: 0 0 0 3px rgba(183,154,99,0.2); }
+.adm-act-dot-clay { background: var(--color-clay); }
+.adm-act-body { flex: 1; }
+.adm-act-title { font-size: 0.85rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.2rem; }
+.adm-act-meta { font-size: 0.72rem; color: var(--text-muted); margin: 0; }
+.adm-act-tag { font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 0.15rem 0.55rem; border-radius: 2px; flex-shrink: 0; margin-top: 2px; }
+.adm-act-tag-new { background: rgba(183,154,99,0.15); color: var(--color-antique-gold); }
+.adm-act-tag-warn { background: rgba(184,117,98,0.15); color: var(--color-clay); }
+.adm-act-tag-ok { background: rgba(116,122,105,0.15); color: var(--color-olive-gray); }
+
+/* Quick Actions */
+.adm-quick-actions {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 2rem;
+}
+.adm-quick-btn {
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.6rem;
+    padding: 1.25rem 0.5rem;
+    border: 1px solid var(--border-color);
+    background: transparent; cursor: pointer; color: var(--text-muted);
+    font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase;
+    transition: all 0.3s ease;
+    font-family: var(--font-body);
+}
+.adm-quick-btn:hover { border-color: var(--color-antique-gold); color: var(--color-antique-gold); background: rgba(183,154,99,0.04); }
+.adm-quick-btn i { color: var(--color-antique-gold); }
+
+/* Capacity */
+.adm-capacity-block { border-top: 1px solid var(--border-color); padding-top: 1.5rem; }
+.adm-capacity-block .adm-block-head { margin-bottom: 0.5rem; }
+.adm-capacity-pct { font-family: var(--font-heading); font-style: italic; font-size: 1.6rem; color: var(--color-antique-gold); }
+.adm-capacity-track { height: 6px; background: var(--bg-secondary); border-radius: 3px; overflow: hidden; }
+.adm-capacity-bar { height: 100%; background: linear-gradient(90deg, var(--color-antique-gold), #D2B883); border-radius: 3px; transition: width 0.8s ease; }
+
+/* Designer Cards */
+.adm-designers-block { border: 1px solid var(--border-color); padding: 1.75rem; margin-top: 1.5rem; }
+.adm-designers-grid { display: flex; flex-direction: column; gap: 0; }
+.adm-designer-card {
+    display: flex; align-items: center; gap: 1.25rem;
+    padding: 1rem 0; border-bottom: 1px solid var(--border-color);
+}
+.adm-designer-card:last-child { border-bottom: none; }
+.adm-designer-avatar {
+    width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+    background: var(--color-obsidian); color: var(--color-warm-ivory);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-heading); font-size: 0.85rem;
+}
+.adm-designer-info { flex: 1; }
+.adm-designer-name { font-weight: 600; font-size: 0.9rem; color: var(--text-primary); margin: 0; }
+.adm-designer-role { font-size: 0.72rem; color: var(--text-muted); margin: 0; }
+.adm-designer-load { flex: 2; }
+.adm-designer-projects { font-size: 0.75rem; color: var(--text-muted); display: block; margin-bottom: 0.4rem; }
+.adm-designer-bar-wrap { height: 4px; background: var(--bg-secondary); border-radius: 2px; overflow: hidden; }
+.adm-designer-bar { height: 100%; background: var(--color-antique-gold); border-radius: 2px; }
+.adm-designer-bar-warn { background: var(--color-clay); }
+
+/* ---------- Chips ---------- */
+.adm-chip { padding: 0.25rem 0.75rem; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; border-radius: 2px; }
+.adm-chip-sm { font-size: 0.58rem; padding: 0.2rem 0.6rem; }
+.adm-chip-gold { background: var(--color-antique-gold); color: #fff; }
+.adm-chip-dark { background: var(--color-obsidian); color: var(--color-warm-ivory); }
+.adm-chip-olive { background: var(--color-olive-gray); color: #fff; }
+.adm-chip-clay { background: var(--color-clay); color: #fff; }
+
+/* ---------- Buttons ---------- */
+.adm-btn {
+    display: inline-flex; align-items: center; gap: 0.55rem;
+    padding: 0.7rem 1.5rem; font-size: 0.68rem; letter-spacing: 0.22em;
+    text-transform: uppercase; font-family: var(--font-body);
+    cursor: pointer; transition: all 0.3s ease; border: none;
+}
+.adm-btn-sm { padding: 0.5rem 1rem; }
+.adm-btn-gold { background: var(--color-antique-gold); color: var(--color-obsidian); border: 1px solid var(--color-antique-gold); }
+.adm-btn-gold:hover { background: transparent; color: var(--color-antique-gold); }
+.adm-btn-ghost { background: transparent; color: var(--text-primary); border: 1px solid var(--border-color); }
+.adm-btn-ghost:hover { border-color: var(--color-antique-gold); color: var(--color-antique-gold); }
+
+/* ---------- Filter Bar ---------- */
+.adm-filter-bar { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+.adm-search-wrap { display: flex; align-items: center; gap: 0.6rem; border: 1px solid var(--border-color); padding: 0.6rem 1rem; flex: 1; min-width: 200px; }
+.adm-search-input { border: none; background: transparent; color: var(--text-primary); font-family: var(--font-body); font-size: 0.85rem; outline: none; width: 100%; }
+.adm-filter-chips { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.adm-filter-chip {
+    padding: 0.4rem 0.9rem; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+    border: 1px solid var(--border-color); background: transparent; cursor: pointer;
+    color: var(--text-muted); font-family: var(--font-body); transition: all 0.3s ease; border-radius: 2px;
+}
+.adm-filter-chip:hover, .adm-filter-chip.active { border-color: var(--color-antique-gold); color: var(--color-antique-gold); background: rgba(183,154,99,0.07); }
+.adm-filter-count { display: inline-flex; align-items: center; justify-content: center; background: var(--color-clay); color: #fff; border-radius: 10px; width: 16px; height: 16px; font-size: 0.55rem; margin-left: 4px; }
+
+/* ---------- Client Table ---------- */
+.adm-table-wrap { overflow-x: auto; margin-bottom: 3rem; }
+.adm-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+.adm-table th {
+    text-align: left; padding: 0.75rem 1rem;
+    font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--text-muted); border-bottom: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+}
+.adm-table td { padding: 1rem; border-bottom: 1px solid var(--border-color); color: var(--text-secondary); vertical-align: middle; }
+.adm-table tbody tr { transition: background 0.2s ease; }
+.adm-table tbody tr:hover { background: rgba(183,154,99,0.04); }
+.adm-table tbody tr[data-status="completed"] { opacity: 0.65; }
+.adm-client-cell { display: flex; align-items: center; gap: 0.75rem; }
+.adm-client-mini-avatar {
+    width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0;
+    background: var(--color-obsidian); color: var(--color-warm-ivory);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-heading); font-size: 0.75rem;
+}
+.adm-client-name { font-weight: 600; color: var(--text-primary); margin: 0; font-size: 0.85rem; }
+.adm-client-email { font-size: 0.72rem; color: var(--text-muted); margin: 0; }
+.adm-project-id { font-family: var(--font-heading); font-style: italic; color: var(--color-antique-gold); font-size: 0.85rem; }
+.adm-mini-bar-wrap { height: 4px; background: var(--bg-secondary); border-radius: 2px; overflow: hidden; margin-bottom: 0.3rem; min-width: 80px; }
+.adm-mini-bar { height: 100%; background: var(--color-antique-gold); border-radius: 2px; }
+.adm-mini-bar-clay { background: var(--color-clay); }
+.adm-mini-bar-lg { margin-bottom: 0.75rem; }
+.adm-table-actions { display: flex; gap: 0.4rem; }
+.adm-tbl-btn {
+    display: flex; align-items: center; justify-content: center;
+    width: 28px; height: 28px; border: 1px solid var(--border-color);
+    background: transparent; cursor: pointer; color: var(--text-muted);
+    transition: all 0.2s ease;
+}
+.adm-tbl-btn:hover { border-color: var(--color-antique-gold); color: var(--color-antique-gold); }
+
+/* ---------- Forms ---------- */
+.adm-form-block { border: 1px solid var(--border-color); padding: 2rem; }
+.adm-form { display: flex; flex-direction: column; gap: 1.25rem; }
+.adm-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.adm-form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+.adm-form-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); }
+.adm-input {
+    padding: 0.75rem 1rem; border: 1px solid var(--border-color);
+    background: transparent; color: var(--text-primary); font-family: var(--font-body); font-size: 0.88rem;
+    transition: border-color 0.3s ease; outline: none;
+}
+.adm-input:focus { border-color: var(--color-antique-gold); }
+.adm-select { cursor: pointer; }
+.adm-textarea { resize: vertical; min-height: 80px; }
+.adm-form-footer { display: flex; gap: 1rem; align-items: center; }
+.adm-form-success {
+    display: flex; align-items: center; gap: 1rem;
+    padding: 1rem 1.25rem; background: rgba(183,154,99,0.08);
+    border: 1px solid var(--color-antique-gold);
+    color: var(--color-antique-gold); font-size: 0.88rem;
+    animation: admFadeIn 0.4s ease;
+}
+.adm-form-success-icon { font-size: 1.1rem; font-weight: 700; }
+@keyframes admFadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ---------- Projects ---------- */
+.adm-projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+.adm-project-card { border: 1px solid var(--border-color); padding: 0; overflow: hidden; transition: border-color 0.3s ease; }
+.adm-project-card:hover { border-color: var(--color-antique-gold); }
+.adm-project-card-header {
+    display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;
+    background: var(--bg-secondary); padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+.adm-project-ref { display: block; font-family: var(--font-heading); font-style: italic; color: var(--color-antique-gold); font-size: 0.8rem; margin-bottom: 0.25rem; }
+.adm-project-title { font-family: var(--font-heading); font-size: 1.3rem; font-weight: 400; color: var(--text-primary); margin: 0 0 0.25rem; }
+.adm-project-client { font-size: 0.75rem; color: var(--text-muted); margin: 0; }
+.adm-project-timeline {
+    display: flex; align-items: center; gap: 0;
+    padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--border-color);
+}
+.adm-pt-stage { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); flex: 1; }
+.adm-pt-done { color: var(--color-antique-gold); }
+.adm-pt-active { color: var(--text-primary); }
+.adm-pt-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--bg-secondary); border: 2px solid var(--border-color); }
+.adm-pt-dot-gold { background: var(--color-antique-gold); border-color: var(--color-antique-gold); }
+.adm-pt-dot-pulse { background: var(--color-antique-gold); border-color: var(--color-antique-gold); animation: admPulse 2s ease infinite; }
+.adm-pt-dot-clay { background: var(--color-clay); border-color: var(--color-clay); }
+.adm-pt-line { flex: 1; height: 1px; background: var(--border-color); }
+.adm-pt-line-done { background: var(--color-antique-gold); }
+.adm-project-card-footer { padding: 1.25rem 1.5rem; }
+.adm-project-meta-row { display: flex; justify-content: space-between; gap: 1rem; font-size: 0.72rem; color: var(--text-muted); margin-bottom: 1rem; }
+.adm-project-meta-row i { vertical-align: middle; margin-right: 0.25rem; }
+.adm-project-actions { display: flex; gap: 0.75rem; }
+
+/* ---------- Photo Review ---------- */
+.adm-photos-filter { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.adm-photo-submissions { display: flex; flex-direction: column; gap: 2rem; }
+.adm-photo-submission { border: 1px solid var(--border-color); padding: 1.75rem; }
+.adm-photo-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.25rem; }
+.adm-photo-client { font-weight: 600; font-size: 0.9rem; color: var(--text-primary); margin: 0 0 0.2rem; }
+.adm-photo-date { font-size: 0.75rem; color: var(--text-muted); margin: 0; }
+.adm-photo-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.25rem; }
+
+.adm-photo-tile {
+    aspect-ratio: 4/3; background: var(--bg-secondary);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text-muted); font-size: 0.72rem;
+    border: 1px solid var(--border-color); margin-bottom: 0.5rem;
+    text-align: center; padding: 0.5rem;
+}
+.adm-photo-thumb p { font-size: 0.75rem; color: var(--text-muted); margin: 0; }
+.adm-photo-notes { margin-bottom: 1.25rem; }
+.adm-photo-actions { display: flex; gap: 1rem; }
+
+/* ---------- Mood Board List ---------- */
+.adm-upload-block { border: 1px solid var(--border-color); padding: 2rem; margin-bottom: 2rem; }
+.adm-dropzone {
+    border: 1px dashed var(--border-color); padding: 3rem 2rem; text-align: center; cursor: pointer;
+    transition: all 0.3s ease; margin: 1rem 0;
+}
+.adm-dropzone:hover { border-color: var(--color-antique-gold); background: rgba(183,154,99,0.03); }
+.adm-dropzone h3 { font-family: var(--font-body); font-weight: 500; font-size: 1rem; color: var(--text-primary); margin: 0.75rem 0 0.3rem; }
+.adm-dropzone p { color: var(--text-muted); font-size: 0.82rem; margin: 0; }
+.adm-dropzone-line { display: block; margin-top: 1.25rem; font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--color-antique-gold); }
+.adm-moodboard-list { display: flex; flex-direction: column; gap: 1.5rem; }
+.adm-mb-row { display: grid; grid-template-columns: 200px 1fr; gap: 2rem; border: 1px solid var(--border-color); overflow: hidden; }
+.adm-mb-img { overflow: hidden; background: var(--bg-secondary); }
+.adm-mb-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.adm-mb-info { padding: 1.5rem 1.5rem 1.5rem 0; }
+.adm-mb-top { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+.adm-mb-ver { font-family: var(--font-heading); font-style: italic; font-size: 0.95rem; color: var(--color-antique-gold); border: 1px solid var(--color-antique-gold); padding: 0.08rem 0.45rem; }
+.adm-mb-title { font-family: var(--font-body); font-weight: 600; font-size: 0.95rem; margin: 0; color: var(--text-primary); }
+.adm-mb-client { font-size: 0.72rem; color: var(--color-antique-gold); margin-bottom: 0.5rem; }
+.adm-mb-desc { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem; }
+.adm-mb-actions { display: flex; gap: 0.75rem; }
+
+/* ---------- Messaging ---------- */
+.adm-messaging-layout { display: grid; grid-template-columns: 280px 1fr; border: 1px solid var(--border-color); min-height: 520px; }
+.adm-thread-list { border-inline-end: 1px solid var(--border-color); overflow-y: auto; }
+.adm-thread-item {
+    display: flex; align-items: center; gap: 0.75rem;
+    padding: 1rem 1.25rem; border-bottom: 1px solid var(--border-color);
+    cursor: pointer; transition: background 0.2s ease;
+}
+.adm-thread-item:hover { background: rgba(183,154,99,0.05); }
+.adm-thread-item.active { background: rgba(183,154,99,0.08); border-inline-start: 2px solid var(--color-antique-gold); }
+.adm-thread-avatar {
+    width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0;
+    background: var(--color-obsidian); color: var(--color-warm-ivory);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-heading); font-size: 0.8rem;
+}
+.adm-thread-info { flex: 1; min-width: 0; }
+.adm-thread-name { font-weight: 600; font-size: 0.85rem; color: var(--text-primary); margin: 0 0 0.15rem; }
+.adm-thread-preview { font-size: 0.72rem; color: var(--text-muted); margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.adm-thread-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 0.3rem; }
+.adm-thread-time { font-size: 0.65rem; color: var(--text-muted); }
+.adm-thread-unread { background: var(--color-antique-gold); color: #fff; font-size: 0.58rem; width: 16px; height: 16px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+
+.adm-chat-window { display: flex; flex-direction: column; }
+.adm-chat-win-head {
+    display: flex; align-items: center; gap: 1rem;
+    padding: 1rem 1.5rem; border-bottom: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+}
+.adm-chat-win-avatar {
+    width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+    background: var(--color-obsidian); color: var(--color-warm-ivory);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-heading); font-size: 0.85rem;
+    box-shadow: 0 0 0 2px var(--color-antique-gold);
+}
+.adm-chat-win-name { font-weight: 600; font-size: 0.9rem; color: var(--text-primary); margin: 0; }
+.adm-chat-win-sub { font-size: 0.7rem; color: var(--text-muted); margin: 0.1rem 0 0; }
+.adm-chat-win-actions { display: flex; gap: 0.5rem; margin-inline-start: auto; }
+.adm-chat-win-body { flex: 1; padding: 1.5rem; overflow-y: auto; min-height: 300px; max-height: 380px; }
+.adm-msg { display: flex; gap: 0.75rem; margin-bottom: 1.25rem; max-width: 80%; }
+.adm-msg-in { align-items: flex-start; }
+.adm-msg-out { justify-content: flex-end; margin-inline-start: auto; }
+.adm-msg-ava {
+    flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%;
+    background: var(--color-obsidian); color: var(--color-warm-ivory);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-heading); font-size: 0.7rem;
+}
+.adm-msg-bub { padding: 0.85rem 1.1rem; font-size: 0.88rem; border-radius: 12px; }
+.adm-msg-bub p { margin: 0 0 0.25rem; color: var(--text-primary); }
+.adm-msg-bub span { font-size: 0.68rem; color: var(--text-muted); }
+.adm-msg-bub-in { background: var(--bg-secondary); border-radius: 12px 12px 12px 2px; }
+.adm-msg-bub-out { background: var(--color-obsidian); color: var(--color-warm-ivory); border-radius: 12px 12px 2px 12px; }
+.adm-msg-bub-out p, .adm-msg-bub-out span { color: rgba(247,243,237,0.8); }
+.adm-typing { display: flex; align-items: center; gap: 0.6rem; font-size: 0.78rem; color: var(--text-muted); margin-bottom: 1rem; }
+.adm-typing-dots { display: inline-flex; gap: 3px; }
+.adm-typing-dots span { width: 6px; height: 6px; border-radius: 50%; background: var(--color-antique-gold); animation: admMsgPulse 1s infinite; }
+.adm-typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+.adm-typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes admMsgPulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+.adm-chat-win-input {
+    display: flex; gap: 0.75rem; padding: 1rem 1.5rem;
+    border-top: 1px solid var(--border-color); align-items: center;
+}
+.adm-reply-as { padding: 0.5rem 0.75rem; }
+
+/* ---------- Approvals ---------- */
+.adm-approvals-list { display: flex; flex-direction: column; gap: 1.25rem; }
+.adm-approval-item {
+    display: flex; gap: 1.5rem; align-items: flex-start;
+    border: 1px solid var(--border-color); padding: 1.75rem;
+    transition: border-color 0.3s ease;
+}
+.adm-approval-item:hover { border-color: var(--color-antique-gold); }
+.adm-approval-item.resolved { opacity: 0.4; pointer-events: none; }
+.adm-approval-icon {
+    display: flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px; flex-shrink: 0; border: 1px solid;
+}
+.adm-approval-icon-warn { border-color: rgba(183,154,99,0.4); color: var(--color-antique-gold); background: rgba(183,154,99,0.08); }
+.adm-approval-icon-clay { border-color: rgba(184,117,98,0.4); color: var(--color-clay); background: rgba(184,117,98,0.08); }
+.adm-approval-body { flex: 1; }
+.adm-approval-type { font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--color-antique-gold); margin: 0 0 0.3rem; }
+.adm-approval-title { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 400; color: var(--text-primary); margin: 0 0 0.3rem; }
+.adm-approval-meta { font-size: 0.72rem; color: var(--text-muted); margin: 0 0 0.75rem; }
+.adm-approval-desc { font-size: 0.85rem; color: var(--text-secondary); margin: 0; }
+.adm-approval-actions { display: flex; flex-direction: column; gap: 0.5rem; flex-shrink: 0; }
+.adm-approvals-empty { text-align: center; padding: 4rem; color: var(--text-muted); }
+.adm-approvals-empty p { margin-top: 1rem; font-size: 0.9rem; }
+
+/* ---------- Reveal ---------- */
+.reveal-up { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal-up.revealed { opacity: 1; transform: translateY(0); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1200px) {
+    .adm-kpis { grid-template-columns: repeat(3, 1fr); }
+    .adm-overview-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 1024px) {
+    .adm-wrap { flex-direction: column; padding-top: 120px; }
+    .adm-side { position: static; width: 100%; max-height: none; }
+    .adm-nav { display: flex; flex-wrap: wrap; gap: 0 1rem; }
+    .adm-nav a { flex: 0 0 auto; }
+    .adm-main { padding: 2.5rem 1.5rem; }
+}
+@media (max-width: 768px) {
+    .adm-kpis { grid-template-columns: 1fr 1fr; }
+    .adm-projects-grid { grid-template-columns: 1fr; }
+    .adm-messaging-layout { grid-template-columns: 1fr; }
+    .adm-thread-list { border-inline-end: none; border-bottom: 1px solid var(--border-color); max-height: 240px; overflow-y: auto; }
+    .adm-mb-row { grid-template-columns: 1fr; }
+    .adm-mb-img { max-height: 160px; }
+    .adm-mb-info { padding: 1.25rem; }
+    .adm-form-row { grid-template-columns: 1fr; }
+    .adm-photo-gallery { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 540px) {
+    .adm-kpis { grid-template-columns: 1fr; }
+    .adm-quick-actions { grid-template-columns: 1fr 1fr; }
+    .adm-approval-item { flex-direction: column; }
+    .adm-approval-actions { flex-direction: row; }
+}
+/* ---------- Toast ---------- */
+.adm-toast {
+    position: fixed; bottom: 2rem; right: 2rem; z-index: 9999;
+    background: var(--color-obsidian); color: var(--color-warm-ivory);
+    padding: 0.85rem 1.5rem; font-size: 0.82rem; letter-spacing: 0.04em;
+    border-left: 3px solid var(--color-antique-gold);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+    opacity: 0; transform: translateY(12px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    max-width: 320px; pointer-events: none;
+}
+.adm-toast.adm-toast-show { opacity: 1; transform: translateY(0); }
+
+/* ---------- Notification Panel ---------- */
+.adm-notif-panel {
+    position: absolute; top: calc(100% + 10px); right: 0;
+    width: 300px; background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    z-index: 500;
+}
+.adm-notif-panel-head {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.85rem 1.25rem; border-bottom: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+}
+.adm-notif-clear {
+    font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--color-antique-gold); cursor: pointer;
+    transition: opacity 0.2s;
+}
+.adm-notif-clear:hover { opacity: 0.7; }
+.adm-notif-row {
+    display: flex; align-items: flex-start; gap: 0.85rem;
+    padding: 0.85rem 1.25rem; border-bottom: 1px solid var(--border-color);
+}
+.adm-notif-row:last-child { border-bottom: none; }
+</style>
