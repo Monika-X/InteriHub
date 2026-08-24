@@ -688,6 +688,19 @@ img {
     transform: translateY(0);
 }
 
+/* Scroll Reveal Animations */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-up.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Helpers */
 .section-padding {
     padding: var(--spacing-xl) 0;

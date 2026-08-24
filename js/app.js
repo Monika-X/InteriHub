@@ -294,16 +294,47 @@ function initRouter() {
 
 // --- Scroll Reveal Animation ---
 function initScrollReveal() {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('revealed');
-                observer.unobserve(entry.target);
+    const reveals = document.querySelectorAll('.reveal-up');
+    if (!reveals.length) return;
+
+    const revealElement = (el) => {
+        if (el) el.classList.add('revealed');
+    };
+
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    revealElement(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.01, rootMargin: '50px 0px 50px 0px' });
+
+        reveals.forEach(el => observer.observe(el));
+    } else {
+        reveals.forEach(revealElement);
+    }
+
+    // Viewport check for initial elements
+    const checkViewport = () => {
+        reveals.forEach(el => {
+            if (el.classList.contains('revealed')) return;
+            const rect = el.getBoundingClientRect();
+            if (rect.top < (window.innerHeight || document.documentElement.clientHeight) + 100 && rect.bottom > -100) {
+                revealElement(el);
             }
         });
-    }, { threshold: 0.1 });
+    };
 
-    document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+    checkViewport();
+    setTimeout(checkViewport, 150);
+    setTimeout(checkViewport, 500);
+
+    // Guaranteed fallback: reveal all elements if not already revealed
+    setTimeout(() => {
+        reveals.forEach(revealElement);
+    }, 1200);
 }
 
 // --- Views (Simulated Components) ---
