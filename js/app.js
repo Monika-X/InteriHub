@@ -134,11 +134,29 @@ function initMobileMenu() {
     });
 }
 
+// Detect the GitHub Pages base path (e.g. "/InteriHub") at runtime
+const BASE_PATH = (() => {
+    const p = window.location.pathname;
+    // If served from a subdir like /InteriHub/, the base is everything before the last segment
+    const scriptSrc = document.querySelector('script[src*="app.js"]');
+    if (scriptSrc) {
+        // e.g. "/InteriHub/js/app.js" → base is "/InteriHub"
+        const src = scriptSrc.getAttribute('src');
+        const idx = src.indexOf('/js/app.js');
+        if (idx > 0) return src.slice(0, idx);
+    }
+    return '';
+})();
+
 function getRoute() {
     const hash = window.location.hash.replace(/^#/, '');
     if (hash) return hash === '/index.html' ? '/' : hash;
-    const path = window.location.pathname;
-    if (path === '/index.html' || path === '/') return '/';
+    let path = window.location.pathname;
+    // Strip the base path prefix so /InteriHub/about → /about
+    if (BASE_PATH && path.startsWith(BASE_PATH)) {
+        path = path.slice(BASE_PATH.length) || '/';
+    }
+    if (!path || path === '/index.html' || path === '/') return '/';
     return path;
 }
 
