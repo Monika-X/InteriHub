@@ -9,13 +9,13 @@ const state = {
 
 // --- DOM Elements ---
 const dom = {
-    body: document.body,
-    themeToggleBtn: document.getElementById('theme-toggle'),
-    navbar: document.getElementById('navbar'),
-    appRoot: document.getElementById('app-root'),
-    pageTransition: document.querySelector('.page-transition'),
-    backToTopBtn: document.getElementById('back-to-top'),
-    rtlToggleBtn: document.getElementById('rtl-toggle')
+    get body() { return document.body; },
+    get themeToggleBtn() { return document.getElementById('theme-toggle'); },
+    get navbar() { return document.getElementById('navbar'); },
+    get appRoot() { return document.getElementById('app-root'); },
+    get pageTransition() { return document.querySelector('.page-transition'); },
+    get backToTopBtn() { return document.getElementById('back-to-top'); },
+    get rtlToggleBtn() { return document.getElementById('rtl-toggle'); }
 };
 
 // --- Theme Management ---
@@ -163,8 +163,7 @@ function getRoute() {
 
 const routes = {
     '/': renderHome,
-    '/index.html': renderHome,
-    '/blog-details': renderBlogDetails
+    '/index.html': renderHome
     // Other routes will dynamically fetch from /pages/[route].html
 };
 
@@ -2476,11 +2475,17 @@ function initGlobalForms() {
 }
 
 // --- Initialization ---
-document.addEventListener('DOMContentLoaded', () => {
+function bootApp() {
     initTheme();
     initRTL();
     initNavigation();
     initProfileMenu();
     initGlobalForms();
     initRouter();
-});
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bootApp);
+} else {
+    bootApp();
+}
