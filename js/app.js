@@ -177,76 +177,65 @@ function getQueryParam(name) {
 
 async function handleRoute(path) {
     const routeKey = path.split('?')[0];
-    // Prevent routing if it's the same page
-    if(path === state.currentRoute && dom.appRoot.innerHTML.trim() !== '') return;
+    const isInitial = dom.appRoot.innerHTML.trim() === '';
+    
+    if (path === state.currentRoute && !isInitial) return;
     state.currentRoute = path;
 
-    // Close profile dropdown on navigation
     closeProfileMenu();
 
-    // Transition out
-    dom.pageTransition.classList.add('active');
-    
-    // Wait for transition overlay
-    await new Promise(resolve => setTimeout(resolve, 800));
-    
-    // Render view
-    let is404 = false;
-    if (routes[routeKey]) {
-        dom.appRoot.innerHTML = await routes[routeKey]();
-    } else {
-        try {
-            const pageName = routeKey === '/' ? 'home' : routeKey.replace(/^\//, '');
-            const pageUrl = `${BASE_PATH}/pages/${pageName}.html`;
-            const response = await fetch(pageUrl);
-            if (response.ok) {
-                dom.appRoot.innerHTML = await response.text();
-            } else {
+    // Trigger overlay only for subsequent route changes
+    if (!isInitial && dom.pageTransition) {
+        dom.pageTransition.classList.add('active');
+        await new Promise(resolve => setTimeout(resolve, 300));
+    }
+
+    try {
+        let is404 = false;
+        if (routes[routeKey]) {
+            dom.appRoot.innerHTML = await routes[routeKey]();
+        } else {
+            try {
+                const pageName = routeKey === '/' ? 'home' : routeKey.replace(/^\//, '');
+                const pageUrl = `${BASE_PATH}/pages/${pageName}.html`;
+                const response = await fetch(pageUrl);
+                if (response.ok) {
+                    dom.appRoot.innerHTML = await response.text();
+                } else {
+                    dom.appRoot.innerHTML = await render404();
+                    is404 = true;
+                }
+            } catch (error) {
                 dom.appRoot.innerHTML = await render404();
                 is404 = true;
             }
-        } catch (error) {
-            dom.appRoot.innerHTML = await render404();
-            is404 = true;
         }
-    }
 
-    // Minimal pages: hide navbar/footer, show floating controls
-    const minimalPages = ['/login', '/signup', '/dashboard', '/admin-dashboard', '/404', '/maintenance'];
-    dom.body.classList.toggle('page-auth', minimalPages.includes(routeKey) || is404);
-    
-    if (path === '/dashboard') {
-        initDashboard();
-    }
-    
-    if (path === '/admin-dashboard') {
-        initAdminDashboard();
-    }
-    
-    if (path === '/blog') {
-        initBlogFilters();
-    }
-    
-    // Re-initialize Lucide icons for new content
-    if(window.lucide) {
-        window.lucide.createIcons();
-    }
-    
-    // Update Active Nav Link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === routeKey || (routeKey === '/blog-details' && link.getAttribute('href') === '/blog')) {
-            link.classList.add('active');
+        const minimalPages = ['/login', '/signup', '/dashboard', '/admin-dashboard', '/404', '/maintenance'];
+        dom.body.classList.toggle('page-auth', minimalPages.includes(routeKey) || is404);
+        
+        if (path === '/dashboard') initDashboard();
+        if (path === '/admin-dashboard') initAdminDashboard();
+        if (path === '/blog') initBlogFilters();
+        
+        if (window.lucide) window.lucide.createIcons();
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === routeKey || (routeKey === '/blog-details' && link.getAttribute('href') === '/blog')) {
+                link.classList.add('active');
+            }
+        });
+        
+        window.scrollTo(0, 0);
+    } catch (err) {
+        console.error('Error rendering route:', err);
+    } finally {
+        if (dom.pageTransition) {
+            dom.pageTransition.classList.remove('active');
         }
-    });
-    
-    window.scrollTo(0, 0);
-
-    // Transition in
-    dom.pageTransition.classList.remove('active');
-    
-    // Trigger scroll reveal animations after render
-    initScrollReveal();
+        initScrollReveal();
+    }
 }
 
 function initRouter() {
@@ -295,46 +284,7 @@ function initRouter() {
 // --- Scroll Reveal Animation ---
 function initScrollReveal() {
     const reveals = document.querySelectorAll('.reveal-up');
-    if (!reveals.length) return;
-
-    const revealElement = (el) => {
-        if (el) el.classList.add('revealed');
-    };
-
-    if ('IntersectionObserver' in window) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    revealElement(entry.target);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.01, rootMargin: '50px 0px 50px 0px' });
-
-        reveals.forEach(el => observer.observe(el));
-    } else {
-        reveals.forEach(revealElement);
-    }
-
-    // Viewport check for initial elements
-    const checkViewport = () => {
-        reveals.forEach(el => {
-            if (el.classList.contains('revealed')) return;
-            const rect = el.getBoundingClientRect();
-            if (rect.top < (window.innerHeight || document.documentElement.clientHeight) + 100 && rect.bottom > -100) {
-                revealElement(el);
-            }
-        });
-    };
-
-    checkViewport();
-    setTimeout(checkViewport, 150);
-    setTimeout(checkViewport, 500);
-
-    // Guaranteed fallback: reveal all elements if not already revealed
-    setTimeout(() => {
-        reveals.forEach(revealElement);
-    }, 1200);
+    reveals.forEach(el => el.classList.add('revealed'));
 }
 
 // --- Views (Simulated Components) ---
@@ -572,15 +522,7 @@ async function renderHome() {
         </section>
 
         <style>
-            .reveal-up {
-                opacity: 0;
-                transform: translateY(40px);
-                transition: opacity 0.8s ease, transform 0.8s ease;
-            }
-            .reveal-up.revealed {
-                opacity: 1;
-                transform: translateY(0);
-            }
+
 
             .home-eyebrow {
                 font-size: 0.7rem;
