@@ -161,10 +161,22 @@ function getRoute() {
     return path;
 }
 
+function executePageScripts(container) {
+    if (!container) return;
+    const scripts = container.querySelectorAll('script');
+    scripts.forEach(script => {
+        const newScript = document.createElement('script');
+        Array.from(script.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+        newScript.appendChild(document.createTextNode(script.innerHTML));
+        script.parentNode.replaceChild(newScript, script);
+    });
+}
+
 const routes = {
     '/': renderHome,
+    '/home': renderHome,
+    '/index': renderHome,
     '/index.html': renderHome
-    // Other routes will dynamically fetch from /pages/[route].html
 };
 
 function getQueryParam(name) {
@@ -200,6 +212,7 @@ async function handleRoute(path) {
                 const response = await fetch(pageUrl);
                 if (response.ok) {
                     dom.appRoot.innerHTML = await response.text();
+                    executePageScripts(dom.appRoot);
                 } else {
                     dom.appRoot.innerHTML = await render404();
                     is404 = true;

@@ -5,23 +5,22 @@
   <title>InteriHub — Redirecting</title>
   <script>
     // GitHub Pages SPA redirect — convert path-based URL into hash route
-    // e.g. monika-x.github.io/InteriHub/about → monika-x.github.io/InteriHub/#/about
     (function () {
       var origin  = window.location.origin;
       var path    = window.location.pathname;   // e.g. /InteriHub/about
       var search  = window.location.search;
       var hash    = window.location.hash;
 
-      // Find the repo/base segment — the first path segment after the domain
-      // For project pages like /InteriHub/, base is "/InteriHub/"
-      var segments = path.split('/').filter(Boolean); // ['InteriHub','about']
-      var base     = segments.length > 0 ? '/' + segments[0] + '/' : '/';
-
-      // The route is everything after the base
-      var route = '/' + segments.slice(1).join('/');
+      // Detect repository name on GitHub Pages (e.g. "InteriHub")
+      var segments = path.split('/').filter(Boolean);
+      var repoName = 'InteriHub';
+      var repoIdx = segments.indexOf(repoName);
+      
+      var base = '/' + repoName + '/';
+      var routeSegments = repoIdx >= 0 ? segments.slice(repoIdx + 1) : segments;
+      var route = '/' + routeSegments.join('/');
       if (!route || route === '/') route = '/';
 
-      // Redirect: preserve query string and original hash
       var target = origin + base + '#' + route + (search ? '?' + search.slice(1) : '') + hash;
       window.location.replace(target);
     })();
