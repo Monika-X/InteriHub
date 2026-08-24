@@ -136,14 +136,15 @@ function initMobileMenu() {
 
 // Detect the GitHub Pages base path (e.g. "/InteriHub") at runtime
 const BASE_PATH = (() => {
-    const p = window.location.pathname;
-    // If served from a subdir like /InteriHub/, the base is everything before the last segment
     const scriptSrc = document.querySelector('script[src*="app.js"]');
     if (scriptSrc) {
-        // e.g. "/InteriHub/js/app.js" → base is "/InteriHub"
         const src = scriptSrc.getAttribute('src');
         const idx = src.indexOf('/js/app.js');
         if (idx > 0) return src.slice(0, idx);
+    }
+    const parts = window.location.pathname.split('/').filter(Boolean);
+    if (parts.length > 0 && window.location.hostname.endsWith('github.io')) {
+        return '/' + parts[0];
     }
     return '';
 })();
@@ -195,8 +196,9 @@ async function handleRoute(path) {
         dom.appRoot.innerHTML = await routes[routeKey]();
     } else {
         try {
-            const pageName = routeKey === '/' ? 'home' : routeKey.replace('/', '');
-            const response = await fetch(`pages/${pageName}.html`);
+            const pageName = routeKey === '/' ? 'home' : routeKey.replace(/^\//, '');
+            const pageUrl = `${BASE_PATH}/pages/${pageName}.html`;
+            const response = await fetch(pageUrl);
             if (response.ok) {
                 dom.appRoot.innerHTML = await response.text();
             } else {
@@ -249,14 +251,36 @@ async function handleRoute(path) {
 
 function initRouter() {
     document.addEventListener('click', e => {
-        const link = e.target.closest('a[data-route]');
-        if (link) {
-            const path = link.getAttribute('href');
-            if (!path || path === '#') return;
+        const link = e.target.closest('a');
+        if (!link) return;
+
+        const href = link.getAttribute('href');
+        if (!href) return;
+
+        // Skip external links, mailto, tel, javascript, target="_blank"
+        if (href.startsWith('http://') || href.startsWith('https://') || 
+            href.startsWith('mailto:') || href.startsWith('tel:') || 
+            href.startsWith('javascript:') || link.getAttribute('target') === '_blank') {
+            return;
+        }
+
+        let targetRoute = href;
+        if (targetRoute.startsWith('#/')) {
+            targetRoute = targetRoute.slice(1);
+        } else if (targetRoute.startsWith('#')) {
+            return; // In-page anchor
+        }
+
+        if (targetRoute.startsWith('/') || link.hasAttribute('data-route')) {
             e.preventDefault();
-            if (getRoute() === path) return;
-            window.location.hash = path;
-            handleRoute(path);
+            if (targetRoute === '/index.html') targetRoute = '/';
+
+            const currentHash = window.location.hash.replace(/^#/, '');
+            if (currentHash !== targetRoute) {
+                window.location.hash = targetRoute;
+            } else {
+                handleRoute(targetRoute);
+            }
         }
     });
 
@@ -1067,7 +1091,7 @@ async function renderHome() {
 
 async function render404() {
     try {
-        const response = await fetch('pages/404.html');
+        const response = await fetch(`${BASE_PATH}/pages/404.html`);
         if (response.ok) {
             return await response.text();
         }
