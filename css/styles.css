@@ -144,6 +144,94 @@ img {
     color: var(--bg-primary);
 }
 
+/* Home Quote — Begin Your Project: high-contrast hover fix for Dark Mode
+   Section bg is always var(--color-obsidian); hover must remain readable
+   even when inline styles are present (inline overrides without !important). */
+.home-quote .home-quote-btn-outline {
+    background-color: transparent;
+    color: var(--color-warm-ivory);
+    border: 1px solid var(--color-warm-ivory);
+}
+.home-quote .home-quote-btn-primary {
+    background-color: var(--color-antique-gold);
+    color: var(--color-obsidian);
+    border: 1px solid var(--color-antique-gold);
+}
+.home-quote .home-quote-btn-outline:hover {
+    background-color: var(--color-warm-ivory);
+    color: var(--color-obsidian);
+    border-color: var(--color-warm-ivory);
+}
+.home-quote .home-quote-btn-primary:hover {
+    background-color: var(--color-warm-ivory);
+    color: var(--color-obsidian);
+    border-color: var(--color-warm-ivory);
+}
+.theme-dark .home-quote .home-quote-btn-outline:hover,
+.theme-dark .home-quote .home-quote-btn-primary:hover {
+    background-color: var(--color-warm-ivory);
+    color: var(--color-obsidian);
+    border-color: var(--color-warm-ivory);
+}
+/* Fallback if inline style remains: override inline color on hover */
+.home-quote .btn-outline[style]:hover {
+    background-color: var(--color-warm-ivory) !important;
+    color: var(--color-obsidian) !important;
+    border-color: var(--color-warm-ivory) !important;
+}
+.theme-dark .home-quote .btn-outline[style]:hover {
+    background-color: var(--color-warm-ivory) !important;
+    color: var(--color-obsidian) !important;
+}
+
+/* Home Process — Light mode contrast fix: "A considered path from brief to home" (bg var(--bg-primary)=#F7F3ED) */
+.theme-light .home-process-step p {
+    color: #5A534A;
+}
+.theme-light .home-process-num {
+    color: #9C8456;
+}
+.theme-light .home-process-step {
+    border-top-color: rgba(23,23,23,0.18);
+}
+.theme-light .home-process .home-eyebrow {
+    color: #9C8456;
+}
+.theme-light .home-process .home-eyebrow::before {
+    background: #9C8456;
+}
+
+/* Footer — Light mode visibility fix: bg #EBE6DF with taupe #A99B8E 2.18:1 / gold #B79A63 2.16:1 fail AA */
+.theme-light .footer-desc,
+.theme-light .footer-links-col a,
+.theme-light .footer-newsletter-col p,
+.theme-light .footer-bottom-row,
+.theme-light .footer-copyright,
+.theme-light .footer-legal-links a {
+    color: #5A534A;
+}
+.theme-light .footer-links-col h3,
+.theme-light .footer-newsletter-col h3 {
+    color: #7A5F36;
+}
+.theme-light .newsletter-form-inline .btn {
+    color: var(--color-obsidian);
+}
+.theme-light .footer-links-col a:hover,
+.theme-light .footer-legal-links a:hover {
+    color: #7A5F36;
+}
+.theme-light .footer-divider {
+    background-color: rgba(23, 23, 23, 0.15);
+}
+.theme-light .newsletter-form-inline input {
+    border-color: rgba(23, 23, 23, 0.28);
+    color: #2A2A2A;
+}
+.theme-light .newsletter-form-inline input::placeholder {
+    color: #8A837A;
+}
+
 /* Navigation */
 .navbar {
     position: fixed;
@@ -183,6 +271,20 @@ img {
     color: var(--color-antique-gold);
 }
 
+.brand img,
+.footer-logo img,
+.auth-v2-logo img {
+    image-rendering: -webkit-optimize-contrast;
+    transition: transform var(--transition-fast), filter var(--transition-fast);
+    border-radius: 8px;
+}
+
+.brand:hover img,
+.footer-logo:hover img {
+    transform: scale(1.05);
+    filter: drop-shadow(0 4px 14px rgba(183, 154, 99, 0.35));
+}
+
 .nav-links {
     display: none;
 }
@@ -192,6 +294,20 @@ img {
         display: flex;
         gap: var(--spacing-md);
     }
+}
+@media (max-width: 1180px) and (min-width: 992px) {
+    .nav-links { gap: 1rem; }
+    .nav-links a { font-size: 0.72rem; letter-spacing: 0.07em; }
+    .brand { font-size: 1.25rem; }
+    .brand img { width: 30px !important; height: 30px !important; }
+    .nav-container { gap: 0.75rem; }
+    .nav-actions { gap: 0.5rem !important; }
+}
+@media (max-width: 1024px) and (min-width: 992px) {
+    .nav-links { gap: 0.75rem; }
+    .nav-links a { font-size: 0.68rem; letter-spacing: 0.06em; }
+    .nav-book-btn { padding: 0.5rem 0.9rem !important; font-size: 0.62rem !important; }
+    .rtl-toggle-btn { padding: 0.3rem 0.6rem !important; font-size: 0.62rem !important; }
 }
 
 .nav-links a {
@@ -203,6 +319,14 @@ img {
 
 .nav-book-link {
     display: none;
+}
+
+.nav-book-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    line-height: 1;
+    border-radius: 999px;
 }
 
 .nav-links a::after {

@@ -578,10 +578,15 @@
     }
     .bl-index-head {
         display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        gap: 3rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
         margin-bottom: 3rem;
+        text-align: left;
+    }
+    .bl-index-head > div {
+        width: 100%;
+        text-align: left;
     }
     .bl-index-title {
         font-family: var(--font-heading);
@@ -589,12 +594,17 @@
         font-weight: 300;
         letter-spacing: -0.02em;
         margin: 0;
+        text-align: left;
     }
     .bl-index-title em { font-style: italic; color: var(--color-antique-gold); }
     .bl-index-copy {
         color: var(--text-muted);
         max-width: 380px;
-        margin: 0;
+        margin: 0 auto 0 0;
+        text-align: left !important;
+        align-self: flex-start;
+        display: block;
+        width: 100%;
     }
 
     /* Filters */

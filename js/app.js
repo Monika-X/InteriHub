@@ -528,8 +528,8 @@ async function renderHome() {
                 </p>
                 <p class="home-quote-attr reveal-up">— The Harrison Family, Manhattan</p>
                 <div class="home-quote-actions reveal-up">
-                    <a href="/services" data-route class="btn btn-primary" style="background-color: var(--color-antique-gold); color: var(--color-obsidian); border: none;">Explore Services</a>
-                    <a href="/contact" data-route class="btn btn-outline" style="color: var(--color-warm-ivory); border-color: var(--color-warm-ivory);">Begin Your Project</a>
+                    <a href="/services" data-route class="btn btn-primary home-quote-btn-primary">Explore Services</a>
+                    <a href="/contact" data-route class="btn btn-outline home-quote-btn-outline">Begin Your Project</a>
                 </div>
             </div>
         </section>
@@ -947,6 +947,22 @@ async function renderHome() {
                 color: var(--text-muted);
                 font-size: 0.9rem;
             }
+            /* Light mode contrast improvement — #F7F3ED bg with taupe/gold fails AA (2.4:1) */
+            .theme-light .home-process-step p {
+                color: #5A534A;
+            }
+            .theme-light .home-process-num {
+                color: #9C8456;
+            }
+            .theme-light .home-process-step {
+                border-top-color: rgba(23,23,23,0.18);
+            }
+            .theme-light .home-process .home-eyebrow {
+                color: #9C8456;
+            }
+            .theme-light .home-process .home-eyebrow::before {
+                background: #9C8456;
+            }
 
             .home-journal {
                 padding: 9rem 0;
@@ -956,8 +972,19 @@ async function renderHome() {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 gap: 2rem;
+                align-items: stretch;
             }
-            .home-journal-card a { display: block; }
+            .home-journal-card {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
+            .home-journal-card a {
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+                height: 100%;
+            }
             .home-journal-img {
                 aspect-ratio: 4/3;
                 overflow: hidden;
@@ -997,6 +1024,7 @@ async function renderHome() {
                 color: var(--text-muted);
                 font-size: 0.9rem;
                 margin-bottom: 1.25rem;
+                flex-grow: 1;
             }
             .home-journal-read {
                 font-size: 0.7rem;
@@ -1006,6 +1034,8 @@ async function renderHome() {
                 border-bottom: 1px solid var(--border-color);
                 padding-bottom: 0.35rem;
                 transition: color 0.3s ease, border-color 0.3s ease;
+                margin-top: auto;
+                align-self: flex-start;
             }
             .home-journal-card:hover .home-journal-read {
                 color: var(--color-antique-gold);
@@ -1049,6 +1079,38 @@ async function renderHome() {
                 justify-content: center;
                 flex-wrap: wrap;
             }
+            /* Begin Your Project button — fixed contrast for hover in Dark Mode */
+            .home-quote .home-quote-btn-primary {
+                background-color: var(--color-antique-gold);
+                color: var(--color-obsidian);
+                border: 1px solid var(--color-antique-gold);
+            }
+            .home-quote .home-quote-btn-primary:hover {
+                background-color: var(--color-warm-ivory);
+                color: var(--color-obsidian);
+                border-color: var(--color-warm-ivory);
+            }
+            .home-quote .home-quote-btn-outline {
+                background-color: transparent;
+                color: var(--color-warm-ivory);
+                border: 1px solid var(--color-warm-ivory);
+            }
+            .home-quote .home-quote-btn-outline:hover {
+                background-color: var(--color-warm-ivory);
+                color: var(--color-obsidian);
+                border-color: var(--color-warm-ivory);
+            }
+            .theme-dark .home-quote .home-quote-btn-outline:hover,
+            .theme-dark .home-quote .home-quote-btn-primary:hover {
+                background-color: var(--color-warm-ivory);
+                color: var(--color-obsidian);
+                border-color: var(--color-warm-ivory);
+            }
+            .home-quote .home-quote-btn-outline:focus-visible,
+            .home-quote .home-quote-btn-primary:focus-visible {
+                outline: 2px solid var(--color-antique-gold);
+                outline-offset: 2px;
+            }
 
             @media (max-width: 992px) {
                 .home-hero-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -1070,6 +1132,13 @@ async function renderHome() {
                 .home-work-card-body p { text-align: start; }
                 .home-process-grid { grid-template-columns: 1fr; }
                 .home-stats { grid-template-columns: 1fr 1fr; }
+            }
+            @media (max-width: 360px) {
+                .home-hero { padding-top: 90px; padding-bottom: 1.5rem; }
+                .home-hero .btn { padding: 0.65rem 0.9rem; font-size: 0.68rem; letter-spacing: 0.08em; }
+                .home-hero .btn-outline { margin-inline-start: 0.5rem !important; }
+                .home-hero-lead { margin-bottom: 2rem; }
+                .home-hero-title { margin-bottom: 1.5rem; }
             }
         </style>
     `;

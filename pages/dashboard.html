@@ -4,11 +4,14 @@
     <!-- ======== SIDEBAR ======== -->
     <aside class="ds-side">
         <div class="ds-side-top">
-            <div class="ds-brand">
-                <span class="ds-brand-mark">IH</span>
-                <span class="ds-brand-name">InteriHub</span>
-            </div>
-            <p class="ds-label">Client Portal</p>
+            <a href="/" data-route class="ds-brand" style="text-decoration: none; display: flex; align-items: center; gap: 0.75rem;">
+                <img src="assets/logo.svg" alt="InteriHub Logo" width="32" height="32" style="flex-shrink:0;">
+                <div style="display: flex; flex-direction: column; line-height: 1;">
+                    <span class="ds-brand-name" style="line-height:1;">INTERI<span style="color: var(--color-antique-gold);">HUB</span></span>
+                    <span style="font-size: 0.48rem; font-family: var(--font-body); letter-spacing: 0.08em; color: var(--color-antique-gold); font-weight: 500; margin-top: 2px; text-transform: uppercase;">Where Elegance Meets Comfort.</span>
+                </div>
+            </a>
+            <p class="ds-label" style="margin-top: 0.85rem;">Client Portal</p>
         </div>
 
         <div class="ds-id">
@@ -666,6 +669,43 @@
     /* ---------- Reveal ---------- */
     .reveal-up { opacity: 1; transform: translateY(0); }
     .reveal-up.revealed { opacity: 1; transform: translateY(0); }
+
+    /* ---------- Redesign: premium shell, clickable brand ---------- */
+    .ds-wrap {
+        background: radial-gradient(ellipse at 12% 0%, rgba(183,154,99,0.08), transparent 55%), var(--bg-primary);
+    }
+    .ds-brand {
+        cursor: pointer;
+        transition: opacity var(--transition-fast), transform var(--transition-fast);
+    }
+    .ds-brand:hover { opacity: 0.9; transform: translateY(-1px); }
+    .ds-brand img { display: block; }
+    .ds-brand-name { letter-spacing: 0.06em; }
+    .ds-side {
+        border-radius: 16px;
+        box-shadow: 0 24px 64px rgba(0,0,0,0.12);
+        overflow: hidden;
+    }
+    .ds-main {
+        border-radius: 16px;
+        box-shadow: 0 24px 64px rgba(0,0,0,0.08);
+        background: var(--bg-primary);
+    }
+    .ds-header { position: relative; overflow: hidden; }
+    .ds-header::before {
+        content: 'Workspace';
+        position: absolute;
+        right: -8px; top: -18px;
+        font-family: var(--font-heading);
+        font-size: clamp(3rem, 8vw, 5rem);
+        line-height: 1;
+        color: var(--text-primary);
+        opacity: 0.04;
+        pointer-events: none;
+        user-select: none;
+    }
+    .ds-stat { border-radius: 12px; }
+    .ds-progress, .ds-chat, .ds-mood { border-radius: 12px; overflow: hidden; }
 
     /* ---------- Responsive ---------- */
     @media (max-width: 1024px) {

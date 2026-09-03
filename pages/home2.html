@@ -85,7 +85,9 @@
             <h2 class="h2-works-title">The recent archive</h2>
         </div>
     </div>
-    <div class="h2-works-scroll reveal-up">
+    <div class="h2-works-viewport reveal-up">
+        <button class="h2-works-nav h2-works-prev" aria-label="Previous works" type="button"><i data-lucide="chevron-left"></i></button>
+        <div class="h2-works-scroll">
         <figure class="h2-work">
             <span class="h2-work-num">I</span>
             <div class="h2-work-img">
@@ -141,6 +143,8 @@
                 <span class="h2-work-meta">Dubai · 2024</span>
             </figcaption>
         </figure>
+        </div>
+        <button class="h2-works-nav h2-works-next" aria-label="Next works" type="button"><i data-lucide="chevron-right"></i></button>
     </div>
 </section>
 
@@ -371,6 +375,9 @@
 
     /* Sections */
     .h2-section { padding: 8rem 0; }
+    /* 2nd & 3rd sections — reduced excessive spacing for balanced layout */
+    .h2-manifesto { padding: 4.5rem 0; }
+    .h2-works { padding: 4.5rem 0; }
     .h2-manifesto, .h2-disciplines, .h2-quote, .h2-cta {
         background-color: var(--color-obsidian);
         color: var(--color-warm-ivory);
@@ -418,11 +425,11 @@
     .h2-manifesto-lower {
         display: grid;
         grid-template-columns: 1.6fr 1fr;
-        gap: 4rem;
+        gap: 3rem;
         align-items: end;
-        margin-top: 5rem;
+        margin-top: 3rem;
         border-top: 1px solid rgba(247, 243, 237, 0.15);
-        padding-top: 3rem;
+        padding-top: 2rem;
     }
     .h2-manifesto-body {
         color: var(--color-warm-ivory);
@@ -460,9 +467,9 @@
         margin-bottom: 0.25rem;
     }
     .h2-manifesto-signature {
-        margin-top: 5rem;
+        margin-top: 3rem;
         border-top: 1px solid rgba(247, 243, 237, 0.15);
-        padding-top: 2rem;
+        padding-top: 1.75rem;
         display: flex;
         align-items: baseline;
         gap: 1.5rem;
@@ -484,27 +491,75 @@
     /* Works */
     .h2-works-head {
         display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
         margin-bottom: 3rem;
+        text-align: left;
     }
     .h2-works-title {
         font-family: var(--font-heading);
         font-size: clamp(2rem, 4vw, 3.5rem);
         font-weight: 300;
         margin: 0;
+        text-align: left;
+        align-self: flex-start;
+    }
+    .h2-works-viewport {
+        position: relative;
+        display: flex;
+        align-items: center;
     }
     .h2-works-scroll {
         display: flex;
         gap: 2rem;
         overflow-x: auto;
+        overflow-y: hidden;
         scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
         padding-bottom: 1.5rem;
-        scrollbar-width: thin;
-        scrollbar-color: var(--color-antique-gold) transparent;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        flex: 1;
     }
-    .h2-works-scroll::-webkit-scrollbar { height: 3px; }
-    .h2-works-scroll::-webkit-scrollbar-thumb { background: var(--color-antique-gold); }
+    .h2-works-scroll::-webkit-scrollbar { display: none; height: 0; }
+    .h2-works-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 3;
+        width: 46px;
+        height: 46px;
+        border: 1px solid var(--color-antique-gold);
+        background: var(--color-warm-ivory);
+        color: var(--color-obsidian);
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background 0.3s ease, color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        flex-shrink: 0;
+    }
+    .h2-works-nav:hover:not(:disabled) {
+        background: var(--color-antique-gold);
+        color: var(--color-obsidian);
+        transform: translateY(-50%) scale(1.05);
+    }
+    .h2-works-nav:disabled {
+        opacity: 0.35;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+    .h2-works-nav i, .h2-works-nav svg { width: 20px; height: 20px; }
+    .h2-works-prev { left: 1rem; }
+    .h2-works-next { right: 1rem; }
+    @media (max-width: 900px) {
+        .h2-works-prev { left: 0.5rem; }
+        .h2-works-next { right: 0.5rem; }
+        .h2-works-nav { width: 40px; height: 40px; }
+    }
     .h2-work {
         flex: 0 0 auto;
         width: min(360px, 80vw);
@@ -679,3 +734,43 @@
         .h2-scroll-cue { display: none; }
     }
 </style>
+<script>
+(function() {
+    function initH2WorksNav() {
+        const viewport = document.querySelector('.h2-works-viewport');
+        const scroll = document.querySelector('.h2-works-scroll');
+        const prev = document.querySelector('.h2-works-prev');
+        const next = document.querySelector('.h2-works-next');
+        if (!viewport || !scroll || !prev || !next) return;
+        if (window.lucide) window.lucide.createIcons();
+        const getStep = () => {
+            const card = scroll.querySelector('.h2-work');
+            if (!card) return 320;
+            const style = getComputedStyle(scroll);
+            const gap = parseFloat(style.columnGap || style.gap) || 32;
+            return card.offsetWidth + gap;
+        };
+        const update = () => {
+            const maxScroll = scroll.scrollWidth - scroll.clientWidth;
+            const atStart = scroll.scrollLeft <= 5;
+            const atEnd = scroll.scrollLeft >= maxScroll - 5;
+            prev.disabled = atStart;
+            next.disabled = atEnd;
+        };
+        prev.addEventListener('click', () => scroll.scrollBy({ left: -getStep(), behavior: 'smooth' }));
+        next.addEventListener('click', () => scroll.scrollBy({ left: getStep(), behavior: 'smooth' }));
+        scroll.addEventListener('scroll', update, { passive: true });
+        window.addEventListener('resize', update);
+        // keyboard
+        viewport.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') prev.click();
+            if (e.key === 'ArrowRight') next.click();
+        });
+        viewport.setAttribute('tabindex', '0');
+        update();
+        setTimeout(update, 300);
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initH2WorksNav);
+    else initH2WorksNav();
+})();
+</script>

@@ -4,11 +4,14 @@
     <!-- ======== SIDEBAR ======== -->
     <aside class="adm-side">
         <div class="adm-side-top">
-            <div class="adm-brand">
-                <span class="adm-brand-mark">IH</span>
-                <span class="adm-brand-name">InteriHub</span>
-            </div>
-            <p class="adm-label adm-label-admin">Admin Portal</p>
+            <a href="/" data-route class="adm-brand" style="text-decoration: none; display: flex; align-items: center; gap: 0.75rem;">
+                <img src="assets/logo.svg" alt="InteriHub Logo" width="32" height="32" style="flex-shrink:0;">
+                <div style="display: flex; flex-direction: column; line-height: 1;">
+                    <span class="adm-brand-name" style="line-height:1;">INTERI<span style="color: var(--color-antique-gold);">HUB</span></span>
+                    <span style="font-size: 0.48rem; font-family: var(--font-body); letter-spacing: 0.08em; color: var(--color-antique-gold); font-weight: 500; margin-top: 2px; text-transform: uppercase;">Where Elegance Meets Comfort.</span>
+                </div>
+            </a>
+            <p class="adm-label adm-label-admin" style="margin-top: 0.85rem;">Admin Portal</p>
         </div>
 
         <div class="adm-id">
@@ -1568,6 +1571,43 @@
 /* ---------- Reveal ---------- */
 .reveal-up { opacity: 1; transform: translateY(0); }
 .reveal-up.revealed { opacity: 1; transform: translateY(0); }
+
+/* ---------- Redesign: premium shell, clickable brand ---------- */
+.adm-wrap {
+    background: radial-gradient(ellipse at 10% 0%, rgba(183,154,99,0.07), transparent 55%), var(--bg-primary);
+}
+.adm-brand {
+    cursor: pointer;
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+.adm-brand:hover { opacity: 0.9; transform: translateY(-1px); }
+.adm-brand img { display: block; }
+.adm-brand-name { letter-spacing: 0.06em; }
+.adm-side {
+    border-radius: 16px;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.12);
+    overflow: hidden;
+}
+.adm-main {
+    border-radius: 16px;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.08);
+    background: var(--bg-primary);
+}
+.adm-header { position: relative; overflow: hidden; }
+.adm-header::before {
+    content: 'Command';
+    position: absolute;
+    right: -8px; top: -16px;
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 8vw, 5rem);
+    line-height: 1;
+    color: var(--text-primary);
+    opacity: 0.04;
+    pointer-events: none;
+    user-select: none;
+}
+.adm-kpi, .adm-project-card, .adm-photo-submission, .adm-approval-item { border-radius: 12px; }
+.adm-table-wrap, .adm-form-block, .adm-upload-block { border-radius: 12px; overflow: hidden; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1200px) {
