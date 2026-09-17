@@ -1,3 +1,21 @@
+<!-- PAGE_DIRECT_REDIRECT -->
+<script>
+(function(){
+  try {
+    if (window.top !== window) return;
+    if (document.getElementById('app-root')) return;
+    var page = location.pathname.split('/').pop().replace(/\.html$/, '');
+    var target = '../index.html#/' + page;
+    if (location.search) target += location.search;
+    if (location.hash && location.hash.indexOf('#/') !== 0) target += location.hash;
+    if (location.pathname.indexOf('/pages/') !== -1) {
+      location.replace(target);
+    } else if (page) {
+      location.replace(target);
+    }
+  } catch(e) {}
+})();
+</script>
 ﻿<section class="auth-v2-page">
     <div class="ax-bg">
         <img src="https://i.pinimg.com/736x/0d/79/36/0d79368a1e7258d267c078987ba59cf2.jpg" alt="InteriHub" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMyQTIzMkEiLz48L3N2Zz4=';">

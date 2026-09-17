@@ -3,6 +3,7 @@
 // Detect the GitHub Pages base path (e.g. "/InteriHub") at runtime
 // NOTE: must be declared before `state` because getRoute() reads it during initialization
 const BASE_PATH = (() => {
+    if (window.location.protocol === 'file:') return '';
     const scriptSrc = document.querySelector('script[src*="app.js"]');
     if (scriptSrc) {
         const src = scriptSrc.getAttribute('src');
@@ -153,6 +154,14 @@ function initMobileMenu() {
 function getRoute() {
     const hash = window.location.hash.replace(/^#/, '');
     if (hash) return hash === '/index.html' ? '/' : hash;
+    // file:// protocol — right-click -> Open : pathname is like /C:/.../InteriHub/index.html
+    if (window.location.protocol === 'file:') {
+        const p = window.location.pathname;
+        if (!p || p.endsWith('/index.html') || p.endsWith('/index') || p.endsWith('/')) return '/';
+        // File mode has no real URL path routing — default to home instead of 404
+        // (hash routing like #/about will still work via the hash check above)
+        return '/';
+    }
     let path = window.location.pathname;
     // Strip the base path prefix so /InteriHub/about → /about
     if (BASE_PATH && path.startsWith(BASE_PATH)) {
@@ -209,18 +218,38 @@ async function handleRoute(path) {
         } else {
             try {
                 const pageName = routeKey === '/' ? 'home' : routeKey.replace(/^\//, '');
-                const pageUrl = `${BASE_PATH}/pages/${pageName}.html`;
-                const response = await fetch(pageUrl);
-                if (response.ok) {
-                    dom.appRoot.innerHTML = await response.text();
+                const isFile = window.location.protocol === 'file:';
+                // File protocol: use embedded FILE_PAGES directly (fetch is blocked by Chrome)
+                if (isFile && typeof FILE_PAGES !== 'undefined' && FILE_PAGES[pageName]) {
+                    dom.appRoot.innerHTML = FILE_PAGES[pageName];
+                    executePageScripts(dom.appRoot);
+                } else {
+                    const pageUrl = isFile ? `pages/${pageName}.html` : `${BASE_PATH}/pages/${pageName}.html`;
+                    const response = await fetch(pageUrl);
+                    if (response.ok) {
+                        dom.appRoot.innerHTML = await response.text();
+                        executePageScripts(dom.appRoot);
+                    } else {
+                        // Try embedded fallback before 404
+                        if (typeof FILE_PAGES !== 'undefined' && FILE_PAGES[pageName]) {
+                            dom.appRoot.innerHTML = FILE_PAGES[pageName];
+                            executePageScripts(dom.appRoot);
+                        } else {
+                            dom.appRoot.innerHTML = await render404();
+                            is404 = true;
+                        }
+                    }
+                }
+            } catch (error) {
+                // Fetch blocked (file:// CORS) -> try embedded fallback
+                const pageName2 = routeKey === '/' ? 'home' : routeKey.replace(/^\//, '');
+                if (typeof FILE_PAGES !== 'undefined' && FILE_PAGES[pageName2]) {
+                    dom.appRoot.innerHTML = FILE_PAGES[pageName2];
                     executePageScripts(dom.appRoot);
                 } else {
                     dom.appRoot.innerHTML = await render404();
                     is404 = true;
                 }
-            } catch (error) {
-                dom.appRoot.innerHTML = await render404();
-                is404 = true;
             }
         }
 
@@ -1145,12 +1174,20 @@ async function renderHome() {
 }
 
 async function render404() {
+    // File protocol: serve from embedded cache (fetch blocked)
+    if (window.location.protocol === 'file:' && typeof FILE_PAGES !== 'undefined' && FILE_PAGES['404']) {
+        return FILE_PAGES['404'];
+    }
     try {
-        const response = await fetch(`${BASE_PATH}/pages/404.html`);
+        const isFile = window.location.protocol === 'file:';
+        const url404 = isFile ? `pages/404.html` : `${BASE_PATH}/pages/404.html`;
+        const response = await fetch(url404);
         if (response.ok) {
             return await response.text();
         }
+        if (typeof FILE_PAGES !== 'undefined' && FILE_PAGES['404']) return FILE_PAGES['404'];
     } catch (e) {
+        if (typeof FILE_PAGES !== 'undefined' && FILE_PAGES['404']) return FILE_PAGES['404'];
         // Fallback
     }
     return `<section style="min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:120px 24px;background-color:var(--bg-primary);">

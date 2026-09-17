@@ -172,6 +172,12 @@
     </footer>
 
     <!-- Scripts -->
+    <script>
+    // Load embedded pages only for file:// (right-click open) — avoids 400KB download on http/server
+    if (window.location.protocol === 'file:') {
+        document.write('<script src="js/file-pages.js"><\/script>');
+    }
+    </script>
     <script src="js/app.js?v=20260824b"></script>
     <script>
         if (window.lucide) lucide.createIcons();
